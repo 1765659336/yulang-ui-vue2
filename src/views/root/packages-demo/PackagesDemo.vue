@@ -12,14 +12,19 @@
         {{ item.title }}
       </div>
     </div>
-    <router-view class="component-content"></router-view>
+    <keep-alive>
+      <!-- 需要缓存的视图组件 -->
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <!-- 不需要缓存的视图组件 -->
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 
 <script>
-import { unionData } from './data.js';
+import { unionData } from "./data.js";
 export default {
-  name: 'yulang-packages-union',
+  name: "yulang-packages-union",
   data() {
     return {
       unionData,
@@ -40,9 +45,9 @@ export default {
     },
     unionDataClass(item) {
       return [
-        'menu-title-' + item.level,
-        item.active ? 'menu-title-actived' : '',
-        item.level === 2 ? 'menu-title-level2-common' : '',
+        "menu-title-" + item.level,
+        item.active ? "menu-title-actived" : "",
+        item.level === 2 ? "menu-title-level2-common" : "",
       ];
     },
   },
