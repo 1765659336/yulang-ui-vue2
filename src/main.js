@@ -5,6 +5,7 @@ import store from './store'
 
 // 引入样式重置文件
 import 'normalize.css';
+import '@/assets/style/public.css'
 
 // 引入自定义组件
 import { Packages } from '@/packages';

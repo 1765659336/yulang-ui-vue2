@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <root-head></root-head>
     <keep-alive>
       <!-- 需要缓存的视图组件 -->
@@ -18,6 +18,8 @@ export default {
     RootHead,
   },
 };
-</script>
+</script> 
 
-<style></style>
+<style scoped lang="less">
+@import url('./index.less');
+</style>

@@ -1,19 +1,25 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Root from "@/views/root/Root.vue";
-import Home from "@/views/root/home/Home.vue";
-import PackagesDemo from "@/views/root/packages-demo/PackagesDemo.vue";
-Vue.use(VueRouter);
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Root from '@/views/root/Root.vue'
+import Home from '@/views/root/home/Home.vue'
+import PackagesDemo from '@/views/root/packages-demo/PackagesDemo.vue'
+import Guide from '@/views/root/guide/Guide.vue';
+import YulangButton from '@/views/root/packages-demo/yulang-button/YulangButton.vue';
+import YulangSwitch from '@/views/root/packages-demo/yulang-switch/YulangSwitch.vue';
+
 /* 
   meta: {
     keepAlive:是否缓存组件
     isAuth:前端设置是否需要跳过后端路由鉴权
   }
 */
+
+Vue.use(VueRouter)
+
 const routes = [
   {
-    path: "/",
-    redirect: "/root",
+    path: '',
+    redirect: '/root'
   },
   {
     path: "/login",
@@ -31,8 +37,8 @@ const routes = [
     component: Root,
     children: [
       {
-        path: "",
-        redirect: "home",
+        path: '',
+        redirect: 'packages-demo'
       },
       {
         path: "home",
@@ -47,14 +53,43 @@ const routes = [
         path: "packages-demo",
         name: "packages-demo",
         component: PackagesDemo,
+        children: [
+          {
+            path: '',
+            redirect: 'yulang-button'
+          },
+          {
+            path: 'yulang-button',
+            name: 'yulang-button',
+            component: YulangButton,
+            meta: {
+              keepAlive: true,
+              isAuth: true
+            },
+          },
+          {
+            path: 'yulang-switch',
+            name: 'yulang-switch',
+            component: YulangSwitch,
+            meta: {
+              keepAlive: true,
+              isAuth: true
+            },
+          },
+        ]
+      },
+      {
+        path: 'guide',
+        name: 'guide',
+        component: Guide,
         meta: {
           keepAlive: true,
           isAuth: true
         },
-      },
-    ],
-  },
-];
+      }
+    ]
+  }
+]
 
 const router = new VueRouter({
   routes,
