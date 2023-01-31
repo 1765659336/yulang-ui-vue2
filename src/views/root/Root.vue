@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <root-head></root-head>
     <router-view></router-view>
   </div>
@@ -13,6 +13,8 @@ export default {
     RootHead,
   },
 };
-</script>
+</script> 
 
-<style></style>
+<style scoped lang="less">
+@import url('./index.less');
+</style>

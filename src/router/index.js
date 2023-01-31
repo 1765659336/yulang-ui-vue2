@@ -3,11 +3,16 @@ import VueRouter from 'vue-router'
 import Root from '@/views/root/Root.vue'
 import Home from '@/views/root/home/Home.vue'
 import PackagesDemo from '@/views/root/packages-demo/PackagesDemo.vue'
+import Guide from '@/views/root/guide/Guide.vue';
+import YulangButton from '@/views/root/packages-demo/yulang-button/YulangButton.vue';
+import YulangSwitch from '@/views/root/packages-demo/yulang-switch/YulangSwitch.vue';
+
+
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '',
     redirect: '/root'
   },
   {
@@ -22,7 +27,7 @@ const routes = [
     children: [
       {
         path: '',
-        redirect: 'home'
+        redirect: 'packages-demo'
       },
       {
         path: 'home',
@@ -33,9 +38,30 @@ const routes = [
         path: 'packages-demo',
         name: 'packages-demo',
         component: PackagesDemo,
+        children: [
+          {
+            path: '',
+            redirect: 'yulang-button'
+          },
+          {
+            path: 'yulang-button',
+            name: 'yulang-button',
+            component: YulangButton,
+          },
+          {
+            path: 'yulang-switch',
+            name: 'yulang-switch',
+            component: YulangSwitch,
+          },
+        ]
       },
+      {
+        path: 'guide',
+        name: 'guide',
+        component: Guide,
+      }
     ]
-  },
+  }
 ]
 
 const router = new VueRouter({
