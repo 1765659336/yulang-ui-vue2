@@ -1,0 +1,15 @@
+.test {
+  color: red;
+}
+.ButtonClass {
+  width: 3em;
+  height: 1.5em;
+  background-color: #13ce66;
+  border-radius: 2em;
+}
+.circle {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 2em;
+}
