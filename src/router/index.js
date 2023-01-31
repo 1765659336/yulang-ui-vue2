@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Root from '@/views/root/Root.vue'
-import Home from '@/views/root/home/Home.vue'
-import PackagesDemo from '@/views/root/packages-demo/PackagesDemo.vue'
-import Guide from '@/views/root/guide/Guide.vue';
-import YulangButton from '@/views/root/packages-demo/yulang-button/YulangButton.vue';
-import YulangSwitch from '@/views/root/packages-demo/yulang-switch/YulangSwitch.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Root from "@/views/root/Root.vue";
+import Home from "@/views/root/home/Home.vue";
+import PackagesDemo from "@/views/root/packages-demo/PackagesDemo.vue";
+import Guide from "@/views/root/guide/Guide.vue";
+import YulangButton from "@/views/root/packages-demo/yulang-button/YulangButton.vue";
+import YulangSwitch from "@/views/root/packages-demo/yulang-switch/YulangSwitch.vue";
 
 /* 
   meta: {
@@ -14,12 +14,12 @@ import YulangSwitch from '@/views/root/packages-demo/yulang-switch/YulangSwitch.
   }
 */
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '',
-    redirect: '/root'
+    path: "",
+    redirect: "/root",
   },
   {
     path: "/login",
@@ -28,7 +28,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/login/Login.vue"),
     meta: {
       keepAlive: false,
-      isAuth: true
+      isAuth: true,
     },
   },
   {
@@ -37,8 +37,8 @@ const routes = [
     component: Root,
     children: [
       {
-        path: '',
-        redirect: 'packages-demo'
+        path: "",
+        redirect: "packages-demo",
       },
       {
         path: "home",
@@ -46,7 +46,7 @@ const routes = [
         component: Home,
         meta: {
           keepAlive: true,
-          isAuth: true
+          isAuth: true,
         },
       },
       {
@@ -55,41 +55,44 @@ const routes = [
         component: PackagesDemo,
         children: [
           {
-            path: '',
-            redirect: 'yulang-button'
+            path: "",
+            redirect: "yulang-button",
           },
           {
-            path: 'yulang-button',
-            name: 'yulang-button',
+            path: "yulang-button",
+            name: "yulang-button",
             component: YulangButton,
             meta: {
               keepAlive: true,
-              isAuth: true
+              isAuth: true,
+              title: "按钮 Button",
             },
           },
           {
-            path: 'yulang-switch',
-            name: 'yulang-switch',
+            path: "yulang-switch",
+            name: "yulang-switch",
             component: YulangSwitch,
             meta: {
               keepAlive: true,
-              isAuth: true
+              isAuth: true,
+              title: "开关 Switch",
             },
           },
-        ]
+        ],
       },
       {
-        path: 'guide',
-        name: 'guide',
+        path: "guide",
+        name: "guide",
         component: Guide,
         meta: {
           keepAlive: true,
-          isAuth: true
+          isAuth: true,
+          title: "指南",
         },
-      }
-    ]
-  }
-]
+      },
+    ],
+  },
+];
 
 const router = new VueRouter({
   routes,
@@ -108,6 +111,10 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+});
+
+router.afterEach((to) => {
+  document.title = to.meta.title || "找不到了嘤嘤嘤";
 });
 
 export default router;
