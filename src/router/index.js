@@ -49,7 +49,7 @@ const routes = [
   },
   {
     path: "/root",
-    name: "root",
+    // name: "root",
     component: Root,
     children: [
       {
@@ -67,7 +67,7 @@ const routes = [
       },
       {
         path: "packages-demo",
-        name: "packages-demo",
+        // name: "packages-demo",
         component: PackagesDemo,
         children: [
           {
