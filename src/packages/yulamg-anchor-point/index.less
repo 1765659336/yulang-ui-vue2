@@ -10,11 +10,12 @@
 
 .packages-main-form-anchor-point-container {
     width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - var(--offsetTop-container--));
 
     .packages-main-form-anchor-point-content {
-        height: calc(100vh - var(--offsetTop-container--));
         width: @anchor-point-content-width;
-        overflow-y: auto;
+
 
         .packages-main-form-anchor-point-content-item-title {
             width: 100%;
