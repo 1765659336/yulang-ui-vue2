@@ -5,6 +5,7 @@ import YulangSwitch from "./yulang-switch/YulangSwitch.vue";
 import YulangUpload from "./yulang-upload/YulangUpload.vue";
 import YulangCanvas from "./yulang-canvas/YulangCanvas.vue";
 import YulangAnchorPoint from "./yulamg-anchor-point/YulangAnchorPoint.vue";
+import YulangDescribeFrame from "./yulang-describe-frame/YulangDescribeFrame.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -26,6 +27,7 @@ export const Packages = [
   YulangUpload,
   YulangCanvas,
   YulangAnchorPoint,
+  YulangDescribeFrame
 ];
 
 const install = function (Vue, option) {
@@ -52,4 +54,5 @@ export default {
   YulangUpload,
   YulangCanvas,
   YulangAnchorPoint,
+  YulangDescribeFrame
 };
