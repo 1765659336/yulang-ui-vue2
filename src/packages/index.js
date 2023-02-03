@@ -5,7 +5,7 @@ import YulangSignaure from "@/packages/yulang-signaure/YulangSignaure.vue";
 import YulangSwitch from "@/packages/yulang-switch/YulangSwitch.vue";
 import YulangUpload from "@/packages/yulang-upload/YulangUpload.vue";
 import YulangCanvas from "@/packages/yulang-canvas/YulangCanvas.vue";
-import YulangAnchorPoint from "@/packages/yulamg-anchor-point/YulangAnchorPoint.vue";
+import YulangAnchorPoint from "@/packages/yulang-anchor-point/YulangAnchorPoint.vue";
 import YulangLink from "@/packages/yulang-link/YulangLink.vue";
 import YulangDescribeFrame from "@/packages/yulang-describe-frame/YulangDescribeFrame.vue";
 
@@ -38,6 +38,7 @@ const install = function (Vue, option) {
   Packages.forEach((component) => {
     Vue.component(component.name, component);
   });
+  
   Object.keys(Directives).forEach((key) => {
     Vue.directive(key, Directives[key]);
   });
