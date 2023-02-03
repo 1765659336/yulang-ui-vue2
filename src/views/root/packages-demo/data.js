@@ -70,5 +70,11 @@ export const unionData = [
     title: "Dialog 对话框",
     path: "/root/packages-demo/yulang-dialog",
     active: false,
-  }
+  },
+  {
+    level: 2,
+    title: "BackTop 回到顶部",
+    path: "/root/packages-demo/yulang-back-top",
+    active: false,
+  },
 ];

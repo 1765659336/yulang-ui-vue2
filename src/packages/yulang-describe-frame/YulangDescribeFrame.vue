@@ -1,5 +1,8 @@
 <template>
-  <div class="describe-frame-container">
+  <div
+    class="describe-frame-container"
+    :style="{ '--container-width--': width }"
+  >
     <div class="describe-frame-header">
       <slot></slot>
     </div>
@@ -51,9 +54,14 @@ export default {
     };
   },
   props: {
+    // 传入的内容区代码
     codeStr: {
       type: String,
       default: null,
+    },
+    // 描述框的宽度
+    width: {
+      type: String,
     },
   },
   computed: {
@@ -90,7 +98,10 @@ export default {
           this.isShow = !this.isShow;
         }, 300);
       }
+    console.log(this, 'YulangDe');
     },
+  },
+  mounted() {
   },
 };
 </script>
