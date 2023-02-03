@@ -10,6 +10,8 @@ import YulangLink from "@/packages/yulang-link/YulangLink.vue";
 import YulangDescribeFrame from "@/packages/yulang-describe-frame/YulangDescribeFrame.vue";
 import YulangDialog from "@/packages/yulang-dialog/YulangDialog.vue";
 import YulangBackTop from "@/packages/yulang-back-top/YulangBackTop.vue";
+import YulangCheckbox from "@/packages/yulang-checkbox/YulangCheckbox.vue";
+import YulangSwitchCopy from "@/packages/yulang-switch-copy/YulangSwitchCopy.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -34,7 +36,9 @@ export const Packages = [
   YulangDescribeFrame,
   YulangLink,
   YulangDialog,
-  YulangBackTop
+  YulangBackTop,
+  YulangCheckbox,
+  YulangSwitchCopy,
 ];
 
 const install = function (Vue, option) {
@@ -64,5 +68,8 @@ export default {
   YulangAnchorPoint,
   YulangDescribeFrame,
   YulangLink,
-  YulangDialog
+  YulangDialog,
+  YulangBackTop,
+  YulangCheckbox,
+  YulangSwitchCopy,
 };
