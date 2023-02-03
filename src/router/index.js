@@ -14,6 +14,7 @@ import YulangAnchorPoint from "@/views/root/packages-demo/yulang-anchor-point/Yu
 import YulangIcon from "@/views/root/packages-demo/yulang-icon/YulangIcon.vue";
 import YulangDescribeFrame from "@/views/root/packages-demo/yulang-describe-frame/YulangDescribeFrame.vue";
 import YulangLink from "@/views/root/packages-demo/yulang-link/YulangLink.vue";
+import YulangDialog from "@/views/root/packages-demo/yulang-dialog/YulangDialog.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -178,6 +179,16 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "文字链接 Link",
+            },
+          },
+          {
+            path: "yulang-dialog",
+            name: "yulang-dialog",
+            component: YulangDialog,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "对话框 Dialog",
             },
           },
         ],

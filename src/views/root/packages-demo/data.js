@@ -65,4 +65,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-link",
     active: false,
   },
+  {
+    level: 2,
+    title: "Dialog 对话框",
+    path: "/root/packages-demo/yulang-dialog",
+    active: false,
+  }
 ];
