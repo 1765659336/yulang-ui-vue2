@@ -1,11 +1,13 @@
-import YulangButton from "./yulang-button/YulangButton.vue";
-import YulangSlider from "./yulang-slider/YulangSlider.vue";
-import YulangSignaure from "./yulang-signaure/YulangSignaure.vue";
-import YulangSwitch from "./yulang-switch/YulangSwitch.vue";
-import YulangUpload from "./yulang-upload/YulangUpload.vue";
-import YulangCanvas from "./yulang-canvas/YulangCanvas.vue";
-import YulangAnchorPoint from "./yulamg-anchor-point/YulangAnchorPoint.vue";
-import YulangDescribeFrame from "./yulang-describe-frame/YulangDescribeFrame.vue";
+// 自定义组件
+import YulangButton from "@/packages/yulang-button/YulangButton.vue";
+import YulangSlider from "@/packages/yulang-slider/YulangSlider.vue";
+import YulangSignaure from "@/packages/yulang-signaure/YulangSignaure.vue";
+import YulangSwitch from "@/packages/yulang-switch/YulangSwitch.vue";
+import YulangUpload from "@/packages/yulang-upload/YulangUpload.vue";
+import YulangCanvas from "@/packages/yulang-canvas/YulangCanvas.vue";
+import YulangAnchorPoint from "@/packages/yulamg-anchor-point/YulangAnchorPoint.vue";
+import YulangLink from "@/packages/yulang-link/YulangLink.vue";
+import YulangDescribeFrame from "@/packages/yulang-describe-frame/YulangDescribeFrame.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -14,11 +16,11 @@ import "../assets/icon/reset.css";
 
 // 自定义指令
 import Copy from "@/instruction/copy";
-// 自定义指令
+// 自定义指令对象
 export const Directives = {
   Copy,
 };
-
+// 自定义组件数组
 export const Packages = [
   YulangButton,
   YulangSlider,
@@ -27,7 +29,8 @@ export const Packages = [
   YulangUpload,
   YulangCanvas,
   YulangAnchorPoint,
-  YulangDescribeFrame
+  YulangDescribeFrame,
+  YulangLink,
 ];
 
 const install = function (Vue, option) {
@@ -54,5 +57,6 @@ export default {
   YulangUpload,
   YulangCanvas,
   YulangAnchorPoint,
-  YulangDescribeFrame
+  YulangDescribeFrame,
+  YulangLink
 };

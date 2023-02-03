@@ -19,18 +19,20 @@
         <div class="describe-frame-content-code">
           <code style="white-space: pre">
             <div>{{ codeStr }}</div>
-            <div>{{ codeStr }}</div>
-            <div>{{ codeStr }}</div>
           </code>
         </div>
       </div>
     </div>
 
     <div class="describe-frame-footer" @click="changeDescribeFrameHeight">
-      <img src="@/assets/images/downarrow.svg" v-if="!isShow" />
-      <img src="@/assets/images/uparrow.svg" v-else />
-      <div v-if="!isShow">显示代码</div>
-      <div v-else>隐藏代码</div>
+      <div></div>
+      <div class="describe-frame-footer-center">
+        <img src="@/assets/images/downarrow.svg" v-if="!isShow" />
+        <img src="@/assets/images/uparrow.svg" v-else />
+        <div v-if="!isShow">显示代码</div>
+        <div v-else>隐藏代码</div>
+      </div>
+      <div class="copy" v-Copy="codeStr">复制</div>
     </div>
   </div>
 </template>
@@ -42,6 +44,7 @@ export default {
     return {
       isShow: false,
       contentHeight: 0,
+      value: '1234',
     };
   },
   props: {
@@ -66,17 +69,17 @@ export default {
           this.$refs.describeFrameContent.classList.add(
             'describeFrameContentAnimation'
           );
-          // this.$refs.describeFrameContent.classList.remove(
-          //   'describeFrameContentAnimationReverse'
-          // );
+          this.$refs.describeFrameContent.classList.remove(
+            'describeFrameContentAnimationReverse'
+          );
         });
       } else {
         this.$refs.describeFrameContent.classList.add(
           'describeFrameContentAnimationReverse'
         );
-        // this.$refs.describeFrameContent.classList.remove(
-        //   'describeFrameContentAnimation'
-        // );
+        this.$refs.describeFrameContent.classList.remove(
+          'describeFrameContentAnimation'
+        );
         setTimeout(() => {
           this.isShow = !this.isShow;
         }, 300);
