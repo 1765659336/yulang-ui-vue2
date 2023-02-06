@@ -223,7 +223,7 @@ const routes = [
               isAuth: true,
               title: "开关Copy SwitchCopy",
             },
-          },
+          }
         ],
       },
       {
