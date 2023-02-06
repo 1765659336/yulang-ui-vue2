@@ -18,6 +18,7 @@ import YulangDialog from "@/views/root/packages-demo/yulang-dialog/YulangDialog.
 import YulangBackTop from "@/views/root/packages-demo/yulang-back-top/YulangBackTop.vue";
 import YulangCheckbox from "@/views/root/packages-demo/yulang-checkbox/YulangCheckbox.vue";
 import YulangSwitchCopy from "@/views/root/packages-demo/yulang-switch-copy/YulangSwitchCopy.vue";
+import YulangForm from "@/views/root/packages-demo/yulang-form/YulangForm.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -192,7 +193,7 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "对话框 Dialog",
-            }
+            },
           },
           {
             path: "yulang-back-top",
@@ -222,6 +223,16 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "开关Copy SwitchCopy",
+            },
+          },
+          {
+            path: "yulang-form",
+            name: "yulang-form",
+            component: YulangForm,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "表单Form Form",
             },
           },
         ],
