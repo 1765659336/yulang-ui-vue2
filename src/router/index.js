@@ -19,6 +19,7 @@ import YulangBackTop from "@/views/root/packages-demo/yulang-back-top/YulangBack
 import YulangCheckbox from "@/views/root/packages-demo/yulang-checkbox/YulangCheckbox.vue";
 import YulangSwitchCopy from "@/views/root/packages-demo/yulang-switch-copy/YulangSwitchCopy.vue";
 import YulangForm from "@/views/root/packages-demo/yulang-form/YulangForm.vue";
+import YulangTable from "@/views/root/packages-demo/yulang-table/YulangTable.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -233,6 +234,16 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "表单Form Form",
+            },
+          },
+          {
+            path: "yulang-table",
+            name: "yulang-table",
+            component: YulangTable,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "表格Table Table",
             },
           },
         ],
