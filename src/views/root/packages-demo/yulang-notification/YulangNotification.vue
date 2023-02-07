@@ -4,7 +4,7 @@
       <template #a> 悬浮出现在页面角落，显示全局的通知提醒消息 </template>
 
       <template #b>
-        <yulang-describe-frame :codeStr="codeStr">
+        <yulang-describe-frame>
           <yulang-button @click="showNotice('success')" type="success">
             成功消息
           </yulang-button>
@@ -16,7 +16,7 @@
       </template>
 
       <template #c>
-        <yulang-describe-frame :codeStr="codeStr">
+        <yulang-describe-frame>
           <yulang-button @click="showNoticeTimeout('success')" type="success">
             成功消息
           </yulang-button>
@@ -44,10 +44,14 @@ export default {
   },
   methods: {
     showNotice(type) {
-      this.$notification({ message: '小帅哥快来玩呀！！',type });
+      this.$notification({ message: '小帅哥快来玩呀！！', type });
     },
     showNoticeTimeout(type) {
-      this.$notification({ message: '小帅哥快来玩呀！！', type,timeout: 2000 });
+      this.$notification({
+        message: '小帅哥快来玩呀！！',
+        type,
+        timeout: 3000,
+      });
     },
   },
 };

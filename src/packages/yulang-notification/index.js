@@ -3,6 +3,9 @@ import YulangNotification from './YulangNotification.vue'
 
 const notificationObject = Vue.extend(YulangNotification)
 
+// 引入所有通知消息的父盒子的样式
+import './index.less'
+
 // const notification = {
 function install(option) {
   // 如果未设置类型默认为成功类型
@@ -21,9 +24,6 @@ function install(option) {
 function createNotificationParent() {
   const notificationParent = document.createElement('div')
   notificationParent.setAttribute('id', 'notificationParentId')
-  notificationParent.style.top = '150px'
-  notificationParent.style.left = '20px'
-  notificationParent.style.position = 'fixed'
   document.body.appendChild(notificationParent)
 }
 
