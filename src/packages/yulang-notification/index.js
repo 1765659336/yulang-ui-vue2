@@ -8,15 +8,16 @@ import './index.less'
 
 // const notification = {
 function install(option) {
-  // 如果未设置类型默认为成功类型
-  if (!option.type) option.type = 'success'
+  // 如果未设置类型默认为undefined
+  if (!option.type) option.type = undefined
+  if (!option.message) option.message = undefined
 
   let instance = new notificationObject({
     data() {
       return { ...option }
     }
   }).$mount()
-  // 将实例对象挂载到body上
+  // 将实例对象挂载到bod上的id为notificationParentId身上
   document.querySelector('#notificationParentId').appendChild(instance.$el)
 }
 
