@@ -18,6 +18,7 @@ import YulangInput from "@/packages/yulang-input/YulangInput.vue";
 import YulangTable from "@/packages/yulang-table/YulangTable.vue";
 import YulangTableItem from "@/packages/yulang-table-item/YulangTableItem.vue";
 import YulangTree from "@/packages/yulang-tree/YulangTree.vue";
+import YulangLeader from "@/packages/yulang-leader/YulangLeader.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -59,6 +60,7 @@ export const Packages = [
   YulangTable,
   YulangTableItem,
   YulangTree,
+  YulangLeader
 ];
 
 // 工具函数
@@ -87,5 +89,5 @@ if (typeof window !== "undefined" && window.Vue) {
 export default {
   install,
   ...Packages,
-  Lib,
+  Lib
 };

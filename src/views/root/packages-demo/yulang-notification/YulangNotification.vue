@@ -55,16 +55,27 @@
         </yulang-describe-frame>
       </template>
 
+      <!-- <template #f>
+        <yulang-describe-frame>
+          <yulang-button @click="showNoticeSetH()" type="success">
+            成功消息
+          </yulang-button>
+        </yulang-describe-frame>
+      </template> -->
+
       <!-- 以下开始是阅读文档 -->
       <template #u></template>
 
       <template #v>
         <yulang-table :data="tableDataAttributes">
-          <yulang-table-item prop="attributeName" label="属性名">
+          <yulang-table-item prop="attributeName" label="属性名" width="200px">
           </yulang-table-item>
-          <yulang-table-item prop="explain" label="说明"> </yulang-table-item>
-          <yulang-table-item prop="type" label="类型"> </yulang-table-item>
-          <yulang-table-item prop="default" label="默认值"> </yulang-table-item>
+          <yulang-table-item prop="explain" label="说明" width="200px">
+          </yulang-table-item>
+          <yulang-table-item prop="type" label="类型" width="200px">
+          </yulang-table-item>
+          <yulang-table-item prop="default" label="默认值" width="200px">
+          </yulang-table-item>
         </yulang-table>
       </template>
     </yulang-anchor-point>
@@ -114,7 +125,7 @@ export default {
     showNoticeDefault() {
       this.$notification({
         message: '开来玩摇摇车',
-      })
+      });
     },
     showNoticeSetTitle(type) {
       this.$notification({
@@ -122,6 +133,19 @@ export default {
         type,
       });
     },
+    // showNoticeSetH() {
+    //   const h = this.$createElement;
+
+    //   this.$notification({
+    //     title: h('div', null, { default: h('div', null, 'can can need') }),
+    //     title: h('div', null, { default: h('div', null, 'can can need') }),
+    //     title: h('div', null,[
+    //       this.$slots.default({
+    //         text: '1111',
+    //       }),
+    //     ]),
+    //   });
+    // },
   },
 };
 </script>

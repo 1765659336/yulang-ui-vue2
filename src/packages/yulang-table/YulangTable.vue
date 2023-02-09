@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "yulang-table",
+  name: 'yulang-table',
   props: {
     data: {
       type: Array,
@@ -31,7 +31,7 @@ export default {
     // 没有传递宽度时，默认宽度
     minWidth: {
       default() {
-        return "180px";
+        return '100px';
       },
     },
   },
@@ -41,7 +41,6 @@ export default {
     };
   },
   mounted() {
-    console.log('this.$children',this.$children);
     this.$children.map((item) => {
       if (item.prop) {
         this.fieldSort.push({ prop: item.prop, width: item.width });
@@ -52,5 +51,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("./index.less");
+@import url('./index.less');
 </style>
