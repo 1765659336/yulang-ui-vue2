@@ -98,7 +98,6 @@ export default {
         { slotName: 'c', slotTitle: '自动消失', level: 2 },
         { slotName: 'd', slotTitle: '默认标题无类型', level: 2 },
         { slotName: 'e', slotTitle: '设置标题', level: 2 },
-        { slotName: 'f', slotTitle: '使用h函数渲染', level: 2 },
         { slotName: 'u', slotTitle: '阅读文档', level: 1 },
         { slotName: 'v', slotTitle: '属性', level: 2 },
       ],
