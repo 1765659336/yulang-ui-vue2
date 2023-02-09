@@ -1,5 +1,12 @@
 <template>
-  <div class="mask-layer" ref="container" @click.self="addStep" v-if="isOpenLeader">
+  <div
+    class="mask-layer"
+    ref="container"
+    @click.self="addStep"
+    @touchmove.prevent
+    v-if="isOpenLeader"
+    :style="getIndex"
+  >
     <div class="leader-container">
       {{ nowStep }}
       {{ this.leaderList.length }}
@@ -14,7 +21,7 @@
       :style="getAddress(index)"
     >
       <div class="leader-container-Item-haeder">
-        <img src="@/assets/images/delete.svg" @click="deleteLeaderComponent"/>
+        <img src="@/assets/images/delete.svg" @click="deleteLeaderComponent" />
       </div>
 
       <div class="leader-container-Item-body">
@@ -28,10 +35,14 @@
             v-for="index in leaderList.length"
             :key="index"
             :style="[index - 1 == nowStep ? { backgroundColor: 'black' } : {}]"
-          >
-          </div>
+          ></div>
         </div>
-        <div class="leader-container-Item-footer-nextstep"  @click.self="addStep">下一步</div>
+        <div
+          class="leader-container-Item-footer-nextstep"
+          @click.self="addStep"
+        >
+          下一步
+        </div>
       </div>
     </div>
   </div>
@@ -57,7 +68,16 @@ export default {
       isOpenLeader: true,
     };
   },
+  computed:{
+    // 设置z-index
+    getIndex() {
+      return {
+        '--index--': this.$index.getIndex(),
+      };
+    },
+  },
   methods: {
+    // 设置每个引导框位置
     getAddress(index) {
       const itemBox = this.leaderContainerList[index];
       // 设置于目标框的默认距离
@@ -84,7 +104,7 @@ export default {
         };
       } else {
         return {
-          '--box-item-top--': itemBox.height + distance + 'px',
+          '--box-item-top--': itemBox.top + itemBox.height + distance + 'px',
           '--box-item-left--': itemBox.left + itemBox.width / 2 + 'px',
           '--box-item-transform--': 'translateX(-50%)',
         };
@@ -94,17 +114,37 @@ export default {
     addStep() {
       if (this.nowStep >= this.leaderList.length - 1) {
         // 删除引导组件
-        this.$el.parentNode.removeChild(this.$el);
+        this.deleteLeaderComponent();
       } else {
         this.nowStep++;
       }
     },
     // 删除整个组件的函数
-    deleteLeaderComponent(){
+    deleteLeaderComponent() {
+      this.Move();
       this.$el.parentNode.removeChild(this.$el);
-    }
+    },
+    /** 禁用滚动*/
+    stopMove() {
+      let m = function (e) {
+        e.preventDefault();
+      };
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('touchmove', m, { passive: false }); //禁止页面滑动
+    },
+    //开启页面滚动
+    Move() {
+      let m = function (e) {
+        e.preventDefault();
+      };
+      document.body.style.overflow = ''; //出现滚动条
+      document.removeEventListener('touchmove', m, { passive: true });
+    },
   },
   mounted() {
+    // 禁止页面滚动
+    this.stopMove();
+
     this.leaderList.forEach((item, index) => {
       // 这是满足条件的数组
       const targetAll = document.querySelectorAll(item.target);
