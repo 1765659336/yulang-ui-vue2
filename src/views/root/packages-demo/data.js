@@ -119,4 +119,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-loading",
     active: false,
   },
+  {
+    level: 2,
+    title: "Tree 树",
+    path: "/root/packages-demo/yulang-tree",
+    active: false,
+  },
 ];
