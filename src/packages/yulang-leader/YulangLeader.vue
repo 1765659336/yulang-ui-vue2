@@ -7,10 +7,13 @@
     v-if="isOpenLeader"
     :style="getIndex"
   >
-    <div class="leader-container">
-      {{ nowStep }}
-      {{ this.leaderList.length }}
-    </div>
+    <!-- 单个目标框 -->
+    <div
+      v-for="(item, index) in leaderContainerList"
+      :key="index + item"
+      v-show="item.step === nowStep"
+      :style="focusBoxItem(item)"
+    ></div>
 
     <!-- 单个引导框样式 -->
     <div
@@ -68,7 +71,7 @@ export default {
       isOpenLeader: true,
     };
   },
-  computed:{
+  computed: {
     // 设置z-index
     getIndex() {
       return {
@@ -140,6 +143,18 @@ export default {
       document.body.style.overflow = ''; //出现滚动条
       document.removeEventListener('touchmove', m, { passive: true });
     },
+    // 目标的盒子
+    focusBoxItem(item) {
+      console.log(item);
+      return {
+        border: '3px solid red',
+        position: 'absolute',
+        width: item.width + 'px',
+        height: item.height + 'px',
+        top: item.top + 'px',
+        left: item.left + 'px',
+      };
+    },
   },
   mounted() {
     // 禁止页面滚动
@@ -157,6 +172,8 @@ export default {
         this.leaderContainerList.push(leaderContainerItem);
       });
     });
+
+    console.log(this.leaderContainerList);
   },
 };
 </script>
