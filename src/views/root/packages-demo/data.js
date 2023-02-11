@@ -131,4 +131,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-leader",
     active: false,
   },
+  { 
+    level:2,
+    title: "Tabs 标签页",
+    path: "/root/packages-demo/yulang-tabs",
+    active: false,
+  },
 ];

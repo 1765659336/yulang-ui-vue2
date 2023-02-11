@@ -25,6 +25,7 @@ import YulangMessage from "@/views/root/packages-demo/yulang-message/YulangMessa
 import YulangLoading from "@/views/root/packages-demo/yulang-loading/YulangLoading.vue";
 import YulangTree from "@/views/root/packages-demo/yulang-tree/YulangTree.vue";
 import YulangLeader from "@/views/root/packages-demo/yulang-leader/YulangLeader.vue";
+import YulangTabs from "@/views/root/packages-demo/yulang-tabs/YulangTabs.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -301,6 +302,16 @@ const routes = [
               title: "树Tree Tree",
             },
           },
+          {
+            path: "yulang-tabs",
+            name: "yulang-tabs",
+            component: YulangTabs,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "标签页Tabs Tabs",
+            }
+          }
         ],
       },
       {
