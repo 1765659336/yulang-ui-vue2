@@ -137,4 +137,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-tabs",
     active: false,
   },
+  { 
+    level:2,
+    title: "Divider 分割线",
+    path: "/root/packages-demo/yulang-divider",
+    active: false,
+  },
 ];

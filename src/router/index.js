@@ -26,6 +26,7 @@ import YulangLoading from "@/views/root/packages-demo/yulang-loading/YulangLoadi
 import YulangTree from "@/views/root/packages-demo/yulang-tree/YulangTree.vue";
 import YulangLeader from "@/views/root/packages-demo/yulang-leader/YulangLeader.vue";
 import YulangTabs from "@/views/root/packages-demo/yulang-tabs/YulangTabs.vue";
+import YulangDivider from "@/views/root/packages-demo/yulang-divider/YulangDivider.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -310,6 +311,16 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "标签页Tabs Tabs",
+            }
+          },
+          {
+            path: 'yulang-divider',
+            name: 'yulang-divider',
+            component: YulangDivider,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "标签页Divider Divider"
             }
           }
         ],
