@@ -1,0 +1,35 @@
+.package-yulang-input-container {
+    display: inline-block;
+    min-width: 250px;
+    position: relative;
+    .input {
+      outline: none;
+      border: 1px solid #ccc;
+      padding: 10px 8px;
+      width: 100%;
+      font-size: 14px;
+      color: black;
+      border-radius: 4px;
+      transition: all 0.1s ease;
+      &:focus {
+        border-color: red;
+      }
+    }
+  
+    .input-disabled {
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+  
+    .yulang-input-close-icon {
+      position: absolute;
+      // 向上移动10px刚好等于input的下padding值，然后icon和文字都受到input设置的font-size影响，大小会一致，因此可以实现垂直居中
+      top: 10px;
+      right: 0px;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
