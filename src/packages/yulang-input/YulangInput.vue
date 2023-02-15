@@ -8,16 +8,18 @@
       :value="valueComputed"
       @input="valueComputedInput"
     />
-    <i
-      class="iconfont icon-guanbi yulang-input-close-icon"
-      v-show="iconIsShow"
-      @click="clearValue"
-    ></i>
-    <i
-      class="iconfont icon-yanjing yulang-input-eye-icon"
-      v-if="showPassword"
-      v-YulangLongClick="passwordEyeClick"
-    ></i>
+    <div class="suffix-icon-container">
+      <i
+        class="iconfont icon-guanbi"
+        v-show="iconIsShow"
+        @click="clearValue"
+      ></i>
+      <i
+        class="iconfont icon-yanjing"
+        v-if="showPassword"
+        v-YulangLongClick="passwordEyeClick"
+      ></i>
+    </div>
   </div>
 </template>
 
@@ -77,6 +79,7 @@ export default {
     },
     // icon是否显示
     iconIsShow() {
+      console.log(this.disabled, this.clearable);
       return this.valueComputed && !this.disabled && this.clearable;
     },
   },
@@ -85,9 +88,7 @@ export default {
       this.valueComputed = null;
     },
     valueComputedInput(e) {
-      if (this.showPassword) {
-        this.valueComputed = e.target.value;
-      }
+      this.valueComputed = e.target.value;
     },
     // 清除icon点击事件
     clearValue() {
