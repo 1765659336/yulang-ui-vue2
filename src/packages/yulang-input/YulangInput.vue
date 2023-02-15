@@ -1,25 +1,44 @@
 <template>
   <div class="package-yulang-input-container">
-    <input
-      :class="inputClassComputed"
-      :type="showPassword && !isShowPassword ? 'password' : type"
+    <div v-if="type !== 'textarea'">
+      <div class="prefix-icon-container">
+        <slot name="prefix">
+          <i v-if="prefixIcon" :class="['iconfont', prefixIcon]"></i>
+        </slot>
+      </div>
+      <input
+        :class="inputClassComputed"
+        :type="showPassword && !isShowPassword ? 'password' : type"
+        :placeholder="placeholder"
+        :disabled="disabled"
+        :value="valueComputed"
+        @input="valueComputedInput"
+      />
+      <div class="suffix-icon-container">
+        <i
+          class="iconfont icon-guanbi"
+          v-show="iconIsShow"
+          @click="clearValue"
+        ></i>
+        <i
+          class="iconfont icon-yanjing"
+          v-if="showPassword"
+          v-YulangLongClick="passwordEyeClick"
+        ></i>
+        <slot name="suffix">
+          <i v-if="suffixIcon" :class="['iconfont', suffixIcon]"></i>
+        </slot>
+      </div>
+    </div>
+    <textarea
+      v-else
+      class="textarea"
       :placeholder="placeholder"
+      :rows="rows"
       :disabled="disabled"
       :value="valueComputed"
       @input="valueComputedInput"
-    />
-    <div class="suffix-icon-container">
-      <i
-        class="iconfont icon-guanbi"
-        v-show="iconIsShow"
-        @click="clearValue"
-      ></i>
-      <i
-        class="iconfont icon-yanjing"
-        v-if="showPassword"
-        v-YulangLongClick="passwordEyeClick"
-      ></i>
-    </div>
+    ></textarea>
   </div>
 </template>
 
@@ -53,6 +72,19 @@ export default {
     showPassword: {
       type: Boolean,
       default: false,
+    },
+    // 后缀图标类名
+    suffixIcon: {
+      type: String,
+    },
+    // 前缀图标类名
+    prefixIcon: {
+      type: String,
+    },
+    // 文本域的高度
+    rows: {
+      type: Number,
+      default: 1,
     },
   },
   data() {
