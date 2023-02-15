@@ -2,10 +2,10 @@
   <div class="package-yulang-input-container">
     <input
       :class="inputClassComputed"
-      :type="type"
+      :type="showPassword && !isShowPassword ? 'password' : type"
       :placeholder="placeholder"
       :disabled="disabled"
-      :value="realValueComputed"
+      :value="valueComputed"
       @input="valueComputedInput"
     />
     <i
@@ -14,7 +14,7 @@
       @click="clearValue"
     ></i>
     <i
-      class="iconfont icon-xiaoxi"
+      class="iconfont icon-yanjing yulang-input-eye-icon"
       v-if="showPassword"
       v-YulangLongClick="passwordEyeClick"
     ></i>
@@ -68,22 +68,6 @@ export default {
         this.$emit("input", value);
       },
     },
-    // 开启密码框的替代文本
-    valuePasswordComputed() {
-      let str = "";
-      if (this.valueComputed?.length) {
-        for (let index = 0; index < this.valueComputed.length; index++) {
-          str += "*";
-        }
-      }
-      return str;
-    },
-    // 具体显示的值
-    realValueComputed() {
-      return this.showPassword && this.isShowPassword
-        ? this.valueComputed
-        : this.valuePasswordComputed;
-    },
     // input动态class类名
     inputClassComputed() {
       return {
@@ -101,7 +85,7 @@ export default {
       this.valueComputed = null;
     },
     valueComputedInput(e) {
-      if(this.showPassword){
+      if (this.showPassword) {
         this.valueComputed = e.target.value;
       }
     },
