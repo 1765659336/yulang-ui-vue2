@@ -44,3 +44,55 @@ export const deepCloneObj = (obj) => {
   }
   return clone;
 };
+
+const lifeHooksInit = [
+  "beforeCreate",
+  "created",
+  "beforeMount",
+  "mounted",
+  "beforeUpdate",
+  "updated",
+  "beforeDestroy",
+  "destroyed",
+];
+
+// 合并Vue类参数
+export function mergeVueParameter(...args) {
+  return {
+    name: args.find((item) => item.name)?.name,
+    data() {
+      return args.reduce((acc, cur) => {
+        // 判断是一个函数工具函数
+        if (cur && cur.data) {
+          // 同名处理
+          return { ...acc, ...cur.data() };
+        } else {
+          return acc;
+        }
+      }, {});
+    },
+    ...args.reduce((acc, cur) => {
+      lifeHooksInit.forEach((item) => {
+        if (cur && cur[item]) {
+          acc[item] = () => {
+            acc[item]();
+            cur[item]();
+          };
+        }
+      });
+    }, {}),
+    ...args.reduce(
+      (acc, cur) => {
+        for (const key in acc) {
+          if (Object.hasOwnProperty.call(acc, key)) {
+            if (cur && cur[key]) {
+              acc[key] = { ...acc[key], ...cur[key] };
+            }
+          }
+        }
+        return acc;
+      },
+      { props: {}, methods: {}, computed: {} }
+    ),
+  };
+}
