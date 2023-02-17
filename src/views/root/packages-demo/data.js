@@ -131,4 +131,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-leader",
     active: false,
   },
+  { 
+    level:2,
+    title: "Select 下拉框",
+    path: "/root/packages-demo/yulang-select",
+    active: false,
+  },
 ];
