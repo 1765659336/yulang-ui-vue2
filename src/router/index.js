@@ -5,26 +5,9 @@ import Home from "@/views/root/home/Home.vue";
 import PackagesDemo from "@/views/root/packages-demo/PackagesDemo.vue";
 import Guide from "@/views/root/guide/Guide.vue";
 import YulangButton from "@/views/root/packages-demo/yulang-button/YulangButton.vue";
-// import YulangSwitch from "@/views/root/packages-demo/yulang-switch/YulangSwitch.vue";
-// import YulangSlider from "@/views/root/packages-demo/yulang-slider/YulangSlider.vue";
-// import YulangSignaure from "@/views/root/packages-demo/yulang-signaure/YulangSignaure.vue";
-// import YulangUpload from "@/views/root/packages-demo/yulang-upload/YulangUpload.vue";
-// import YulangCanvas from "@/views/root/packages-demo/yulang-canvas/YulangCanvas.vue";
-// import YulangAnchorPoint from "@/views/root/packages-demo/yulang-anchor-point/YulangAnchorPoint.vue";
-// import YulangIcon from "@/views/root/packages-demo/yulang-icon/YulangIcon.vue";
-// import YulangDescribeFrame from "@/views/root/packages-demo/yulang-describe-frame/YulangDescribeFrame.vue";
-// import YulangLink from "@/views/root/packages-demo/yulang-link/YulangLink.vue";
-// import YulangDialog from "@/views/root/packages-demo/yulang-dialog/YulangDialog.vue";
-// import YulangBackTop from "@/views/root/packages-demo/yulang-back-top/YulangBackTop.vue";
-// import YulangCheckbox from "@/views/root/packages-demo/yulang-checkbox/YulangCheckbox.vue";
-// import YulangSwitchCopy from "@/views/root/packages-demo/yulang-switch-copy/YulangSwitchCopy.vue";
-// import YulangForm from "@/views/root/packages-demo/yulang-form/YulangForm.vue";
-// import YulangTable from "@/views/root/packages-demo/yulang-table/YulangTable.vue";
-// import YulangNotification from "@/views/root/packages-demo/yulang-notification/YulangNotification.vue";
-// import YulangMessage from "@/views/root/packages-demo/yulang-message/YulangMessage.vue";
-// import YulangLoading from "@/views/root/packages-demo/yulang-loading/YulangLoading.vue";
-// import YulangTree from "@/views/root/packages-demo/yulang-tree/YulangTree.vue";
-// import YulangLeader from "@/views/root/packages-demo/yulang-leader/YulangLeader.vue";
+import YulangTabs from "@/views/root/packages-demo/yulang-tabs/YulangTabs.vue";
+import YulangDivider from "@/views/root/packages-demo/yulang-divider/YulangDivider.vue";
+import YulangInput from "@/views/root/packages-demo/yulang-input/YulangInput.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -279,7 +262,7 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "加载中Loading Loading",
-            }
+            },
           },
           {
             path: "yulang-leader",
@@ -309,6 +292,36 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "下拉框 Select",
+            }
+          }, 
+          {
+            path: "yulang-tabs",
+            name: "yulang-tabs",
+            component: YulangTabs,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "标签页Tabs Tabs",
+            },
+          },
+          {
+            path: "yulang-divider",
+            name: "yulang-divider",
+            component: YulangDivider,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "标签页Divider Divider",
+            },
+          },
+          {
+            path: "yulang-input",
+            name: "yulang-input",
+            component: YulangInput,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "输入框 Input",
             },
           },
         ],

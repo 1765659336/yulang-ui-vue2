@@ -19,6 +19,9 @@ import YulangTable from "@/packages/yulang-table/YulangTable.vue";
 import YulangTableItem from "@/packages/yulang-table-item/YulangTableItem.vue";
 import YulangTree from "@/packages/yulang-tree/YulangTree.vue";
 import YulangLeader from "@/packages/yulang-leader/YulangLeader.vue";
+import YulangTabs from "@/packages/yulang-tabs/YulangTabs.vue";
+import YulangTabPane from "@/packages/yulang-tab-pane/YulangTabPane.vue";
+import YulangDivider from "@/packages/yulang-divider/YulangDivider.vue";
 import YulangSelect from "@/packages/yulang-select/YulangSelect.vue";
 
 // 引入icon
@@ -29,10 +32,13 @@ import "../assets/icon/reset.css";
 // 自定义指令
 import YulangCopy from "@/instruction/copy";
 import YulangLoading from "@/instruction/loading";
+import YulangLongClick from "@/instruction/longClick";
+
 // 自定义指令对象
 export const Directives = {
   YulangCopy,
   YulangLoading,
+  YulangLongClick
 };
 
 // 自定义函数
@@ -62,6 +68,9 @@ export const Packages = [
   YulangTableItem,
   YulangTree,
   YulangLeader,
+  YulangTabs,
+  YulangTabPane,
+  YulangDivider,
   YulangSelect
 ];
 
