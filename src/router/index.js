@@ -293,7 +293,7 @@ const routes = [
               isAuth: true,
               title: "下拉框 Select",
             }
-          }, 
+          },
           {
             path: "yulang-tabs",
             name: "yulang-tabs",
@@ -323,6 +323,16 @@ const routes = [
               isAuth: true,
               title: "输入框 Input",
             },
+          },
+          {
+            path: "yulang-scroll-infinite",
+            name: "yulang-scroll-infinite",
+            component: () => import("@/views/root/packages-demo/yulang-scroll-infinite/YulangScrollInfinite.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "无限滚动 ScrollInfinite",
+            }
           },
         ],
       },

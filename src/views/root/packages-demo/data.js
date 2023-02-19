@@ -155,4 +155,10 @@ export const unionData = [
     path: "/root/packages-demo/yulang-input",
     active: false,
   },
+  {
+    level: 2,
+    title: "ScrollInfinite 无限滚动",
+    path: "/root/packages-demo/yulang-scroll-infinite",
+    active: false,
+  },
 ];
