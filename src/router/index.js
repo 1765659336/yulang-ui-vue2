@@ -8,6 +8,7 @@ import YulangButton from "@/views/root/packages-demo/yulang-button/YulangButton.
 import YulangTabs from "@/views/root/packages-demo/yulang-tabs/YulangTabs.vue";
 import YulangDivider from "@/views/root/packages-demo/yulang-divider/YulangDivider.vue";
 import YulangInput from "@/views/root/packages-demo/yulang-input/YulangInput.vue";
+import YulangPopover from "@/views/root/packages-demo/yulang-popover/YulangPopover.vue";
 
 // 处理路由重复跳转控制台报错
 const originalPush = VueRouter.prototype.push;
@@ -334,6 +335,16 @@ const routes = [
               title: "无限滚动 ScrollInfinite",
             }
           },
+          {
+            path: "yulang-popover",
+            name: "yulang-popover",
+            component: YulangPopover,
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "弹出框 Popover"
+            }
+          }
         ],
       },
       {
