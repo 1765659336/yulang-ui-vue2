@@ -399,8 +399,8 @@ const routes = [
             meta: {
               keepAlive: true,
               isAuth: true,
-              title: "弹出框 Popover"
-            }
+              title: "弹出框 Popover",
+            },
           },
           {
             path: "yulang-time-picker",
@@ -436,6 +436,19 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "气泡确认框 Confirm",
+            },
+          },
+          {
+            path: "yulang-drawer",
+            name: "yulang-drawer",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-drawer/YulangDrawer.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "抽屉 YulangDrawer",
             },
           },
         ],

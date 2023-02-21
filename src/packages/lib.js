@@ -520,3 +520,21 @@ export const changePosition = function (
       break;
   }
 };
+
+// 为false校验
+/* 
+  args : 不包含
+*/
+export const isFalse = function (value, ...args) {
+  // 不校验不包含的值
+  for (const key in args) {
+    if (Object.hasOwnProperty.call(args, key)) {
+      const element = args[key];
+      if (value === element) {
+        return true;
+      }
+    }
+  }
+
+  return value ? true : false;
+};
