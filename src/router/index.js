@@ -425,6 +425,19 @@ const routes = [
               title: "文字提示 Tooltip",
             },
           },
+          {
+            path: "yulang-confirm",
+            name: "yulang-confirm",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-confirm/YulangConfirm.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "气泡确认框 Confirm",
+            },
+          },
         ],
       },
       {
