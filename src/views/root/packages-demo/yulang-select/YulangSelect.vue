@@ -1,67 +1,69 @@
 <template>
   <div>
     下拉页面
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>111</div>
-    <div>这是监听的高度</div>
-    <div>可以将这个组件放到中间看展开效果</div>
-    <div>只能用一个yulang-select,我里面用的id去修改的dom</div>
-    <div>忘记改成ref了,有两个会存在多个id逻辑出问题</div>
     <yulang-select v-model="selectValue">
-      <MyTest></MyTest>
+      <yulang-options :data="options"></yulang-options>
+    </yulang-select>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <div>1111</div>
+    <yulang-select v-model="selectValue2" placement="right">
+      <yulang-options :data="options2"></yulang-options>
     </yulang-select>
   </div>
 </template>
 
 <script>
-import MyTest from './MyTest.vue';
-
 export default {
   name: 'packages-demo-yulang-select',
   data() {
     return {
       selectValue: 'model值',
+      selectValue2: 'model2值',
+      options: [
+        {
+          name: 'KFC',
+          label: 'KFC',
+        },
+        {
+          name: '麦当劳',
+          label: '麦当劳',
+        },
+        {
+          name: '华莱士',
+          label: '华莱士',
+        },
+        {
+          name: '必胜客',
+          label: '必胜客',
+        },
+      ],
+      options2: [
+        {
+          name: '唱',
+          label: '唱',
+        },
+        {
+          name: '跳',
+          label: '跳',
+        },
+        {
+          name: 'RAP',
+          label: 'RAP',
+        },
+        {
+          name: '篮球',
+          label: '篮球',
+        },
+      ],
     };
   },
   components: {
-    MyTest,
+    // MyTest,
   },
 };
 </script>
