@@ -203,4 +203,33 @@ export const unionData = [
     path: "/root/packages-demo/yulang-skeleton",
     active: false,
   },
+  {
+    level: 2,
+    title: "Rate 评分",
+    path: "/root/packages-demo/yulang-rate",
+    active: false,
+  },
+  {
+    level: 2,
+    title: "Radio 单选框",
+    path: "/root/packages-demo/yulang-radio",
+    active: false,
+  },
+  {
+    level: 2,
+    title: "Container 布局容器",
+    path: "/root/packages-demo/yulang-container",
+    active: false,
+  },
+  {
+    level: 2,
+    title: "Pagination 分页",
+    path: "/root/packages-demo/yulang-pagination",
+    active: false,
+  },
+  {
+    title: "YulangTablePlus 表格PLUS",
+    path: "/root/packages-demo/yulang-table-plus",
+    active: false,
+  },
 ];

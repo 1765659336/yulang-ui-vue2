@@ -32,6 +32,17 @@ import YulangCollapse from "@/packages/yulang-collapse/YulangCollapse.vue";
 import YulangCollapseItem from "@/packages/yulang-collapse-item/YulangCollapseItem.vue";
 import YulangSkeleton from "@/packages/yulang-skeleton/YulangSkeleton.vue";
 import YulangOptions from "@/packages/yulang-options/YulangOptions.vue";
+import YulangRate from "@/packages/yulang-rate/YulangRate.vue";
+import YulangRadioGroup from "@/packages/yulang-radio-group/YulangRadioGroup.vue";
+import YulangRadio from "@/packages/yulang-radio/YulangRadio.vue";
+import YulangContainer from "@/packages/yulang-container/YulangContainer.vue";
+import YulangHeader from "@/packages/yulang-header/YulangHeader.vue";
+import YulangAside from "@/packages/yulang-aside/YulangAside.vue";
+import YulangMain from "@/packages/yulang-main/YulangMain.vue";
+import YulangFooter from "@/packages/yulang-footer/YulangFooter.vue";
+import YulangPagination from "@/packages/yulang-pagination/YulangPagination.vue";
+import YulangTablePlus from "@/packages/yulang-table-plus/YulangTablePlus.vue";
+import YulangTablePlusColumn from "@/packages/yulang-table-plus-column/YulangTablePlusColumn.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -91,7 +102,18 @@ export const Packages = [
   YulangCollapse,
   YulangCollapseItem,
   YulangSkeleton,
-  YulangOptions
+  YulangOptions,
+  YulangRate,
+  YulangRadioGroup,
+  YulangRadio,
+  YulangContainer,
+  YulangHeader,
+  YulangAside,
+  YulangMain,
+  YulangFooter,
+  YulangPagination,
+  YulangTablePlus,
+  YulangTablePlusColumn
 ];
 
 // 工具函数

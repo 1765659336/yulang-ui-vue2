@@ -477,6 +477,66 @@ const routes = [
               title: "骨架屏 YulangSkeleton",
             },
           },
+          {
+            path: "yulang-rate",
+            name: "yulang-rate",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-rate/YulangRate.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "评分 YulangRate",
+            },
+          },
+          {
+            path: "yulang-radio",
+            name: "yulang-radio",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-radio/YulangRadio.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "单选框 YulangRadio",
+            },
+          },
+          {
+            path: "yulang-container",
+            name: "yulang-container",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-container/YulangContainer.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "布局容器 YulangContainer",
+            },
+          },
+          {
+            path: "yulang-pagination",
+            name: "yulang-pagination",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-pagination/YulangPagination.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "分页 YulangPagination",
+            }
+          },
+          {
+            path: "yulang-table-plus",
+            name: "yulang-table-plus",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-table-plus/YulangTablePlus.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "表格PLUS YulangTablePlus",
+            },
+          }
         ],
       },
       {
