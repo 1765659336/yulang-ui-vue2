@@ -33,6 +33,14 @@ export default {
           address: 'No. 189, Grove St, Los Angeles',
           zip: 'CA 90036',
         },
+        {
+          date: '2016-05-02',
+          name: 'Tom',
+          state: 'California',
+          city: 'Los Angeles',
+          address: 'No. 189, Grove St, Los Angeles',
+          zip: 'CA 90036',
+        },
       ],
     };
   },
