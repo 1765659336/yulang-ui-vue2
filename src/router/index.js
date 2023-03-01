@@ -74,7 +74,7 @@ const routes = [
         children: [
           {
             path: "",
-            redirect: "yulang-button",
+            redirect: "yulang-switch",
           },
           {
             path: "yulang-button",
@@ -565,8 +565,7 @@ const routes = [
           {
             path: "tools",
             name: "tools",
-            component: () =>
-              import("@/views/root/resources/tools/Tools.vue"),
+            component: () => import("@/views/root/resources/tools/Tools.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,

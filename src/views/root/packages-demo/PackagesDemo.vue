@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       unionData,
-      componentIndex: 2,
     };
   },
   computed: {},
@@ -52,7 +51,7 @@ export default {
     unionDataClass(item) {
       return [
         "menu-title-" + item.level,
-        item.active ? "menu-title-actived" : "",
+        item.path === this.$route.path ? "menu-title-actived" : "",
         item.level === 2 ? "menu-title-level2-common" : "",
       ];
     },
