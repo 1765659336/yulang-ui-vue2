@@ -39,7 +39,7 @@ export default {
         },
         {
           title: '资源',
-          path: '/root/home',
+          path: '/root/resources',
         },
       ],
     };

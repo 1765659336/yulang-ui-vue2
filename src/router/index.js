@@ -537,6 +537,55 @@ const routes = [
           title: "指南",
         },
       },
+      {
+        path: "resources",
+        name: "resources",
+        component: () => import("@/views/root/resources/Resources.vue"),
+        meta: {
+          keepAlive: true,
+          isAuth: true,
+          title: "资源",
+        },
+        children: [
+          {
+            path: "",
+            redirect: "animate",
+          },
+          {
+            path: "animate",
+            name: "animate",
+            component: () =>
+              import("@/views/root/resources/animate/Animate.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "动画 yulang-animate",
+            },
+          },
+          {
+            path: "tools",
+            name: "tools",
+            component: () =>
+              import("@/views/root/resources/tools/Tools.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "工具 yulang-tools",
+            },
+          },
+          {
+            path: "instruction",
+            name: "instruction",
+            component: () =>
+              import("@/views/root/resources/instruction/Instruction.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "指令 yulang-instruction",
+            },
+          },
+        ],
+      },
     ],
   },
 ];

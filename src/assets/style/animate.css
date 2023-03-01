@@ -1,0 +1,30 @@
+.yulang-animate {
+    /* 设置动画初始执行时间为1s */
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.yulang-animate .hu__hu__ {
+    animation: hu__hu__ infinite 2s ease-in-out;
+}
+
+@keyframes hu__hu__ {
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes myfirst {
+    0% {
+        background: red;
+    }
+    25% {
+        background: yellow;
+    }
+    50% {
+        background: blue;
+    }
+    100% {
+        background: green;
+    }
+}
