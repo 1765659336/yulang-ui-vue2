@@ -525,6 +525,19 @@ const routes = [
               title: "分页 YulangPagination",
             },
           },
+          {
+            path: "yulang-color-picker",
+            name: "yulang-color-picker",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-color-picker/YulangColorPicker.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "颜色选择器 YulangColorPicker",
+            },
+          },
         ],
       },
       {
