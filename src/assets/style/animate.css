@@ -4,27 +4,15 @@
     animation-fill-mode: both;
 }
 
-.yulang-animate .hu__hu__ {
-    animation: hu__hu__ infinite 2s ease-in-out;
+
+/* 忽上忽下 */
+
+.yulang-animate.up-and-down {
+    animation: up-and-down infinite 2s ease-in-out;
 }
 
-@keyframes hu__hu__ {
+@keyframes up-and-down {
     50% {
         transform: translateY(30px);
-    }
-}
-
-@keyframes myfirst {
-    0% {
-        background: red;
-    }
-    25% {
-        background: yellow;
-    }
-    50% {
-        background: blue;
-    }
-    100% {
-        background: green;
     }
 }
