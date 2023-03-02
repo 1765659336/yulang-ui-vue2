@@ -1,18 +1,177 @@
 .yulang-animate {
-    /* 设置动画初始执行时间为1s */
-    animation-duration: 1s;
+    /* 设置动画初始执行时间为2s */
+    animation-duration: 2s;
     animation-fill-mode: both;
 }
 
 
-/* 忽上忽下 */
+/* 忽下忽上 */
 
-.yulang-animate.up-and-down {
-    animation: up-and-down infinite 2s ease-in-out;
+.yulang-animate.yulang-up-and-down {
+    animation: yulang-up-and-down infinite 2s ease-in-out;
 }
 
-@keyframes up-and-down {
+@keyframes yulang-up-and-down {
     50% {
         transform: translateY(30px);
+    }
+}
+
+
+/* 
+    dance-------------------------------------------
+*/
+
+
+/* 草木随风摇摆 */
+
+.yulang-animate.yulang-dance-bottom {
+    animation-name: yulang-dance-bottom;
+    /* 设置元素转换的原点 */
+    transform-origin: bottom;
+}
+
+@keyframes yulang-dance-bottom {
+    16% {
+        transform: skew(-14deg)
+    }
+    33% {
+        transform: skew(12deg)
+    }
+    49% {
+        transform: skew(-8deg)
+    }
+    66% {
+        transform: skew(6deg)
+    }
+    83% {
+        transform: skew(-4deg)
+    }
+}
+
+
+/* 两头摇摆 */
+
+.yulang-animate.yulang-dance-middle {
+    animation-name: yulang-dance-middle;
+}
+
+@keyframes yulang-dance-middle {
+    16% {
+        transform: skew(-14deg)
+    }
+    33% {
+        transform: skew(12deg)
+    }
+    49% {
+        transform: skew(-8deg)
+    }
+    66% {
+        transform: skew(6deg)
+    }
+    83% {
+        transform: skew(-4deg)
+    }
+}
+
+
+/* 晒衣服 */
+
+.yulang-animate.yulang-dance-top {
+    animation-name: yulang-dance-top;
+    transform-origin: top;
+}
+
+@keyframes yulang-dance-top {
+    16% {
+        transform: skew(-14deg)
+    }
+    33% {
+        transform: skew(12deg)
+    }
+    49% {
+        transform: skew(-8deg)
+    }
+    66% {
+        transform: skew(6deg)
+    }
+    83% {
+        transform: skew(-4deg)
+    }
+}
+
+
+/* --------------------------------------------------- */
+
+
+/* Zoom Out------------------------------------------- */
+
+
+/* 原地消失 */
+
+.yulang-animate.yulang-zoom-out {
+    animation-name: yulang-zoom-out;
+}
+
+@keyframes yulang-zoom-out {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+
+/* 左移消失 */
+
+.yulang-animate.yulang-zoom-out-left {
+    animation-name: yulang-zoom-out-left;
+}
+
+@keyframes yulang-zoom-out-left {
+    to {
+        transform: scale(10) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+
+/* 右移消失 */
+
+.yulang-animate.yulang-zoom-out-right {
+    animation-name: yulang-zoom-out-right;
+}
+
+@keyframes yulang-zoom-out-right {
+    to {
+        transform: scale(10) translateX(50%);
+        opacity: 0;
+    }
+}
+
+
+/* 爬升消失 */
+
+.yulang-animate.yulang-zoom-out-top {
+    animation-name: yulang-zoom-out-top;
+}
+
+@keyframes yulang-zoom-out-top {
+    to {
+        transform: scale(10) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+
+/* 掉落消失 */
+
+.yulang-animate.yulang-zoom-out-bottom {
+    animation-name: yulang-zoom-out-bottom;
+}
+
+@keyframes yulang-zoom-out-bottom {
+    to {
+        transform: scale(10) translateY(50%);
+        opacity: 0;
     }
 }

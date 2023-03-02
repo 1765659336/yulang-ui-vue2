@@ -1,10 +1,10 @@
 <template>
-  <div class="yulang-animate yulang-up-and-down">忽下忽上</div>
+  <div class="yulang-animate yulang-dance-bottom">草木随风摇摆</div>
 </template>
 
 <script>
 export default {
-  name: "yulang-up-and-down",
+  name: "yulang-dance-bottom",
 };
 </script>
 
