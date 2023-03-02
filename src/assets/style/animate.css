@@ -1,6 +1,6 @@
 .yulang-animate {
     /* 设置动画初始执行时间为2s */
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: both;
 }
 
@@ -175,3 +175,195 @@
         opacity: 0;
     }
 }
+
+
+/* ---------------------------------------------------------------- */
+
+
+/* Zoom In---------------------------------------------------------------- */
+
+
+/* 原地缩小显现 */
+
+.yulang-animate.yulang-zoom-in {
+    animation-name: yulang-zoom-in;
+}
+
+@keyframes yulang-zoom-in {
+    from {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+
+/* 左方进入缩小显现 */
+
+.yulang-animate.yulang-zoom-in-left {
+    animation-name: yulang-zoom-in-left;
+}
+
+@keyframes yulang-zoom-in-left {
+    from {
+        transform: scale(10) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+
+/* 右方进入缩小显现 */
+
+.yulang-animate.yulang-zoom-in-right {
+    animation-name: yulang-zoom-in-right;
+}
+
+@keyframes yulang-zoom-in-right {
+    from {
+        transform: scale(10) translateX(50%);
+        opacity: 0;
+    }
+}
+
+
+/* 掉落缩小显现 */
+
+.yulang-animate.yulang-zoom-in-top {
+    animation-name: yulang-zoom-in-top;
+}
+
+@keyframes yulang-zoom-in-top {
+    from {
+        transform: scale(10) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+
+/* 漂浮缩小显现 */
+
+.yulang-animate.yulang-zoom-in-bottom {
+    animation-name: yulang-zoom-in-bottom;
+}
+
+@keyframes yulang-zoom-in-bottom {
+    from {
+        transform: scale(10) translateY(50%);
+        opacity: 0;
+    }
+}
+
+
+/* ------------------------------------------------------------ */
+
+
+/* perspective使元素具备前后距离，使用3d旋转时，搭配使用使效果更顺滑 */
+
+
+/* 向上翻转消失 */
+
+.yulang-animate.yulang-perspective-to-top {
+    animation-name: yulang-perspective-to-top;
+    transform-style: preserve-3d;
+}
+
+@keyframes yulang-perspective-to-top {
+    50% {
+        opacity: 1
+    }
+    to {
+        transform: perspective(500px) rotateX(90deg);
+        opacity: 0;
+    }
+}
+
+.yulang-animate.yulang-perspective-to-bottom {
+    animation-name: yulang-perspective-to-bottom;
+    transform-style: preserve-3d
+}
+
+@keyframes yulang-perspective-to-bottom {
+    50% {
+        opacity: 1
+    }
+    to {
+        transform: perspective(500px) rotateX(90deg);
+        opacity: 0;
+    }
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+
+/* Rotate In----------------------------------------------------------------------- */
+
+
+/* 从左翻转显示 */
+
+.yulang-animate.yulang-rotate-in-left {
+    animation-name: yulang-rotate-in-left;
+}
+
+@keyframes yulang-rotate-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%) rotate(0deg)
+    }
+    to {
+        transform: translateX(0px) rotate(360deg)
+    }
+}
+
+
+/* 从右翻转显示 */
+
+.yulang-animate.yulang-rotate-in-right {
+    animation-name: yulang-rotate-in-right;
+}
+
+@keyframes yulang-rotate-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%) rotate(0deg)
+    }
+    to {
+        transform: translateX(0px) rotate(-360deg)
+    }
+}
+
+
+/* 旋转掉落显示 */
+
+.yulang-animate.yulang-rotate-in-top {
+    animation-name: yulang-rotate-in-top;
+}
+
+@keyframes yulang-rotate-in-top {
+    from {
+        opacity: 0;
+        transform: translateY(-400%) rotate(0deg)
+    }
+    to {
+        transform: translateX(0px) rotate(360deg)
+    }
+}
+
+
+/* 旋转漂浮显示 */
+
+.yulang-animate.yulang-rotate-in-bottom {
+    animation-name: yulang-rotate-in-bottom;
+}
+
+@keyframes yulang-rotate-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(400%) rotate(0deg)
+    }
+    to {
+        transform: translateX(0px) rotate(360deg)
+    }
+}
+
+
+/* -------------------------------------------------------- */

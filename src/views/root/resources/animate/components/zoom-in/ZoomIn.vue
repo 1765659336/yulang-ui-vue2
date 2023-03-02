@@ -1,13 +1,13 @@
 <template>
-  <div class="yulang-animate yulang-dance-middle">两头摇摆</div>
+  <div class="yulang-animate yulang-zoom-in">原地缩小显现</div>
 </template>
 
 <script>
 export default {
-  name: "yulang-dance-middle",
+  name: "yulang-zoom-in",
   data() {
     return {
-      title: "两头摇摆",
+      title: "原地缩小显现",
     };
   },
 };

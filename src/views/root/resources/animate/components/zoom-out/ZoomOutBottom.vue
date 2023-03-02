@@ -3,20 +3,14 @@
 </template>
 
 <script>
+import { disappear } from "../mixin";
 export default {
   name: "yulang-zoom-out-bottom",
+  mixins: [disappear],
   data() {
     return {
-      value: true,
+      title: "掉落消失",
     };
-  },
-  mounted() {
-    this.timer = setTimeout(() => {
-      this.value = false;
-    }, 2000);
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
   },
 };
 </script>

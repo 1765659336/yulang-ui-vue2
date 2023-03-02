@@ -1,13 +1,13 @@
 <template>
-  <div class="yulang-animate yulang-dance-middle">两头摇摆</div>
+  <div class="yulang-animate yulang-rotate-in-top"></div>
 </template>
 
 <script>
 export default {
-  name: "yulang-dance-middle",
+  name: "yulang-rotate-in-top",
   data() {
     return {
-      title: "两头摇摆",
+      title: "旋转掉落显示",
     };
   },
 };
@@ -15,8 +15,8 @@ export default {
 
 <style lang="less" scoped>
 div {
-  height: 200px;
   width: 200px;
+  height: 200px;
   background-color: pink;
 }
 </style>

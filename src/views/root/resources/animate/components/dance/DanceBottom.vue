@@ -5,6 +5,11 @@
 <script>
 export default {
   name: "yulang-dance-bottom",
+  data() {
+    return {
+      title: "草木随风摇摆",
+    };
+  },
 };
 </script>
 

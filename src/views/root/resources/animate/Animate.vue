@@ -10,7 +10,7 @@
           item.value === value.value ? 'isSelect' : '',
         ]"
       >
-        {{ item.value }}
+        {{ item.title }}
       </div>
       <div class="copyBtn" v-YulangCopy="value.copy">点我复制代码</div>
     </div>

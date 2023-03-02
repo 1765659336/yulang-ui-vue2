@@ -4,6 +4,7 @@ export const AnimateClassArr = model.keys().map((item) => {
   let comp = model(item);
   components[comp.default.name] = comp.default;
   return {
+    title: comp.default.data().title,
     value: comp.default.name,
     copy: "yulang-animate " + comp.default.name,
   };

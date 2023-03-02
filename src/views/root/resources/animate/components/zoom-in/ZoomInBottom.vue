@@ -1,15 +1,15 @@
 <template>
-    <div class="yulang-animate yulang-dance-top">晒衣服</div>
+    <div class="yulang-animate yulang-zoom-in-bottom">漂浮缩小显现</div>
   </template>
   
   <script>
   export default {
-    name: "yulang-dance-top",
+    name: "yulang-zoom-in-bottom",
     data() {
-    return {
-      title: "晒衣服",
-    };
-  },
+      return {
+        title: "漂浮缩小显现",
+      };
+    },
   };
   </script>
   

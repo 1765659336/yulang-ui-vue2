@@ -5,6 +5,11 @@
 <script>
 export default {
   name: "yulang-up-and-down",
+  data() {
+    return {
+      title: "忽下忽上",
+    };
+  },
 };
 </script>
 

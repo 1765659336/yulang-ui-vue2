@@ -1,16 +1,17 @@
 <template>
-  <div v-if="value" class="yulang-animate yulang-zoom-out-right">右移消失</div>
+  <div v-if="value" class="yulang-animate yulang-perspective-to-top">
+    向上翻转消失
+  </div>
 </template>
 
 <script>
 import { disappear } from "../mixin";
-
 export default {
-  name: "yulang-zoom-out-right",
+  name: "yulang-perspective-to-top",
   mixins: [disappear],
   data() {
     return {
-      title: "右移消失",
+      title: "向上翻转消失",
     };
   },
 };
