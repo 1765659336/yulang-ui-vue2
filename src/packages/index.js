@@ -48,6 +48,8 @@ import YulangTablePlusColumn from "@/packages/yulang-table-plus-column/YulangTab
 import "../assets/icon/iconfont.css";
 // 阿里图标初始化样式文件
 import "../assets/icon/reset.css";
+// 引入动画样式文件
+import "@/assets/style/animate.css";
 
 // 自定义指令
 import YulangCopy from "@/instruction/copy";
