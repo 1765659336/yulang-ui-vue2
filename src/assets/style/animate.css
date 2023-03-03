@@ -271,7 +271,7 @@
         opacity: 1
     }
     to {
-        transform: perspective(500px) rotateX(90deg);
+        transform: perspective(500px) rotateX(90deg) translateY(-50px) translateZ(50px);
         opacity: 0;
     }
 }
@@ -286,7 +286,7 @@
         opacity: 1
     }
     to {
-        transform: perspective(500px) rotateX(90deg);
+        transform: perspective(500px) rotateX(90deg) translateY(50px) translateZ(-50px);
         opacity: 0;
     }
 }
@@ -958,3 +958,97 @@
 
 
 /* ---------------------------------------------------- */
+
+
+/* Bounce In ------------------------------------------ */
+
+
+/* 抖动掉落显示 */
+
+.yulang-animate.yulang-bounce-in-top {
+    animation-name: yulang-bounce-in-top;
+}
+
+@keyframes yulang-bounce-in-top {
+    0% {
+        transform: translate3d(0, -300%, 0)
+    }
+    58% {
+        transform: translate3d(0, 27px, 0)
+    }
+    73% {
+        transform: translate3d(0, -12px, 0)
+    }
+    88% {
+        transform: translate3d(0, 7px, 0)
+    }
+}
+
+
+/* 抖动漂浮显示 */
+
+.yulang-animate.yulang-bounce-in-bottom {
+    animation-name: yulang-bounce-in-bottom;
+}
+
+@keyframes yulang-bounce-in-bottom {
+    0% {
+        transform: translate3d(0, 300%, 0)
+    }
+    58% {
+        transform: translate3d(0, -27px, 0)
+    }
+    73% {
+        transform: translate3d(0, 12px, 0)
+    }
+    88% {
+        transform: translate3d(0, -8px, 0)
+    }
+}
+
+
+/* 抖动左侧进入显示 */
+
+.yulang-animate.yulang-bounce-in-left {
+    animation-name: yulang-bounce-in-left;
+}
+
+@keyframes yulang-bounce-in-left {
+    0% {
+        transform: translate3d(-300%, 0, 0)
+    }
+    58% {
+        transform: translate3d(27px, 0, 0)
+    }
+    73% {
+        transform: translate3d(-12px, 0, 0)
+    }
+    88% {
+        transform: translate3d(8px, 0, 0)
+    }
+}
+
+
+/* 抖动右侧进入 */
+
+.yulang-animate.yulang-bounce-in-right {
+    animation-name: yulang-bounce-in-right;
+}
+
+@keyframes yulang-bounce-in-right {
+    0% {
+        transform: translate3d(300%, 0, 0)
+    }
+    58% {
+        transform: translate3d(-27px, 0, 0)
+    }
+    73% {
+        transform: translate3d(12px, 0, 0)
+    }
+    88% {
+        transform: translate3d(-8px, 0, 0)
+    }
+}
+
+
+/* -------------------------------------------- */
