@@ -33,6 +33,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.yulang-animate-div {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
 .root-resources-animate-container {
   .animate-class-arr-container {
     display: flex;
