@@ -4,7 +4,7 @@
       <div
         v-for="item in animateClassArr"
         :key="item.value"
-        @click="value = item"
+        @click="animateClassItem(item)"
         :class="[
           'animate-class-item',
           item.value === value.value ? 'isSelect' : '',
@@ -28,6 +28,11 @@ export default {
       value: AnimateClassArr[0],
       animateClassArr: AnimateClassArr,
     };
+  },
+  methods: {
+    animateClassItem(item) {
+      this.value = item;
+    },
   },
 };
 </script>

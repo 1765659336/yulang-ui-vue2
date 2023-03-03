@@ -1,6 +1,6 @@
 .yulang-animate {
-    /* 设置动画初始执行时间为2s */
-    animation-duration: 1s;
+    /* 设置动画初始执行时间为1s */
+    animation-duration: 3s;
     animation-fill-mode: both;
 }
 
@@ -745,7 +745,7 @@
     85%,
     to {
         filter: blur(20px);
-        transform: translateY(100%);
+        transform: translateY(-100%);
     }
     to {
         opacity: 0
@@ -763,7 +763,7 @@
     85%,
     to {
         filter: blur(20px);
-        transform: translateY(-100%);
+        transform: translateY(100%);
     }
     to {
         opacity: 0
