@@ -190,8 +190,13 @@ export const unionData = [
     path: "/root/packages-demo/yulang-pagination",
   },
   {
+    level: 2,
     title: "YulangTablePlus 表格PLUS",
     path: "/root/packages-demo/yulang-table-plus",
-    active: false,
+  },
+  {
+    level: 2,
+    title: "ColorPicker 颜色选择器",
+    path: "/root/packages-demo/yulang-color-picker",
   },
 ];

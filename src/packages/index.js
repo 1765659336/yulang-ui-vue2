@@ -43,6 +43,8 @@ import YulangFooter from "@/packages/yulang-footer/YulangFooter.vue";
 import YulangPagination from "@/packages/yulang-pagination/YulangPagination.vue";
 import YulangTablePlus from "@/packages/yulang-table-plus/YulangTablePlus.vue";
 import YulangTablePlusColumn from "@/packages/yulang-table-plus-column/YulangTablePlusColumn.vue";
+import YulangColorPicker from "@/packages/yulang-color-picker/YulangColorPicker.vue";
+
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -115,7 +117,8 @@ export const Packages = [
   YulangFooter,
   YulangPagination,
   YulangTablePlus,
-  YulangTablePlusColumn
+  YulangTablePlusColumn,
+  YulangColorPicker,
 ];
 
 // 工具函数
@@ -143,6 +146,7 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  ...Packages,
+  Packages,
   Lib,
+  Directives
 };

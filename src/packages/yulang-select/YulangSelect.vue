@@ -9,7 +9,13 @@
       @blur="handleBlur"
       @click.stop="changeShowPullDown"
     >
-      <input type="text" class="input-class-initial" :value="value" disabled />
+      <input
+        type="text"
+        class="input-class-initial"
+        :value="value"
+        :placeholder="placeholder"
+        disabled
+      />
       <img v-show="isShowPullDown" src="@/assets/images/downarrow.svg" />
       <img v-show="!isShowPullDown" src="@/assets/images/uparrow.svg" />
     </span>
@@ -18,9 +24,9 @@
     <!-- <transition name="hh" appear> -->
     <div
       tabindex="0"
-      @blur="handleBlur"
       v-show="isShowPullDown"
       ref="yulangSelectContentRef"
+      @blur="handleBlur"
     >
       <slot></slot>
     </div>
@@ -42,10 +48,14 @@ export default {
     // 弹出框默认弹出的位置
     placement: {
       type: String,
-      default: 'bottom',
+      default: 'bottom-start',
       validator(value) {
         return positionArr.find((item) => item === value);
       },
+    },
+    placeholder: {
+      type: String,
+      default: '请选择',
     },
   },
   data() {
@@ -59,21 +69,20 @@ export default {
       fatSelect: this,
     };
   },
-  computed: {},
   methods: {
-    hh(val) {
+    refreshInputValue(val) {
       this.$emit('input', val);
     },
     handleBlur() {
       setTimeout(() => {
         this.isShowPullDown = false;
-      }, 100);
+      }, 150);
     },
     changeShowPullDown() {
       this.isShowPullDown = !this.isShowPullDown;
       this.isShowPullDown & this.$nextTick(this.getPositionFn);
     },
-    getPositionFn() { 
+    getPositionFn() {
       changePosition(
         this.$refs.yulangSelectReferenceRef,
         this.$refs.referenceRef,
