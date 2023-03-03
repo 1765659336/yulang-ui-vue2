@@ -1052,3 +1052,121 @@
 
 
 /* -------------------------------------------- */
+
+
+/* Bounce Out------------------------------------------- */
+
+
+/* 抖动漂浮离开 */
+
+.yulang-animate.yulang-bounce-out-top {
+    animation-name: yulang-bounce-out-top;
+}
+
+@keyframes yulang-bounce-out-top {
+    18%,
+    33%,
+    48% {
+        opacity: 1
+    }
+    18% {
+        transform: translate3d(0, 27px, 0)
+    }
+    33% {
+        transform: translate3d(0, -12px, 0)
+    }
+    48% {
+        transform: translate3d(0, 8px, 0)
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -300%, 0)
+    }
+}
+
+
+/* 抖动掉落离开 */
+
+.yulang-animate.yulang-bounce-out-bottom {
+    animation-name: yulang-bounce-out-bottom;
+}
+
+@keyframes yulang-bounce-out-bottom {
+    18%,
+    33%,
+    48% {
+        opacity: 1
+    }
+    18% {
+        transform: translate3d(0, -27px, 0)
+    }
+    33% {
+        transform: translate3d(0, 12px, 0)
+    }
+    48% {
+        transform: translate3d(0, -8px, 0)
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 300%, 0)
+    }
+}
+
+
+/* 抖动左侧离开 */
+
+.yulang-animate.yulang-bounce-out-left {
+    animation-name: yulang-bounce-out-left;
+}
+
+@keyframes yulang-bounce-out-left {
+    18%,
+    33%,
+    48% {
+        opacity: 1
+    }
+    18% {
+        transform: translate3d(27px, 0, 0)
+    }
+    33% {
+        transform: translate3d(-12px, 0, 0)
+    }
+    48% {
+        transform: translate3d(8px, 0, 0)
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-300%, 0, 0)
+    }
+}
+
+
+/* 抖动右侧离开 */
+
+.yulang-animate.yulang-bounce-out-right {
+    animation-name: yulang-bounce-out-right;
+}
+
+@keyframes yulang-bounce-out-right {
+    18%,
+    33%,
+    48% {
+        opacity: 1
+    }
+    18% {
+        transform: translate3d(-27px, 0, 0)
+    }
+    33% {
+        transform: translate3d(12px, 0, 0)
+    }
+    48% {
+        transform: translate3d(-8px, 0, 0)
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(300%, 0, 0)
+    }
+}
+
+
+/* --------------------------------------------------- */
