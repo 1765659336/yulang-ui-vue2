@@ -30,7 +30,7 @@ export default {
         return this.fatSelect.value;
       },
       set(val) {
-        this.fatSelect.hh(val);
+        this.fatSelect.refreshInputValue(val);
       },
     },
   },
@@ -40,7 +40,7 @@ export default {
     },
   },
   beforeDestroy() {
-    this.fatSelect.hh(this.chooseValue);
+    this.fatSelect.refreshInputValue(this.chooseValue);
   },
 };
 </script>

@@ -559,7 +559,7 @@ const routes = [
               isAuth: true,
               title: "颜色选择器 YulangColorPicker",
             },
-          }
+          },
         ],
       },
       {
