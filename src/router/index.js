@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Root from "@/views/root/Root.vue";
-import Home from "@/views/root/home/Home.vue";
 import PackagesDemo from "@/views/root/packages-demo/PackagesDemo.vue";
 import Guide from "@/views/root/guide/Guide.vue";
 import YulangButton from "@/views/root/packages-demo/yulang-button/YulangButton.vue";
@@ -37,7 +36,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "",
-    redirect: "/root",
+    redirect: "/home",
   },
   {
     path: "/login",
@@ -51,30 +50,42 @@ const routes = [
   },
   {
     path: "/root",
-    // name: "root",
+    name: "root",
     component: Root,
     children: [
       {
         path: "",
-        redirect: "packages-demo",
+        redirect: "home",
       },
       {
-        path: "home",
+        path: "/home",
         name: "home",
-        component: Home,
+        component: () =>
+          import(/* webpackChunkName: "about" */ "@/views/root/home/Home.vue"),
+        meta: {
+          keepAlive: false,
+          isAuth: true,
+          title: "YulangUI",
+        },
+      },
+      {
+        path: "guide",
+        name: "guide",
+        component: Guide,
         meta: {
           keepAlive: true,
           isAuth: true,
+          title: "指南",
         },
       },
       {
         path: "packages-demo",
-        // name: "packages-demo",
+        name: "packages-demo",
         component: PackagesDemo,
         children: [
           {
             path: "",
-            redirect: "yulang-button",
+            redirect: "yulang-switch",
           },
           {
             path: "yulang-button",
@@ -529,25 +540,87 @@ const routes = [
             name: "yulang-table-plus",
             component: () =>
               import(
-                "@/views/root/packages-demo/yulang-table-plus/YulangTablePlus.vue"
-              ),
+                "@/views/root/packages-demo/yulang-table-plus/YulangTablePlus.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
               title: "表格PLUS YulangTablePlus",
             },
+          },
+          {
+            path: "yulang-color-picker",
+            name: "yulang-color-picker",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-color-picker/YulangColorPicker.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "颜色选择器 YulangColorPicker",
+            },
           }
         ],
       },
       {
-        path: "guide",
-        name: "guide",
-        component: Guide,
+        path: "theme",
+        name: "theme",
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ "@/views/root/theme/Theme.vue"
+          ),
         meta: {
           keepAlive: true,
           isAuth: true,
-          title: "指南",
         },
+      },
+      {
+        path: "resources",
+        name: "resources",
+        component: () => import("@/views/root/resources/Resources.vue"),
+        meta: {
+          keepAlive: true,
+          isAuth: true,
+          title: "资源",
+        },
+        children: [
+          {
+            path: "",
+            redirect: "animate",
+          },
+          {
+            path: "animate",
+            name: "animate",
+            component: () =>
+              import("@/views/root/resources/animate/Animate.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "动画 yulang-animate",
+            },
+          },
+          {
+            path: "tools",
+            name: "tools",
+            component: () => import("@/views/root/resources/tools/Tools.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "工具 yulang-tools",
+            },
+          },
+          {
+            path: "instruction",
+            name: "instruction",
+            component: () =>
+              import("@/views/root/resources/instruction/Instruction.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "指令 yulang-instruction",
+            },
+          },
+        ],
       },
     ],
   },
