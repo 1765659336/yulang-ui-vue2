@@ -53,7 +53,7 @@ export default {
       this.$router.push(item.path);
     },
     menuItemClass(item) {
-      console.log(this.$route);
+      // console.log(this.$route);
       return {
         // 选中样式
         ["yulang-head-menu-item-active"]:
