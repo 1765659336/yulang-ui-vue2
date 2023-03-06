@@ -45,7 +45,6 @@ import YulangTablePlus from "@/packages/yulang-table-plus/YulangTablePlus.vue";
 import YulangTablePlusColumn from "@/packages/yulang-table-plus-column/YulangTablePlusColumn.vue";
 import YulangColorPicker from "@/packages/yulang-color-picker/YulangColorPicker.vue";
 
-
 // 引入icon
 import "../assets/icon/iconfont.css";
 // 阿里图标初始化样式文件
@@ -58,6 +57,7 @@ import YulangCopy from "@/instruction/copy";
 import YulangLoading from "@/instruction/loading";
 import YulangLongClick from "@/instruction/longClick";
 import YulangInfiniteScroll from "@/instruction/infiniteScroll";
+import YulangClickOutside from "@/instruction/clickOutside";
 
 // 自定义指令对象
 export const Directives = {
@@ -65,6 +65,7 @@ export const Directives = {
   YulangLoading,
   YulangLongClick,
   YulangInfiniteScroll,
+  YulangClickOutside,
 };
 
 // 自定义函数
@@ -148,5 +149,5 @@ export default {
   install,
   Packages,
   Lib,
-  Directives
+  Directives,
 };
