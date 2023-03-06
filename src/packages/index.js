@@ -70,8 +70,10 @@ export const Directives = {
 
 // 自定义函数
 import { Loading } from "@/createNode/loading";
-// 自定义函数对象
-export const CreateNode = [{ name: "$yulangLoading", value: Loading }];
+import { Notification } from "@/createNode/notification";
+
+// 自定义函数对象// 引入自定义方法(通知)
+export const CreateNode = [{ name: "$yulangLoading", value: Loading }, { name: '$yulangNotification', value: Notification }];
 
 // 自定义组件数组
 export const Packages = [
