@@ -4,7 +4,7 @@
       <template #a></template>
 
       <template #b>
-        <!-- <yulang-describe-frame :codeStr="codeStr">
+        <yulang-describe-frame :codeStr="codeStrB">
           <yulang-table :data="tableData">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
@@ -13,10 +13,10 @@
             <yulang-table-item prop="address" label="地址" width="300px">
             </yulang-table-item>
           </yulang-table>
-        </yulang-describe-frame> -->
+        </yulang-describe-frame>
       </template>
-      <!-- <template #c>
-        <yulang-describe-frame :codeStr="codeStr">
+      <template #c>
+        <yulang-describe-frame :codeStr="codeStrC">
           <yulang-table :data="tableData" :isShowBorder="true">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
@@ -26,9 +26,9 @@
             </yulang-table-item>
           </yulang-table>
         </yulang-describe-frame>
-      </template> -->
+      </template>
       <template #d>
-        <yulang-describe-frame :codeStr="codeStr">
+        <yulang-describe-frame :codeStr="codeStrD">
           <yulang-table :data="tableData" :isShowBorder="true">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
@@ -50,7 +50,7 @@
       <template #u></template>
 
       <template #v>
-        <!-- <yulang-table :data="tableDataAttributes">
+        <yulang-table :data="tableDataAttributes">
           <yulang-table-item prop="attributeName" label="属性名" width="100px">
           </yulang-table-item>
           <yulang-table-item prop="explain" label="说明" width="200px">
@@ -59,20 +59,20 @@
           </yulang-table-item>
           <yulang-table-item prop="default" label="默认值" width="200px">
           </yulang-table-item>
-        </yulang-table> -->
+        </yulang-table>
       </template>
 
       <template #w>
-        <!-- <yulang-table :data="tableDataSlots">
+        <yulang-table :data="tableDataSlots">
           <yulang-table-item prop="slotName" label="插槽名" width="100px">
           </yulang-table-item>
           <yulang-table-item prop="explain" label="说明" width="250px">
           </yulang-table-item>
-        </yulang-table> -->
+        </yulang-table>
       </template>
 
       <template #x>
-        <!-- <yulang-table :data="tableDataAttributes">
+        <yulang-table :data="tableDataAttributes">
           <yulang-table-item prop="attributeName" label="属性名" width="100px">
           </yulang-table-item>
           <yulang-table-item prop="explain" label="说明" width="200px">
@@ -81,7 +81,7 @@
           </yulang-table-item>
           <yulang-table-item prop="default" label="默认值" width="200px">
           </yulang-table-item>
-        </yulang-table> -->
+        </yulang-table>
       </template>
     </yulang-anchor-point>
   </div>
@@ -89,7 +89,9 @@
 
 <script>
 import {
-  codeStr,
+  codeStrB,
+  codeStrC,
+  codeStrD,
   tableDataAttributes,
   tableDataSlots,
   tableDataItemAttributes,
@@ -126,7 +128,9 @@ export default {
           address: "上海市普陀区金沙江路 1519 弄",
         },
       ],
-      codeStr,
+      codeStrB,
+      codeStrC,
+      codeStrD,
       tableDataAttributes,
       tableDataSlots,
       tableDataItemAttributes,
