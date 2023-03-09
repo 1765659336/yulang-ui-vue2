@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       title: '右侧钓鱼提起',
+      attribute: 'right show',
     };
   },
 };

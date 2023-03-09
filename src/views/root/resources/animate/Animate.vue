@@ -34,18 +34,130 @@
           </div>
         </yulang-tab-pane>
 
-        <yulang-tab-pane label="右边" name="rightDirection"
-          >配置管理</yulang-tab-pane
-        >
-        <yulang-tab-pane label="上边" name="topDirection"
-          >角色管理</yulang-tab-pane
-        >
-        <yulang-tab-pane label="下边" name="bottomDirection"
-          >定时任务补偿</yulang-tab-pane
-        >
-        <yulang-tab-pane label="中间" name="middleDirection"
-          >定时任务补偿</yulang-tab-pane
-        >
+        <yulang-tab-pane label="右侧进入" name="rightShow">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrRightShow"
+              :key="item.value"
+            >
+              {{ AnimateClassArrRightShow[index].title }}
+              <component
+                :is="AnimateClassArrRightShow[index].value"
+              ></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="右侧退出" name="rightLeave">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrRightLeave"
+              :key="item.value"
+            >
+              {{ AnimateClassArrRightLeave[index].title }}
+              <component
+                :is="AnimateClassArrRightLeave[index].value"
+              ></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="上边进入" name="topShow">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrTopShow"
+              :key="item.value"
+            >
+              {{ AnimateClassArrTopShow[index].title }}
+              <component :is="AnimateClassArrTopShow[index].value"></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="上边退出" name="TopLeave">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrTopLeave"
+              :key="item.value"
+            >
+              {{ AnimateClassArrTopLeave[index].title }}
+              <component :is="AnimateClassArrTopLeave[index].value"></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="下边进入" name="bottomShow">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrBottomShow"
+              :key="item.value"
+            >
+              {{ AnimateClassArrBottomShow[index].title }}
+              <component
+                :is="AnimateClassArrBottomShow[index].value"
+              ></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="下边退出" name="bottomLeave">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrBottomLeave"
+              :key="item.value"
+            >
+              {{ AnimateClassArrBottomLeave[index].title }}
+              <component
+                :is="AnimateClassArrBottomLeave[index].value"
+              ></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="中间" name="middle">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrMiddle"
+              :key="item.value"
+            >
+              {{ AnimateClassArrMiddle[index].title }}
+              <component :is="AnimateClassArrMiddle[index].value"></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="X轴" name="xAxis">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrXAxis"
+              :key="item.value"
+            >
+              {{ AnimateClassArrXAxis[index].title }}
+              <component :is="AnimateClassArrXAxis[index].value"></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
+
+        <yulang-tab-pane label="Y轴" name="yAxis">
+          <div class="animationCollect">
+            <div
+              class="animationItemBox"
+              v-for="(item, index) in AnimateClassArrYAxis"
+              :key="item.value"
+            >
+              {{ AnimateClassArrYAxis[index].title }}
+              <component :is="AnimateClassArrYAxis[index].value"></component>
+            </div>
+          </div>
+        </yulang-tab-pane>
       </yulang-tabs>
 
       <div
@@ -75,7 +187,15 @@ import {
   AnimateClassArr,
   AnimateClassArrLeftShow,
   AnimateClassArrLeftLeave,
-  AnimateClassArrLeft,
+  AnimateClassArrRightShow,
+  AnimateClassArrRightLeave,
+  AnimateClassArrTopShow,
+  AnimateClassArrTopLeave,
+  AnimateClassArrBottomShow,
+  AnimateClassArrBottomLeave,
+  AnimateClassArrMiddle,
+  AnimateClassArrXAxis,
+  AnimateClassArrYAxis,
 } from './index';
 export default {
   name: 'root-resources-animate',
@@ -86,7 +206,15 @@ export default {
       animateClassArr: AnimateClassArr,
       AnimateClassArrLeftShow,
       AnimateClassArrLeftLeave,
-      AnimateClassArrLeft,
+      AnimateClassArrRightShow,
+      AnimateClassArrRightLeave,
+      AnimateClassArrTopShow,
+      AnimateClassArrTopLeave,
+      AnimateClassArrBottomShow,
+      AnimateClassArrBottomLeave,
+      AnimateClassArrMiddle,
+      AnimateClassArrXAxis,
+      AnimateClassArrYAxis,
       // 选中tab的属性
       activeName: 'leftShow',
     };
