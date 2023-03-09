@@ -160,7 +160,7 @@
         </yulang-tab-pane>
       </yulang-tabs>
 
-      <div
+      <!-- <div
         v-for="item in animateClassArr"
         :key="item.value"
         @click="animateClassItem(item)"
@@ -170,11 +170,11 @@
         ]"
       >
         {{ item.title }}
-      </div>
+      </div> -->
 
-      <div class="copyBtn" v-YulangCopy:[copySuccess]="copyData">
+      <!-- <div class="copyBtn" v-YulangCopy:[copySuccess]="copyData">
         点我复制代码
-      </div>
+      </div> -->
     </div>
 
     <component :is="value.value"></component>
