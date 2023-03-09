@@ -133,7 +133,7 @@
 
 @keyframes yulang-zoom-out {
     to {
-        transform: scale(10);
+        transform: scale(5);
         opacity: 0;
     }
 }
@@ -147,7 +147,7 @@
 
 @keyframes yulang-zoom-out-left {
     to {
-        transform: scale(10) translateX(-50%);
+        transform: scale(5) translateX(-50%);
         opacity: 0;
     }
 }
@@ -161,7 +161,7 @@
 
 @keyframes yulang-zoom-out-right {
     to {
-        transform: scale(10) translateX(50%);
+        transform: scale(5) translateX(50%);
         opacity: 0;
     }
 }
@@ -175,7 +175,7 @@
 
 @keyframes yulang-zoom-out-top {
     to {
-        transform: scale(10) translateY(-50%);
+        transform: scale(5) translateY(-50%);
         opacity: 0;
     }
 }
@@ -189,7 +189,7 @@
 
 @keyframes yulang-zoom-out-bottom {
     to {
-        transform: scale(10) translateY(50%);
+        transform: scale(5) translateY(50%);
         opacity: 0;
     }
 }
@@ -1644,11 +1644,11 @@ Elevate
 
 /* 右侧钓鱼提起 */
 
-.yulang-animate.yulang-elevate-left {
-    animation-name: yulang-elevate-left;
+.yulang-animate.yulang-elevate-right {
+    animation-name: yulang-elevate-right;
 }
 
-@keyframes yulang-elevate-left {
+@keyframes yulang-elevate-right {
     from {
         transform: translateY(100%) rotate(-20deg);
         transform-origin: right;
@@ -1666,11 +1666,11 @@ Elevate
 
 /* 左侧钓鱼提起 */
 
-.yulang-animate.yulang-elevate-right {
-    animation-name: yulang-elevate-right
+.yulang-animate.yulang-elevate-left {
+    animation-name: yulang-elevate-left
 }
 
-@keyframes yulang-elevate-right {
+@keyframes yulang-elevate-left {
     from {
         transform: translateY(100%) rotate(20deg);
         transform-origin: left;
@@ -2214,7 +2214,7 @@ Rotation
 
 @keyframes yulang-move-to-left {
     to {
-        transform: translateX(-800px)
+        transform: translateX(-2000px)
     }
 }
 

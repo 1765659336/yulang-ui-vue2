@@ -1,6 +1,5 @@
 <template>
-  <div>缩小再放大消失</div>
-  <!-- <div class="yulang-animate yulang-push-release-to">缩小再放大消失</div> -->
+  <div class="yulang-animate yulang-push-release-to">缩小再放大消失</div>
 </template>
 
 <script>
@@ -8,7 +7,7 @@ export default {
   name: 'yulang-push-release-to',
   data() {
     return {
-      title: '缩小再放大消失',
+      attribute: '缩小再放大消失',
     };
   },
 };
