@@ -42,6 +42,7 @@ export default {
 .packages-yulang-dropdown-item-container {
   padding: 1rem;
   text-align: center;
+  background-color: white;
 }
 
 .is-disabled {
