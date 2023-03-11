@@ -1,5 +1,5 @@
 <template>
-  <yulang-breadcrumb separator="/">
+  <yulang-breadcrumb separatorClass="icon-chevron-right">
     <yulang-breadcrumb-item :to="{ path: '#/home' }"
       >首页</yulang-breadcrumb-item
     >
