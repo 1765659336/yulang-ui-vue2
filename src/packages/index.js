@@ -49,6 +49,8 @@ import YulangTimelineItem from "@/packages/yulang-timeline-item/YulangTimelineIt
 import YulangDropdown from "@/packages/yulang-dropdown/YulangDropdown.vue";
 import YulangDropdownMenu from "@/packages/yulang-dropdown-menu/YulangDropdownMenu.vue";
 import YulangDropdownItem from "@/packages/yulang-dropdown-item/YulangDropdownItem.vue";
+import YulangBreadcrumb from "@/packages/yulang-breadcrumb/YulangBreadcrumb.vue";
+import YulangBreadcrumbItem from "@/packages/yulang-breadcrumb-item/YulangBreadcrumbItem.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -136,7 +138,9 @@ export const Packages = [
   YulangTimelineItem,
   YulangDropdown,
   YulangDropdownMenu,
-  YulangDropdownItem
+  YulangDropdownItem,
+  YulangBreadcrumb,
+  YulangBreadcrumbItem
 ];
 
 // 工具函数

@@ -586,6 +586,19 @@ const routes = [
               title: "下拉菜单 YulangDropdown",
             },
           },
+          {
+            path: "yulang-breadcrumb",
+            name: "yulang-breadcrumb",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-breadcrumb/YulangBreadcrumb.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "面包屑 YulangBreadcrumb",
+            },
+          },
         ],
       },
       {
