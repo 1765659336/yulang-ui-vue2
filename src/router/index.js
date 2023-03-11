@@ -573,6 +573,19 @@ const routes = [
               title: "时间线 YulangTimeline",
             },
           },
+          {
+            path: "yulang-dropdown",
+            name: "yulang-dropdown",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-dropdown/YulangDropdown.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "下拉菜单 YulangDropdown",
+            },
+          },
         ],
       },
       {
