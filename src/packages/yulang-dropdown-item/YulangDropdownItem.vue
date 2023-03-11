@@ -31,7 +31,7 @@ export default {
   inject: ["closeShow", "commandhandle"],
   methods: {
     dropdownItemClick() {
-      this.commandhandle && this.commandhandle(this.command);
+      !this.disabled && this.commandhandle && this.commandhandle(this.command);
       !this.disabled && this.closeShow();
     },
   },
