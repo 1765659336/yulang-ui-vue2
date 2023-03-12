@@ -127,16 +127,16 @@ const routes = [
             },
           },
           {
-            path: "version",
-            name: "version",
+            path: "start",
+            name: "start",
             component: () =>
               import(
-                "@/views/root/packages-demo/version/Version.vue"
+                "@/views/root/packages-demo/start/Start.vue"
               ),
             meta: {
               keepAlive: true,
               isAuth: true,
-              title: "版本号 Version",
+              title: "快速开始 Start",
             },
           },
           {

@@ -27,7 +27,7 @@ export const unionData = [
   {
     level: 2,
     title: "Start 快速开始",
-    path: "/root/packages-demo/quick-start",
+    path: "/root/packages-demo/start",
   },
   {
     level: 1,
