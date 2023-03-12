@@ -101,6 +101,19 @@ const routes = [
             },
           },
           {
+            path: "install",
+            name: "install",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/install/Install.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "安装 Install",
+            },
+          },
+          {
             path: "version",
             name: "version",
             component: () =>
