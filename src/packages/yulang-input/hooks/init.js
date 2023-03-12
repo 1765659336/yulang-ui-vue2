@@ -32,7 +32,7 @@ export const initObj = {
       this.$listeners.blur && this.$listeners.blur(e);
     },
     valueComputedClick(e) {
-      this.$listeners.click = this.$listeners.click(e);
+      this.$listeners.click && this.$listeners.click(e);
     },
   },
 };
