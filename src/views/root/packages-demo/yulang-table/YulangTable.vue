@@ -5,14 +5,30 @@
 
       <template #b>
         <yulang-describe-frame :codeStr="codeStrB">
-          <yulang-table :data="tableData">
+          <yulang-table :data="tableData" width="814px">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
-            <yulang-table-item prop="name" label="姓名" >
+            <yulang-table-item prop="name" label="姓名" width="300px">
             </yulang-table-item>
-            <yulang-table-item prop="sex" label="性别" >
+            <yulang-table-item prop="name" label="姓名" width="300px">
             </yulang-table-item>
-            <yulang-table-item prop="address" label="地址" width="300px">
+            <yulang-table-item prop="name" label="姓名" width="300px">
+            </yulang-table-item>
+            <yulang-table-item prop="name" label="姓名" width="300px">
+            </yulang-table-item>
+            <yulang-table-item
+              fixed="right"
+              prop="sex"
+              label="性别"
+              width="100px"
+            >
+            </yulang-table-item>
+            <yulang-table-item
+              fixed="right"
+              prop="address"
+              label="地址"
+              width="300px"
+            >
             </yulang-table-item>
           </yulang-table>
         </yulang-describe-frame>
@@ -22,8 +38,7 @@
           <yulang-table :data="tableData" :isShowBorder="true">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
-            <yulang-table-item prop="name" label="姓名" width="150px">
-            </yulang-table-item>
+            <yulang-table-item prop="name" label="姓名"> </yulang-table-item>
             <yulang-table-item prop="address" label="地址" width="300px">
             </yulang-table-item>
           </yulang-table>
@@ -117,19 +132,19 @@ export default {
         {
           date: '2016-05-02',
           name: '王小虎',
-          sex:'男',
+          sex: '男',
           address: '上海市普陀区金沙江路 1518 弄',
         },
         {
           date: '2016-05-04',
           name: '王小虎',
-          sex:'男',
+          sex: '男',
           address: '上海市普陀区金沙江路 1517 弄',
         },
         {
           date: '2016-05-01',
           name: '王小虎',
-          sex:'男',
+          sex: '男',
           address: '上海市普陀区金沙江路 1519 弄',
         },
       ],

@@ -17,6 +17,7 @@ export default {
     width: {
       type: String,
     },
+    fixed:{}
   },
   data() {
     return {
