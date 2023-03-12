@@ -29,6 +29,8 @@ export const initObj = {
       this.valueComputed = e.target.value;
     },
     valueComputedBlur(e) {
+      // 失焦同步值
+      e.target.value = this.valueComputed;
       this.$listeners.blur && this.$listeners.blur(e);
     },
     valueComputedClick(e) {
