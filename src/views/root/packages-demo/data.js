@@ -6,7 +6,7 @@ export const unionData = [
   },
   {
     level: 2,
-    title: "Timeline 时间线",
+    title: "Time 时间线",
     path: "/root/packages-demo/time",
   },
   {
