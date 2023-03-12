@@ -4,22 +4,25 @@
       'packages-yulang-table-container': true,
       'packages-yulang-table-container__border': isShowBorder,
     }"
+    ref="tableContainer"
   >
     <div class="hidden-columns">
       <slot></slot>
     </div>
     <!-- 头部 -->
     <div class="el-table__header-wrapper">
-      <table>
+      <table width="100%">
         <thead>
           <tr>
             <td
               v-for="(item, index) in fieldSort"
               :key="index"
-              :width="minWidth"
+              :width="bisectRemainWidth"
+              :style="getWidthInfo(item.width)"
               :class="[
                 'el-table__cell',
                 isShowBorder ? 'el-table__cell__border' : '',
+                item.width ? 'table-cell-width' : '',
               ]"
             >
               {{ item.label }}
@@ -30,16 +33,18 @@
     </div>
     <!-- 主体 -->
     <div class="el-table__body-wrapper">
-      <table>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
         <tbody>
           <tr v-for="(item, index1) in data.length" :key="index1">
             <td
               v-for="(item2, index2) in fieldSort"
               :key="index2"
-              :width="minWidth"
+              :width="bisectRemainWidth"
+              :style="getWidthInfo(item2.width)"
               :class="[
                 'el-table__cell',
                 isShowBorder ? 'el-table__cell__border' : '',
+                item2.width ? 'table-cell-width' : '',
               ]"
               @click="tbodyTdClick(data[item - 1])"
             >
@@ -50,9 +55,9 @@
                 :el="item2.el"
                 :rowData="data[index1]"
               ></RenderDom>
-              <span v-else>{{
-                data[index1] ? data[index1][item2.prop] : ""
-              }}</span>
+              <div v-else>
+                {{ data[index1] ? data[index1][item2.prop] : '' }}
+              </div>
             </td>
           </tr>
         </tbody>
@@ -63,10 +68,10 @@
 
 <script>
 export default {
-  name: "yulang-table",
+  name: 'yulang-table',
   components: {
     RenderDom: {
-      props: ["el", "vNode", "rowData"],
+      props: ['el', 'vNode', 'rowData'],
       // render(createElement) {
       render() {
         // console.log(this.rowData);
@@ -87,7 +92,7 @@ export default {
     // 没有传递宽度时，默认宽度
     minWidth: {
       default() {
-        return "180px";
+        return '100px';
       },
     },
     // 是否显示边框
@@ -102,16 +107,40 @@ export default {
       fieldSort: [],
     };
   },
+  computed: {
+    // 平分剩下宽度
+    bisectRemainWidth() {
+      // 没有设置宽度的item个数
+      let noSetWidth = 0;
+      // 每个设置width项的总和
+      const sum = this.fieldSort.reduce((pre, item) => {
+        if (item.width) {
+          return pre + parseFloat(item.width.split('px')[0]);
+        }
+        noSetWidth++;
+        return pre;
+      }, 0);
+      const tableWidth = this.$refs.tableContainer.clientWidth;
+      return (tableWidth - sum) / noSetWidth + 'px';
+    },
+  },
+  methods: {
+    getWidthInfo(width) {
+      return {
+        '--cell-width--': width,
+        '--cell-min-width--': this.minWidth,
+      };
+    },
+  },
   mounted() {
     this.$children.forEach((item) => {
-      if (item.yulangComponentName === "yulang-table-item") {
+      if (item.yulangComponentName === 'yulang-table-item') {
         if (item.$vnode.child.$el.childNodes.length > 0) {
           this.fieldSort.push({
             prop: item.prop,
             width: item.width,
             label: item.label,
             vNode: item.$vnode,
-            el: item.$vnode.child.$el,
           });
         } else {
           this.fieldSort.push({
@@ -127,5 +156,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("./index.less");
+@import url('./index.less');
 </style>

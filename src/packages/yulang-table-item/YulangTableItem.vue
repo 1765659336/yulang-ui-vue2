@@ -14,7 +14,9 @@ export default {
     label: {
       type: String,
     },
-    width: {},
+    width: {
+      type: String,
+    },
   },
   data() {
     return {
