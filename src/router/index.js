@@ -88,6 +88,19 @@ const routes = [
             redirect: "yulang-switch",
           },
           {
+            path: "time",
+            name: "time",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/time/Time.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "时间线 Timeline",
+            },
+          },
+          {
             path: "yulang-button",
             name: "yulang-button",
             component: YulangButton,
