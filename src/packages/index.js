@@ -51,6 +51,7 @@ import YulangDropdownMenu from "@/packages/yulang-dropdown-menu/YulangDropdownMe
 import YulangDropdownItem from "@/packages/yulang-dropdown-item/YulangDropdownItem.vue";
 import YulangBreadcrumb from "@/packages/yulang-breadcrumb/YulangBreadcrumb.vue";
 import YulangBreadcrumbItem from "@/packages/yulang-breadcrumb-item/YulangBreadcrumbItem.vue";
+import YulangInputNumber from "@/packages/yulang-input-number/YulangInputNumber.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -140,7 +141,8 @@ export const Packages = [
   YulangDropdownMenu,
   YulangDropdownItem,
   YulangBreadcrumb,
-  YulangBreadcrumbItem
+  YulangBreadcrumbItem,
+  YulangInputNumber
 ];
 
 // 工具函数

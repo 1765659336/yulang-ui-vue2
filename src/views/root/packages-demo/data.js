@@ -214,4 +214,9 @@ export const unionData = [
     title: "Breadcrumb 面包屑",
     path: "/root/packages-demo/yulang-breadcrumb",
   },
+  {
+    level: 2,
+    title: "InputNumber 数字输入框",
+    path: "/root/packages-demo/yulang-input-number",
+  },
 ];

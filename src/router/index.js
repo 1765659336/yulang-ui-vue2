@@ -599,6 +599,19 @@ const routes = [
               title: "面包屑 YulangBreadcrumb",
             },
           },
+          {
+            path: "yulang-input-number",
+            name: "yulang-input-number",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-input-number/YulangInputNumber.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "数字输入框 YulangInputNumber",
+            },
+          },
         ],
       },
       {
