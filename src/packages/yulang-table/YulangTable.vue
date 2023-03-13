@@ -4,7 +4,7 @@
       'packages-yulang-table-container': true,
       'packages-yulang-table-container__border': isShowBorder,
     }"
-    :style="{'--width--':width}"
+    :style="{ '--width--': width }"
     ref="tableContainer"
   >
     <div class="hidden-columns">
@@ -12,34 +12,35 @@
     </div>
     <!-- 头部 -->
     <div
-      class="el-table__header-wrapper"
+      class="yulang-table__header-wrapper"
       :style="setScrollX"
       ref="titleTableRef"
     >
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
-        <thead>
-          <tr>
+        <tbody>
+          <tr class="yulang-table__title__tbody">
             <td
               v-for="(item, index) in fieldSort"
               :key="index"
               :width="bisectRemainWidth"
               :style="[getWidthInfo(item.width), computedFixedPosition(index)]"
               :class="[
-                'el-table__cell',
-                isShowBorder ? 'el-table__cell__border' : '',
+                'yulang-table__cell',
+                'yulang-table__cell__title',
+                isShowBorder ? 'yulang-table__cell__border' : '',
                 item.width ? 'table-cell-width' : '',
               ]"
             >
               {{ item.label }}
             </td>
           </tr>
-        </thead>
+        </tbody>
       </table>
     </div>
     <!-- 主体 -->
-    <div class="el-table__body-wrapper" ref="dataTableRef">
+    <div class="yulang-table__body-wrapper" ref="dataTableRef">
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
-        <tbody>
+        <tbody class="yulang-table__data__tbody">
           <tr v-for="(item, index1) in data.length" :key="index1">
             <td
               v-for="(item2, index2) in fieldSort"
@@ -50,8 +51,9 @@
                 computedFixedPosition(index2),
               ]"
               :class="[
-                'el-table__cell',
-                isShowBorder ? 'el-table__cell__border' : '',
+                'yulang-table__cell',
+                index2 === 0 ? 'yulang-table__cell__first' : '',
+                isShowBorder ? 'yulang-table__cell__border' : '',
                 item2.width ? 'table-cell-width' : '',
               ]"
             >
@@ -97,11 +99,11 @@ export default {
     data: {
       type: Array,
     },
-    width:{
-      typr:String,
-      default(){
-        return '100%'
-      }
+    width: {
+      typr: String,
+      default() {
+        return '100%';
+      },
     },
     // 没有传递宽度时，默认item宽度
     minWidth: {
@@ -126,6 +128,8 @@ export default {
       // 初始内容table的x轴值
       dataTableInitX: 0,
       dataTableActiveX: 0,
+      // 标题的宽度，因为内容区会有滚动，要基于内容区宽度决定
+      tableTileWidth: 0,
     };
   },
   computed: {
@@ -162,7 +166,7 @@ export default {
         }
       }, 0);
       const tableWidth = this.$refs?.tableContainer?.clientWidth;
-      // 如果出现滚动条需要给data的table添加一个监听，在滑动的时候可以让title跟着同时滚动
+      console.log(this.tableTileWidth);
       return allWidth > tableWidth ? allWidth + 'px' : '100%';
     },
     // 设置fixed的位置信息
@@ -173,6 +177,7 @@ export default {
           return {
             position: 'sticky',
             right: this.fixedPosition[index] + 'px',
+            backgroundColor: 'inherit'
           };
         }
       };

@@ -35,7 +35,7 @@
       </template>
       <template #c>
         <yulang-describe-frame :codeStr="codeStrC">
-          <yulang-table :data="tableData" :isShowBorder="true">
+          <yulang-table :data="tableData" :isShowBorder="true" width="800px">
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
             <yulang-table-item prop="name" label="姓名"> </yulang-table-item>
