@@ -3,6 +3,7 @@
 .packages-yulang-table-container {
   display: inline-block;
   width: var(--width--);
+  // overflow-y: scroll;
 
   .hidden-columns {
     display: none;
@@ -15,11 +16,15 @@
     tr:nth-of-type(2n + 1) {
       background-color: #ffffff;
     }
+    tr:hover {
+      background-color: #f5f7fa;
+      cursor: pointer;
+    }
   }
 
-  .yulang-table__title__tbody{
+  .yulang-table__title__tbody {
     color: black;
-    // background-color: #f5f7fa;
+    background-color: #f5f7fa;
   }
 
   .yulang-table__cell {
@@ -42,16 +47,20 @@
   .yulang-table__body-wrapper {
     overflow: scroll;
     width: 100%;
+    height: var(--data-height--);
   }
 
   .yulang-table__header-wrapper {
     width: 100%;
-    border-left: 1px solid @borderColor;
     overflow-x: hidden;
     overflow: scroll;
     &::-webkit-scrollbar {
       height: 0px;
     }
+  }
+
+  .yulang-table__header-border {
+    border-left: 1px solid @borderColor;
   }
 
   .table-cell-width {

@@ -4,7 +4,7 @@
       'packages-yulang-table-container': true,
       'packages-yulang-table-container__border': isShowBorder,
     }"
-    :style="{ '--width--': width }"
+    :style="{ '--width--': width, '--height--': height }"
     ref="tableContainer"
   >
     <div class="hidden-columns">
@@ -13,7 +13,7 @@
     <!-- 头部 -->
     <div
       class="yulang-table__header-wrapper"
-      :style="setScrollX"
+      :class="isShowBorder ? 'yulang-table__header-border' : ''"
       ref="titleTableRef"
     >
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
@@ -38,10 +38,18 @@
       </table>
     </div>
     <!-- 主体 -->
-    <div class="yulang-table__body-wrapper" ref="dataTableRef">
+    <div
+      class="yulang-table__body-wrapper"
+      :style="{ '--data-height--': dataHeight }"
+      ref="dataTableRef"
+    >
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
         <tbody class="yulang-table__data__tbody">
-          <tr v-for="(item, index1) in data.length" :key="index1">
+          <tr
+            v-for="(item, index1) in data.length"
+            :key="index1"
+            class="yulang-table__data__tr"
+          >
             <td
               v-for="(item2, index2) in fieldSort"
               :key="index2"
@@ -52,7 +60,7 @@
               ]"
               :class="[
                 'yulang-table__cell',
-                index2 === 0 ? 'yulang-table__cell__first' : '',
+                index2 === 0 && isShowBorder ? 'yulang-table__cell__first' : '',
                 isShowBorder ? 'yulang-table__cell__border' : '',
                 item2.width ? 'table-cell-width' : '',
               ]"
@@ -99,10 +107,18 @@ export default {
     data: {
       type: Array,
     },
+    // table宽度
     width: {
-      typr: String,
+      type: String,
       default() {
         return '100%';
+      },
+    },
+    // table高度,当高度小于数据显示高度，会自动开启滚动
+    height: {
+      type: String,
+      default() {
+        return 'auto';
       },
     },
     // 没有传递宽度时，默认item宽度
@@ -130,6 +146,7 @@ export default {
       dataTableActiveX: 0,
       // 标题的宽度，因为内容区会有滚动，要基于内容区宽度决定
       tableTileWidth: 0,
+      dataHeight: 0,
     };
   },
   computed: {
@@ -151,7 +168,7 @@ export default {
       const computedWidth = (tableWidth - sum - borderWidth) / noSetWidth;
       // 判断平均分的宽度是否小于最小宽度，如果小于最小宽度则用最小宽度
       return computedWidth > this.minWidth.split('px')[0]
-        ? computedWidth + 'px'
+        ? computedWidth - 10 + 'px'
         : this.minWidth;
       // return computedWidth + 'px';
     },
@@ -166,7 +183,6 @@ export default {
         }
       }, 0);
       const tableWidth = this.$refs?.tableContainer?.clientWidth;
-      console.log(this.tableTileWidth);
       return allWidth > tableWidth ? allWidth + 'px' : '100%';
     },
     // 设置fixed的位置信息
@@ -177,15 +193,9 @@ export default {
           return {
             position: 'sticky',
             right: this.fixedPosition[index] + 'px',
-            backgroundColor: 'inherit'
+            backgroundColor: 'inherit',
           };
         }
-      };
-    },
-    // 根据内容区的x轴偏移设置同步移动
-    setScrollX() {
-      return {
-        // trans
       };
     },
   },
@@ -222,6 +232,17 @@ export default {
           this.$refs.dataTableRef.getBoundingClientRect().x;
       });
     },
+    //设置data区的高度
+    setDataHeight() {
+      if (this.height === 'auto') {
+        this.dataHeight = 'auto';
+      } else {
+        this.dataHeight =
+          parseFloat(this.height.split('px')[0]) -
+          this.$refs?.titleTableRef?.clientHeight +
+          'px';
+      }
+    },
   },
   watch: {
     'this.$refs.dataTableRef': {
@@ -254,6 +275,7 @@ export default {
     });
     this.setFixedWidth();
     this.setScrollListen();
+    this.setDataHeight();
   },
 };
 </script>
