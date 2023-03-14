@@ -10,6 +10,7 @@ import YulangLink from "@/packages/yulang-link/YulangLink.vue";
 import YulangDescribeFrame from "@/packages/yulang-describe-frame/YulangDescribeFrame.vue";
 import YulangDialog from "@/packages/yulang-dialog/YulangDialog.vue";
 import YulangBackTop from "@/packages/yulang-back-top/YulangBackTop.vue";
+import YulangCheckboxGroup from "@/packages/yulang-checkbox-group/YulangCheckboxGroup.vue";
 import YulangCheckbox from "@/packages/yulang-checkbox/YulangCheckbox.vue";
 import YulangSwitchCopy from "@/packages/yulang-switch-copy/YulangSwitchCopy.vue";
 import YulangForm from "@/packages/yulang-form/YulangForm.vue";
@@ -102,6 +103,7 @@ export const Packages = [
   YulangDialog,
   YulangBackTop,
   YulangCheckbox,
+  YulangCheckboxGroup,
   YulangSwitchCopy,
   YulangForm,
   YulangFormItem,

@@ -3,17 +3,17 @@
     :model="form"
     ref="form"
     labelWidth="100px"
-    :style="{ width: '400px' }"
+    :style="{ width: '600px' }"
   >
     <yulang-form-item label="名字">
       <yulang-input v-model="form.name"></yulang-input>
     </yulang-form-item>
-    <!-- <yulang-form-item label="活动区域">
+    <yulang-form-item label="活动区域">
       <yulang-select v-model="form.region" placeholder="请选择活动区域">
         <yulang-option label="区域一" value="shanghai"></yulang-option>
         <yulang-option label="区域二" value="beijing"></yulang-option>
       </yulang-select>
-    </yulang-form-item> -->
+    </yulang-form-item>
     <!-- <yulang-form-item label="活动时间">
       <el-col :span="11">
         <el-date-picker
@@ -35,14 +35,14 @@
     <yulang-form-item label="即时配送">
       <yulang-switch v-model="form.delivery"></yulang-switch>
     </yulang-form-item>
-    <!-- <yulang-form-item label="活动性质">
-      <el-checkbox-group v-model="form.type">
-        <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-        <el-checkbox label="地推活动" name="type"></el-checkbox>
-        <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-        <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-      </el-checkbox-group>
-    </yulang-form-item> -->
+    <yulang-form-item label="活动性质">
+      <yulang-checkbox-group v-model="form.type">
+        <yulang-checkbox label="美食/餐厅线上活动"></yulang-checkbox>
+        <yulang-checkbox label="地推活动"></yulang-checkbox>
+        <yulang-checkbox label="线下主题活动"></yulang-checkbox>
+        <yulang-checkbox label="单纯品牌曝光"></yulang-checkbox>
+      </yulang-checkbox-group>
+    </yulang-form-item>
     <yulang-form-item label="特殊资源">
       <yulang-radio-group v-model="form.resource">
         <yulang-radio label="线上品牌商赞助">线上品牌商赞助</yulang-radio>
