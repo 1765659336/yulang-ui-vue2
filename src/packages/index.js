@@ -23,6 +23,7 @@ import YulangTabs from "@/packages/yulang-tabs/YulangTabs.vue";
 import YulangTabPane from "@/packages/yulang-tab-pane/YulangTabPane.vue";
 import YulangDivider from "@/packages/yulang-divider/YulangDivider.vue";
 import YulangSelect from "@/packages/yulang-select/YulangSelect.vue";
+import YulangOption from "@/packages/yulang-option/YulangOption.vue";
 import YulangPopover from "@/packages/yulang-popover/YulangPopover.vue";
 import YulangTimePicker from "@/packages/yulang-time-picker/YulangTimePicker.vue";
 import YulangTooltip from "@/packages/yulang-tooltip/YulangTooltip.vue";
@@ -31,7 +32,6 @@ import YulangDrawer from "@/packages/yulang-drawer/YulangDrawer.vue";
 import YulangCollapse from "@/packages/yulang-collapse/YulangCollapse.vue";
 import YulangCollapseItem from "@/packages/yulang-collapse-item/YulangCollapseItem.vue";
 import YulangSkeleton from "@/packages/yulang-skeleton/YulangSkeleton.vue";
-import YulangOptions from "@/packages/yulang-options/YulangOptions.vue";
 import YulangRate from "@/packages/yulang-rate/YulangRate.vue";
 import YulangRadioGroup from "@/packages/yulang-radio-group/YulangRadioGroup.vue";
 import YulangRadio from "@/packages/yulang-radio/YulangRadio.vue";
@@ -122,7 +122,6 @@ export const Packages = [
   YulangCollapse,
   YulangCollapseItem,
   YulangSkeleton,
-  YulangOptions,
   YulangRate,
   YulangRadioGroup,
   YulangRadio,
@@ -142,7 +141,8 @@ export const Packages = [
   YulangDropdownItem,
   YulangBreadcrumb,
   YulangBreadcrumbItem,
-  YulangInputNumber
+  YulangInputNumber,
+  YulangOption
 ];
 
 // 工具函数
