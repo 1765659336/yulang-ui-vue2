@@ -1,8 +1,21 @@
 <template>
-  <div>
-    <label v-if="label">{{ label }}</label>
-    <slot></slot>
-    {{ errorMessage }}
+  <div
+    class="packages-yulang-form-item-container"
+    :style="{
+      '--yulang-form-container-direction--':
+        yulangForm.labelPosition === 'top' ? 'column' : 'row',
+      '--yulang-form-label-text-align--':
+        yulangForm.labelPosition !== 'top' ? yulangForm.labelPosition : 'left',
+      '--yulang-form-label-width--': yulangForm.labelWidth
+        ? yulangForm.labelWidth
+        : 'auto',
+    }"
+  >
+    <label v-if="label" class="yulang-form-item-lable">{{ label }}</label>
+    <div class="yulang-form-item-content">
+      <slot></slot>
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
@@ -56,4 +69,21 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.packages-yulang-form-item-container {
+  display: flex;
+  flex-direction: var(--yulang-form-container-direction--);
+  align-items: center;
+  margin: 10px;
+
+  .yulang-form-item-lable {
+    display: inline-block;
+    padding: 0 5px;
+    text-align: var(--yulang-form-label-text-align--);
+    width: var(--yulang-form-label-width--);
+  }
+
+  .yulang-form-item-content {
+  }
+}
+</style>

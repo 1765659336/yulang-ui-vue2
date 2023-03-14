@@ -13,6 +13,16 @@ export default {
       default: () => ({}),
     },
     rules: Object,
+    labelPosition: {
+      type: String,
+      default: "left",
+      validator(value) {
+        return ["top", "left", "right"].find((item) => item === value);
+      },
+    },
+    labelWidth: {
+      type: String,
+    },
   },
   provide() {
     return {
