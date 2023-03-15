@@ -202,6 +202,7 @@ export default {
       fieldSort: [],
       // 向左固定时，各item距离right的px
       fixedPosition: [],
+      fixedStratIndex: 0,
       // 是否开启内容区滚动监听
       isListenScroll: false,
       // 标题的宽度，因为内容区会有滚动，要基于内容区宽度决定
@@ -270,6 +271,7 @@ export default {
     setFixedWidth() {
       // 距离右边的距离
       let rightDistance = 0;
+      let fixedStratIndex = this.fieldSort.length;
       for (let i = this.fieldSort.length - 1; i >= 0; i--) {
         if (this.fieldSort[i].fixed === "right") {
           this.fixedPosition.unshift(rightDistance);
@@ -281,6 +283,8 @@ export default {
           this.fixedPosition.unshift(rightDistance);
         }
       }
+      // 表示从第几个开始固定
+      this.fixedStratIndex = fixedStratIndex;
     },
     // 设置data内容区的滚动监听
     setScrollListen() {
