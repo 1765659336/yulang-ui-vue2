@@ -18,7 +18,7 @@
         {{ item.title }}
       </div>
     </div>
-    <div>中文</div>
+    <!-- <div>中文</div> -->
   </div>
 </template>
 
