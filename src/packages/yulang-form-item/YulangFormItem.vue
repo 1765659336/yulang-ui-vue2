@@ -11,10 +11,14 @@
         : 'auto',
     }"
   >
-    <label v-if="label" class="yulang-form-item-lable">{{ label }}</label>
+    <label
+      v-if="label"
+      :class="['yulang-form-item-lable', isRequire ? 'require-icon' : '']"
+      >{{ label }}</label
+    >
     <div class="yulang-form-item-content">
       <slot></slot>
-      {{ errorMessage }}
+      <div class="errorMessage">{{ errorMessage }}</div>
     </div>
   </div>
 </template>
@@ -32,13 +36,22 @@ export default {
     prop: String,
   },
   data() {
-    return { errorMessage: "" };
+    return {
+      errorMessage: "",
+      yulangComponentName: "yulang-form-item",
+      isRequire: false,
+    };
   },
   methods: {
     validate() {
       if (this.prop) {
         let rule = this.yulangForm.rules[this.prop];
         let newValue = this.yulangForm.model[this.prop];
+        if (!rule || rule.length === 0) {
+          return Promise.resolve(
+            `form表单rules校验规则中不存在{${this.prop}}属性值，默认校验成功`
+          );
+        }
         let descriptor = {
           [this.prop]: rule,
         };
@@ -52,7 +65,9 @@ export default {
           }
         });
       } else {
-        return false;
+        return Promise.resolve(
+          `formItem未传入{${this.prop}}prop属性，默认校验成功`
+        );
       }
     },
     resetFields() {
@@ -64,7 +79,10 @@ export default {
     },
   },
   mounted() {
-    // console.log(this, "yulang-form-item");
+    // console.log(this.yulangForm);
+    // let rule = this.yulangForm.rules[this.prop];
+    // console.log(rule);
+    // console.log(rule.find((item) => item.required));
   },
 };
 </script>
@@ -83,7 +101,21 @@ export default {
     width: var(--yulang-form-label-width--);
   }
 
+  .require-icon::before {
+    content: "*";
+    color: #f56c6c;
+    margin-right: 4px;
+  }
+
   .yulang-form-item-content {
+    position: relative;
+    padding-bottom: 20px;
+
+    .errorMessage {
+      position: absolute;
+      height: 20px;
+      color: #f56c6c;
+    }
   }
 }
 </style>
