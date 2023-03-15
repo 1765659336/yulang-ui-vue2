@@ -17,7 +17,7 @@
       ref="titleTableRef"
     >
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
-        <tbody>
+        <thead>
           <tr class="yulang-table__title__tbody">
             <td
               v-for="(item, index) in fieldSort"
@@ -40,7 +40,7 @@
               <div v-else>{{ item.label }}</div>
             </td>
           </tr>
-        </tbody>
+        </thead>
       </table>
     </div>
     <!-- 主体 -->
@@ -98,6 +98,35 @@
         </tbody>
       </table>
     </div>
+    <!-- 底部 -->
+    <div>
+      <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
+        <tfoot class="yulang-table__data__tfoot">
+          <tr
+            v-for="(item, index1) in footerMethod(data, fieldSort)"
+            :key="index1"
+          >
+            <td
+              v-for="(item2, index2) in fieldSort"
+              :key="index2"
+              :width="bisectRemainWidth"
+              :style="[
+                getWidthInfo(item2.width),
+                computedFixedPosition(index2),
+              ]"
+              :class="[
+                'yulang-table__cell',
+                index2 === 0 && isShowBorder ? 'yulang-table__cell__first' : '',
+                isShowBorder ? 'yulang-table__cell__border' : '',
+                item2.width ? 'table-cell-width' : '',
+              ]"
+            >
+              {{ item[index2] }}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -146,6 +175,24 @@ export default {
       default() {
         return false;
       },
+    },
+    // 是否显示底部汇总
+    isShowFooter: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
+    // 底部汇总数据
+    footerMethod: {
+      type: Function,
+      default() {
+        return [];
+      },
+    },
+    // 开启底部汇总时，首列宽度
+    footerTitleWidth: {
+      default: "50px",
     },
   },
   data() {
@@ -304,6 +351,12 @@ export default {
           }
         }
       });
+      if (this.isShowFooter) {
+        this.fieldSort.unshift({
+          type: "footer",
+          fixed: "left",
+        });
+      }
     },
     // 获取单选的数据
     getRadioData() {

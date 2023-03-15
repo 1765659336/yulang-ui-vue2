@@ -134,6 +134,7 @@
       </template>
       <template #h>
         <yulang-describe-frame :codeStr="codeStrB">
+          <yulang-button @click="getSelectData">获取勾选的数据</yulang-button>
           <yulang-table
             :data="tableData"
             width="814px"
@@ -143,6 +144,37 @@
             <yulang-table-item type="radio" width="50px"> </yulang-table-item>
             <yulang-table-item type="checkbox" width="50px">
             </yulang-table-item>
+            <yulang-table-item prop="date" label="日期" width="100px">
+            </yulang-table-item>
+            <yulang-table-item prop="name" label="姓名" width="300px">
+            </yulang-table-item>
+            <yulang-table-item
+              fixed="right"
+              prop="sex"
+              label="性别"
+              width="100px"
+            >
+            </yulang-table-item>
+            <yulang-table-item
+              fixed="right"
+              prop="address"
+              label="地址"
+              width="300px"
+            >
+            </yulang-table-item>
+          </yulang-table>
+        </yulang-describe-frame>
+      </template>
+      <template #i>
+        <yulang-describe-frame :codeStr="codeStrB">
+          <yulang-table
+            :data="[...tableData, ...tableData, ...tableData]"
+            isShowFooter
+            :footerMethod="footerMethod"
+            footerTitleWidth="50px"
+            width="814px"
+            height="200px"
+          >
             <yulang-table-item prop="date" label="日期" width="100px">
             </yulang-table-item>
             <yulang-table-item prop="name" label="姓名" width="300px">
@@ -229,6 +261,7 @@ export default {
         { slotName: "f", slotTitle: "右端固定", level: 2 },
         { slotName: "g", slotTitle: "表头固定", level: 2 },
         { slotName: "h", slotTitle: "勾选", level: 2 },
+        { slotName: "i", slotTitle: "底部汇总", level: 2 },
         { slotName: "u", slotTitle: "阅读文档", level: 1 },
         { slotName: "v", slotTitle: "Table 属性", level: 2 },
         { slotName: "w", slotTitle: "Table 插槽", level: 2 },
@@ -270,14 +303,39 @@ export default {
         timeout: 3000,
       });
     },
+    footerMethod(data, fieldSort) {
+      return [
+        fieldSort.map((item, index) => {
+          if (item.type === "footer") {
+            return "求和";
+          } else {
+            return index;
+          }
+        }),
+        fieldSort.map((item, index) => {
+          if (item.type === "footer") {
+            return "平均值";
+          } else {
+            return index;
+          }
+        }),
+      ];
+    },
+    getSelectData() {
+      this.$yulangNotification({
+        message: this.$refs.tableH.getRadioData(),
+        type: "success",
+      });
+      this.$yulangNotification({
+        message: this.$refs.tableH.getCheckboxData(),
+        type: "success",
+      });
+    },
   },
   mounted() {
     setInterval(() => {
-      console.log(
-        this.$refs.tableH.getRadioData(),
-        this.$refs.tableH.getCheckboxData()
-      );
-    },3000);
+      console.log();
+    }, 3000);
   },
 };
 </script>
