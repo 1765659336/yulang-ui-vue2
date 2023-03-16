@@ -20,10 +20,9 @@
     </div>
     <yulang-switch
       v-model="theme"
-      inactiveText="喻亮"
-      activeText="暗黑"
-      inactiveColor="black"
-      activeColor="green"
+      inactiveText="绿"
+      activeText="蓝"
+      activeColor="#87d0ec"
       >切换主题</yulang-switch
     >
   </div>
@@ -63,8 +62,16 @@ export default {
     theme(val) {
       const root = document.querySelector(":root");
       root.style.setProperty(
-        "--yulang-head-container--",
-        val ? "black" : "green"
+        "--yulang-theme-color--",
+        val ? "#87d0ec" : "#00DF74"
+      );
+      root.style.setProperty(
+        "--yulang-font-color--",
+        val ? "#69DFEB" : "#00DF74"
+      );
+      root.style.setProperty(
+        "--yulang-border-color--",
+        val ? "#69DFEB" : "#00DF74"
       );
     },
   },

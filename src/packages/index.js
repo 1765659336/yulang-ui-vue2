@@ -60,6 +60,10 @@ import "../assets/icon/iconfont.css";
 import "../assets/icon/reset.css";
 // 引入动画样式文件
 import "../assets/style/animate.css";
+// 引入全局css变量
+import "@/assets/style/variable.less";
+// 引入全局class样式类
+import "@/assets/style/public.less";
 
 // 自定义指令
 import YulangCopy from "@/instruction/copy";
@@ -154,16 +158,8 @@ import * as Lib from "@/packages/lib";
 import Index from "@/tools/getIndex";
 
 const install = function (Vue, option) {
-  console.log(option);
-  // 通过外部传入参数来设置所有组件默认尺寸
-  Vue.prototype.yulangComponentSize = ["medium", "small", "mini"].find(
-    option.size
-  )
-    ? option.size
-    : "medium";
+  console.log(option,"全局引入option");
 
-  // 通过外部传入参数来设置脱离文档流如popover弹窗框的z-index值，保证后弹出的不会被之前弹出的盖住
-  Vue.prototype.$yulangIndex = new Index(option.size.zIndex ?? 3000);
   Packages.forEach((component) => {
     Vue.component(component.name, component);
   });
@@ -177,14 +173,41 @@ const install = function (Vue, option) {
   });
 };
 
-// 判断是否直接引入的LjUI组件库，如果是，那么就把所有的组件注册成全局组件
+// 判断是否直接引入的YulangUI组件库，如果是，那么就把所有的组件注册成全局组件
 if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
+} else {
+  // 后面支持按需加载时，用户可能不会调用changeDefault来更改组件全局默认值,手动赋默认值
+  window.Vue && (window.Vue.prototype.$yulangIndex = new Index(3000));
 }
+
+export const changeDefault = function (Vue, option) {
+  // 通过外部传入参数来设置所有组件默认尺寸
+  Vue.prototype.yulangComponentSize = ["medium", "small", "mini"].find(
+    option.size
+  )
+    ? option.size
+    : "medium";
+
+  // 通过外部传入参数来设置脱离文档流如popover弹窗框的z-index值，保证后弹出的不会被之前弹出的盖住
+  Vue.prototype.$yulangIndex = new Index(option.size.zIndex ?? 3000);
+  
+  // 通过外部传入参数来设置主题变量
+  if (option.themeCssVariable) {
+    const root = document.querySelector(":root");
+    for (const key in option.themeCssVariable) {
+      if (Object.hasOwnProperty.call(option.themeCssVariable, key)) {
+        const element = option.themeCssVariable[key];
+        root.style.setProperty(option.themeCssVariable[key], element);
+      }
+    }
+  }
+};
 
 export default {
   install,
   Packages,
   Lib,
   Directives,
+  changeDefault,
 };

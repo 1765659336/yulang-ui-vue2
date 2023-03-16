@@ -263,7 +263,7 @@ export default {
     }
 
     .isSelect {
-      color: skyblue;
+      color: var(--yulang-theme-color--);
     }
 
     .copyBtn {
