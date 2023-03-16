@@ -45,7 +45,11 @@
     </div>
     <!-- 主体 -->
     <div
-      class="yulang-table__body-wrapper"
+      :class="
+        isShowFooter
+          ? 'yulang-table__body-wrapper-hidden-scroll'
+          : 'yulang-table__body-wrapper-show-scroll'
+      "
       :style="{ '--data-height--': dataHeight }"
       ref="dataTableRef"
     >
@@ -90,7 +94,7 @@
                   :rowData="tableData[index1]"
                 ></RenderDom>
                 <div v-else>
-                  {{ tableData[index1] ? tableData[index1][item2.prop] : "" }}
+                  {{ tableData[index1] ? tableData[index1][item2.prop] : '' }}
                 </div>
               </div>
             </td>
@@ -99,7 +103,7 @@
       </table>
     </div>
     <!-- 底部 -->
-    <div>
+    <div class="yulang-table__footer-wrapper" ref="footerTableRef">
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
         <tfoot class="yulang-table__data__tfoot">
           <tr
@@ -131,16 +135,16 @@
 </template>
 
 <script>
-import YulangRadio from "@/packages/yulang-radio/YulangRadio.vue";
-import YulangCheckbox from "@/packages/yulang-checkbox/YulangCheckbox.vue";
+import YulangRadio from '@/packages/yulang-radio/YulangRadio.vue';
+import YulangCheckbox from '@/packages/yulang-checkbox/YulangCheckbox.vue';
 
 export default {
-  name: "yulang-table",
+  name: 'yulang-table',
   components: {
     YulangRadio,
     YulangCheckbox,
     RenderDom: {
-      props: ["el", "vNode", "rowData"],
+      props: ['el', 'vNode', 'rowData'],
       render() {
         return this.vNode;
       },
@@ -154,20 +158,20 @@ export default {
     width: {
       type: String,
       default() {
-        return "100%";
+        return '100%';
       },
     },
     // table高度,当高度小于数据显示高度，会自动开启滚动
     height: {
       type: String,
       default() {
-        return "auto";
+        return 'auto';
       },
     },
     // 没有传递宽度时，默认item宽度
     minWidth: {
       default() {
-        return "100px";
+        return '100px';
       },
     },
     // 是否显示边框
@@ -192,7 +196,7 @@ export default {
     },
     // 开启底部汇总时，首列宽度
     footerTitleWidth: {
-      default: "50px",
+      default: '50px',
     },
   },
   data() {
@@ -219,7 +223,7 @@ export default {
       // 每个设置width项的总和
       const sum = this.fieldSort.reduce((pre, item) => {
         if (item.wicomputedTabledth) {
-          return pre + parseFloat(item.width.split("px")[0]);
+          return pre + parseFloat(item.width.split('px')[0]);
         }
         noSetWidth++;
         return pre;
@@ -229,8 +233,8 @@ export default {
       const borderWidth = this.isShowBorder ? this.fieldSort.length : 0;
       const computedWidth = (tableWidth - sum - borderWidth) / noSetWidth;
       // 判断平均分的宽度是否小于最小宽度，如果小于最小宽度则用最小宽度
-      return computedWidth > this.minWidth.split("px")[0]
-        ? computedWidth - 10 + "px"
+      return computedWidth > this.minWidth.split('px')[0]
+        ? computedWidth - 10 + 'px'
         : this.minWidth;
     },
     // 计算table是否超出100%
@@ -238,22 +242,22 @@ export default {
       // 这个table宽度是每一个width属性的总和，没设width为minwidth
       const allWidth = this.fieldSort.reduce((pre, item) => {
         if (item.width) {
-          return pre + parseFloat(item.width.split("px")[0]);
+          return pre + parseFloat(item.width.split('px')[0]);
         } else {
-          return pre + parseFloat(this.minWidth.split("px")[0]);
+          return pre + parseFloat(this.minWidth.split('px')[0]);
         }
       }, 0);
       const tableWidth = this.$refs?.tableContainer?.clientWidth;
-      return allWidth > tableWidth ? allWidth + "px" : "auto";
+      return allWidth > tableWidth ? allWidth + 'px' : 'auto';
     },
     // 设置fixed的位置信息
     computedFixedPosition() {
       return function (index) {
-        if (this.fieldSort[index].fixed === "right") {
+        if (this.fieldSort[index].fixed === 'right') {
           return {
-            position: "sticky",
-            right: this.fixedPosition[index] + "px",
-            backgroundColor: "inherit",
+            position: 'sticky',
+            right: this.fixedPosition[index] + 'px',
+            backgroundColor: 'inherit',
           };
         }
       };
@@ -263,8 +267,8 @@ export default {
     // 设置定义了width属性的宽度
     getWidthInfo(width) {
       return {
-        "--cell-width--": width,
-        "--cell-min-width--": this.minWidth,
+        '--cell-width--': width,
+        '--cell-min-width--': this.minWidth,
       };
     },
     // 计算fixed的累加宽度
@@ -273,11 +277,11 @@ export default {
       let rightDistance = 0;
       let fixedStratIndex = this.fieldSort.length;
       for (let i = this.fieldSort.length - 1; i >= 0; i--) {
-        if (this.fieldSort[i].fixed === "right") {
+        if (this.fieldSort[i].fixed === 'right') {
           this.fixedPosition.unshift(rightDistance);
           rightDistance =
             rightDistance + this.fieldSort[i].width
-              ? parseFloat(this.fieldSort[i].width.split("px")[0])
+              ? parseFloat(this.fieldSort[i].width.split('px')[0])
               : this.minWidth;
         } else {
           this.fixedPosition.unshift(rightDistance);
@@ -288,20 +292,26 @@ export default {
     },
     // 设置data内容区的滚动监听
     setScrollListen() {
-      this.$refs.dataTableRef.addEventListener("scroll", () => {
+      // this.$refs.dataTableRef.addEventListener('scroll', () => {
+      //   this.$refs.titleTableRef.scrollLeft =
+      //     this.$refs.dataTableRef.scrollLeft;
+      // });
+      this.$refs.footerTableRef.addEventListener('scroll', () => {
         this.$refs.titleTableRef.scrollLeft =
-          this.$refs.dataTableRef.scrollLeft;
+          this.$refs.footerTableRef.scrollLeft;
+        this.$refs.dataTableRef.scrollLeft =
+          this.$refs.footerTableRef.scrollLeft;
       });
     },
     //设置data区的高度
     setDataHeight() {
-      if (this.height === "auto") {
-        this.dataHeight = "auto";
+      if (this.height === 'auto') {
+        this.dataHeight = 'auto';
       } else {
         this.dataHeight =
-          parseFloat(this.height.split("px")[0]) -
+          parseFloat(this.height.split('px')[0]) -
           this.$refs?.titleTableRef?.clientHeight +
-          "px";
+          'px';
       }
     },
     // 初始化table内部数据
@@ -315,9 +325,9 @@ export default {
     // 初始化渲染dom
     initDom() {
       this.$children.forEach((item) => {
-        if (item.yulangComponentName === "yulang-table-item") {
+        if (item.yulangComponentName === 'yulang-table-item') {
           if (item.$vnode.child.$el.childNodes.length > 0) {
-            if (item.type === "radio" || item.type === "checkbox") {
+            if (item.type === 'radio' || item.type === 'checkbox') {
               this.fieldSort.unshift({
                 prop: item.prop,
                 width: item.width,
@@ -336,7 +346,7 @@ export default {
               });
             }
           } else {
-            if (item.type === "radio" || item.type === "checkbox") {
+            if (item.type === 'radio' || item.type === 'checkbox') {
               this.fieldSort.unshift({
                 prop: item.prop,
                 width: item.width,
@@ -357,8 +367,9 @@ export default {
       });
       if (this.isShowFooter) {
         this.fieldSort.unshift({
-          type: "footer",
-          fixed: "left",
+          type: 'footer',
+          fixed: 'left',
+          width: this.footerTitleWidth,
         });
       }
     },
@@ -389,5 +400,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("./index.less");
+@import url('./index.less');
 </style>
