@@ -9,8 +9,10 @@ import "@/assets/style/animate.css";
 import { Packages, Directives, CreateNode } from "@/packages/index";
 
 // 引入全局index
-import Index from '@/tools/getIndex'
-Vue.prototype.$index = new Index(3000)
+import Index from "@/tools/getIndex";
+
+Vue.prototype.$yulangIndex = new Index(3000);
+Vue.prototype.yulangComponentSize = "mini";
 
 Packages.forEach((component) => {
   Vue.component(component.name, component);

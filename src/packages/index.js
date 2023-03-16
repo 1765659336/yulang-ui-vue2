@@ -78,7 +78,7 @@ export const Directives = {
   YulangInfiniteScroll,
   YulangClickOutside,
   YulangAddDom,
-  YulangDrag
+  YulangDrag,
 };
 
 // 自定义函数
@@ -146,14 +146,24 @@ export const Packages = [
   YulangBreadcrumb,
   YulangBreadcrumbItem,
   YulangInputNumber,
-  YulangOption
+  YulangOption,
 ];
 
 // 工具函数
 import * as Lib from "@/packages/lib";
+import Index from "@/tools/getIndex";
 
 const install = function (Vue, option) {
   console.log(option);
+  // 通过外部传入参数来设置所有组件默认尺寸
+  Vue.prototype.yulangComponentSize = ["medium", "small", "mini"].find(
+    option.size
+  )
+    ? option.size
+    : "medium";
+
+  // 通过外部传入参数来设置脱离文档流如popover弹窗框的z-index值，保证后弹出的不会被之前弹出的盖住
+  Vue.prototype.$yulangIndex = new Index(option.size.zIndex ?? 3000);
   Packages.forEach((component) => {
     Vue.component(component.name, component);
   });
