@@ -13,8 +13,16 @@
               v-for="(item, index) in AnimateClassArrLeftShow"
               :key="item.value"
             >
-              {{ AnimateClassArrLeftShow[index].title }}
-              <component :is="AnimateClassArrLeftShow[index].value"></component>
+              <component
+                :is="AnimateClassArrLeftShow[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -26,10 +34,16 @@
               v-for="(item, index) in AnimateClassArrLeftLeave"
               :key="item.value"
             >
-              {{ AnimateClassArrLeftLeave[index].title }}
               <component
                 :is="AnimateClassArrLeftLeave[index].value"
+                class="animationItemBoxContent"
               ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -41,10 +55,16 @@
               v-for="(item, index) in AnimateClassArrRightShow"
               :key="item.value"
             >
-              {{ AnimateClassArrRightShow[index].title }}
               <component
                 :is="AnimateClassArrRightShow[index].value"
+                class="animationItemBoxContent"
               ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -56,10 +76,16 @@
               v-for="(item, index) in AnimateClassArrRightLeave"
               :key="item.value"
             >
-              {{ AnimateClassArrRightLeave[index].title }}
               <component
                 :is="AnimateClassArrRightLeave[index].value"
+                class="animationItemBoxContent"
               ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -71,8 +97,16 @@
               v-for="(item, index) in AnimateClassArrTopShow"
               :key="item.value"
             >
-              {{ AnimateClassArrTopShow[index].title }}
-              <component :is="AnimateClassArrTopShow[index].value"></component>
+              <component
+                :is="AnimateClassArrTopShow[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -84,8 +118,16 @@
               v-for="(item, index) in AnimateClassArrTopLeave"
               :key="item.value"
             >
-              {{ AnimateClassArrTopLeave[index].title }}
-              <component :is="AnimateClassArrTopLeave[index].value"></component>
+              <component
+                :is="AnimateClassArrTopLeave[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -97,10 +139,16 @@
               v-for="(item, index) in AnimateClassArrBottomShow"
               :key="item.value"
             >
-              {{ AnimateClassArrBottomShow[index].title }}
               <component
                 :is="AnimateClassArrBottomShow[index].value"
+                class="animationItemBoxContent"
               ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -112,10 +160,16 @@
               v-for="(item, index) in AnimateClassArrBottomLeave"
               :key="item.value"
             >
-              {{ AnimateClassArrBottomLeave[index].title }}
               <component
                 :is="AnimateClassArrBottomLeave[index].value"
+                class="animationItemBoxContent"
               ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -127,8 +181,17 @@
               v-for="(item, index) in AnimateClassArrMiddle"
               :key="item.value"
             >
-              {{ AnimateClassArrMiddle[index].title }}
-              <component :is="AnimateClassArrMiddle[index].value"></component>
+              <component
+                :is="AnimateClassArrMiddle[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <!-- <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div> -->
+              {{ AnimateClassArrLeftShow[index]?.copy }}
             </div>
           </div>
         </yulang-tab-pane>
@@ -140,8 +203,16 @@
               v-for="(item, index) in AnimateClassArrXAxis"
               :key="item.value"
             >
-              {{ AnimateClassArrXAxis[index].title }}
-              <component :is="AnimateClassArrXAxis[index].value"></component>
+              <component
+                :is="AnimateClassArrXAxis[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -153,8 +224,16 @@
               v-for="(item, index) in AnimateClassArrYAxis"
               :key="item.value"
             >
-              {{ AnimateClassArrYAxis[index].title }}
-              <component :is="AnimateClassArrYAxis[index].value"></component>
+              <component
+                :is="AnimateClassArrYAxis[index].value"
+                class="animationItemBoxContent"
+              ></component>
+              <div
+                class="copyBtn"
+                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+              >
+                点我复制代码
+              </div>
             </div>
           </div>
         </yulang-tab-pane>
@@ -221,7 +300,9 @@ export default {
   },
   computed: {
     copyData() {
-      return this.value.copy + ` ` + this.value.title;
+      return (title) => {
+        return 'yulang-animate' + ` ` + title;
+      };
     },
   },
   methods: {
@@ -244,47 +325,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.yulang-animate-div,
-.yulang-animate {
-  width: 80px;
-  height: 80px;
-  background-color: yellow;
-}
-.root-resources-animate-container {
-  .animate-class-arr-container {
-    display: flex;
-    flex-wrap: wrap;
-
-    .animate-class-item {
-      padding: 0 10px;
-      margin: 10px 0;
-      border-right: 1px solid #ccc;
-      cursor: pointer;
-    }
-
-    .isSelect {
-      color: skyblue;
-    }
-
-    .copyBtn {
-      padding: 10px;
-    }
-
-    & > div {
-      cursor: pointer;
-    }
-  }
-}
-
-.animationCollect {
-  display: flex;
-  flex-wrap: wrap;
-
-  .animationItemBox {
-    width: 120px;
-    height: 120px;
-    margin: 31.5px;
-    background-color: red;
-  }
-}
+@import url('./index.less');
 </style>
