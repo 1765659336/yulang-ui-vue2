@@ -105,10 +105,11 @@
     <!-- 底部 -->
     <div class="yulang-table__footer-wrapper" ref="footerTableRef">
       <table :width="computedTable" border="0" cellpadding="0" cellspacing="0">
-        <tfoot class="yulang-table__data__tfoot">
+        <tfoot>
           <tr
             v-for="(item, index1) in footerMethod(data, fieldSort)"
             :key="index1"
+            class="yulang-table__footer__tbody"
           >
             <td
               v-for="(item2, index2) in fieldSort"
@@ -204,9 +205,12 @@ export default {
       // 表格内部基于外部传入的data处理过后得到新的数据
       tableData: [],
       fieldSort: [],
-      // 向左固定时，各item距离right的px
-      fixedPosition: [],
-      fixedStratIndex: 0,
+      // 向右固定时，各item距离right的px
+      fixedRightPosition: [],
+      fixedRightStratIndex: 0,
+      // 向左固定时，各item距离left的px
+      fixedLeftPosition: [],
+      fixedLeftStratIndex: 0,
       // 是否开启内容区滚动监听
       isListenScroll: false,
       // 标题的宽度，因为内容区会有滚动，要基于内容区宽度决定
@@ -253,10 +257,17 @@ export default {
     // 设置fixed的位置信息
     computedFixedPosition() {
       return function (index) {
+        if (this.fieldSort[index].fixed === 'left') {
+          return {
+            position: 'sticky',
+            left: this.fixedLeftPosition[index] + 'px',
+            backgroundColor: 'inherit',
+          };
+        }
         if (this.fieldSort[index].fixed === 'right') {
           return {
             position: 'sticky',
-            right: this.fixedPosition[index] + 'px',
+            right: this.fixedRightPosition[index] + 'px',
             backgroundColor: 'inherit',
           };
         }
@@ -273,22 +284,41 @@ export default {
     },
     // 计算fixed的累加宽度
     setFixedWidth() {
-      // 距离右边的距离
-      let rightDistance = 0;
-      let fixedStratIndex = this.fieldSort.length;
+      // 右侧固定的距离数据数组
+      let rightDistance = 0; // 距离右边的距离
+      let fixedRightStratIndex = this.fieldSort.length;
       for (let i = this.fieldSort.length - 1; i >= 0; i--) {
         if (this.fieldSort[i].fixed === 'right') {
-          this.fixedPosition.unshift(rightDistance);
+          fixedRightStratIndex = i;
+          this.fixedRightPosition.unshift(rightDistance);
           rightDistance =
             rightDistance + this.fieldSort[i].width
               ? parseFloat(this.fieldSort[i].width.split('px')[0])
               : this.minWidth;
         } else {
-          this.fixedPosition.unshift(rightDistance);
+          this.fixedRightPosition.unshift(rightDistance);
         }
       }
-      // 表示从第几个开始固定
-      this.fixedStratIndex = fixedStratIndex;
+      // 表示从第几个开始固定右边
+      this.fixedRightStratIndex = fixedRightStratIndex;
+
+      // 左侧固定的距离数据数组
+      let leftDistance = 0; // 距离左边的距离
+      let fixedLeftStratIndex = -1;
+      for (let i = 0; i < this.fieldSort.length; i++) {
+        if (this.fieldSort[i].fixed === 'left') {
+          fixedLeftStratIndex = i;
+          this.fixedLeftPosition.push(leftDistance);
+          leftDistance =
+            leftDistance + this.fieldSort[i].width
+              ? parseFloat(this.fieldSort[i].width.split('px')[0])
+              : this.minWidth;
+        } else {
+          this.fixedLeftPosition.push(leftDistance);
+        }
+      }
+      // 表示从第几个开始固定右边
+      this.fixedLeftStratIndex = fixedLeftStratIndex;
     },
     // 设置data内容区的滚动监听
     setScrollListen() {
@@ -326,6 +356,13 @@ export default {
     initDom() {
       this.$children.forEach((item) => {
         if (item.yulangComponentName === 'yulang-table-item') {
+          /*
+           * prop:item的key名
+           * width:单个item的宽度
+           * fixed: 'left'或者'right'，实现左右固定
+           * vNode: 如果使用插槽，插槽里面的内容
+           * type: 'radio'，'checkbox'和'footer'表示该item是特殊框
+           */
           if (item.$vnode.child.$el.childNodes.length > 0) {
             if (item.type === 'radio' || item.type === 'checkbox') {
               this.fieldSort.unshift({
