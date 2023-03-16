@@ -292,10 +292,10 @@ export default {
     },
     // 设置data内容区的滚动监听
     setScrollListen() {
-      // this.$refs.dataTableRef.addEventListener('scroll', () => {
-      //   this.$refs.titleTableRef.scrollLeft =
-      //     this.$refs.dataTableRef.scrollLeft;
-      // });
+      this.$refs.dataTableRef.addEventListener('scroll', () => {
+        this.$refs.titleTableRef.scrollLeft =
+          this.$refs.dataTableRef.scrollLeft;
+      });
       this.$refs.footerTableRef.addEventListener('scroll', () => {
         this.$refs.titleTableRef.scrollLeft =
           this.$refs.footerTableRef.scrollLeft;
