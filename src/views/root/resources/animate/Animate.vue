@@ -6,234 +6,39 @@
         @tabClick="handleClick"
         :isKeepAlive="false"
       >
-        <yulang-tab-pane label="左侧进入" name="leftShow">
+        <yulang-tab-pane
+          v-for="tabPaneListItem in tabPaneList"
+          :key="tabPaneListItem.name"
+          :label="tabPaneListItem.label"
+          :name="tabPaneListItem.name"
+        >
           <div class="animationCollect">
             <div
               class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrLeftShow"
-              :key="item.value"
+              v-for="(
+                componentsDataItem, componentsDataIndex
+              ) in tabPaneListItem.componentsData"
+              :key="componentsDataItem.value"
             >
               <component
-                :is="AnimateClassArrLeftShow[index].value"
+                :is="componentsDataItem.value"
                 class="animationItemBoxContent"
               ></component>
-              <div
+              <yulang-link
                 class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
+                v-YulangCopy:[copySuccess]="componentsDataItem.copy"
               >
                 点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="左侧退出" name="leftLeave">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrLeftLeave"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrLeftLeave[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="右侧进入" name="rightShow">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrRightShow"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrRightShow[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="右侧退出" name="rightLeave">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrRightLeave"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrRightLeave[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="上边进入" name="topShow">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrTopShow"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrTopShow[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="上边退出" name="TopLeave">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrTopLeave"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrTopLeave[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="下边进入" name="bottomShow">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrBottomShow"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrBottomShow[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="下边退出" name="bottomLeave">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrBottomLeave"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrBottomLeave[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="中间" name="middle">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrMiddle"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrMiddle[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <!-- <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div> -->
-              {{ AnimateClassArrLeftShow[index]?.copy }}
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="X轴" name="xAxis">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrXAxis"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrXAxis[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
-            </div>
-          </div>
-        </yulang-tab-pane>
-
-        <yulang-tab-pane label="Y轴" name="yAxis">
-          <div class="animationCollect">
-            <div
-              class="animationItemBox"
-              v-for="(item, index) in AnimateClassArrYAxis"
-              :key="item.value"
-            >
-              <component
-                :is="AnimateClassArrYAxis[index].value"
-                class="animationItemBoxContent"
-              ></component>
-              <div
-                class="copyBtn"
-                v-YulangCopy:[copySuccess]="AnimateClassArrLeftShow[index].copy"
-              >
-                点我复制代码
-              </div>
+              </yulang-link>
+              <i
+                class="iconfont icon-shuaxin refresh"
+                @click="
+                  refreshItemAnimation(
+                    tabPaneListItem.componentsData,
+                    componentsDataIndex
+                  )
+                "
+              ></i>
             </div>
           </div>
         </yulang-tab-pane>
@@ -296,6 +101,64 @@ export default {
       AnimateClassArrYAxis,
       // 选中tab的属性
       activeName: 'leftShow',
+      test: false,
+      tabPaneList: [
+        {
+          label: '左侧进入',
+          name: 'leftShow',
+          componentsData: AnimateClassArrLeftShow,
+        },
+        {
+          label: '左侧退出',
+          name: 'leftLeave',
+          componentsData: AnimateClassArrLeftLeave,
+        },
+        {
+          label: '右侧进入',
+          name: 'rightShow',
+          componentsData: AnimateClassArrRightShow,
+        },
+        {
+          label: '右侧退出',
+          name: 'rightLeave',
+          componentsData: AnimateClassArrRightLeave,
+        },
+        {
+          label: '上边进入',
+          name: 'topShow',
+          componentsData: AnimateClassArrTopShow,
+        },
+        {
+          label: '上边退出',
+          name: 'TopLeave',
+          componentsData: AnimateClassArrTopLeave,
+        },
+        {
+          label: '下边进入',
+          name: 'bottomShow',
+          componentsData: AnimateClassArrBottomShow,
+        },
+        {
+          label: '下边退出',
+          name: 'bottomLeave',
+          componentsData: AnimateClassArrBottomLeave,
+        },
+        {
+          label: '中间',
+          name: 'middle',
+          componentsData: AnimateClassArrMiddle,
+        },
+        {
+          label: 'X轴',
+          name: 'xAxis',
+          componentsData: AnimateClassArrXAxis,
+        },
+        {
+          label: 'Y轴',
+          name: 'yAxis',
+          componentsData: AnimateClassArrYAxis,
+        },
+      ],
     };
   },
   computed: {
@@ -314,11 +177,18 @@ export default {
       this.$yulangNotification({
         message: '复制成功' + value,
         type: 'success',
+        timeout: 1500,
       });
     },
     // 控制tab切换
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    // 刷新当前动画效果
+    refreshItemAnimation(data, index) {
+      const value = data[index].value;
+      data[index].value = '';
+      this.$nextTick(() => (data[index].value = value));
     },
   },
 };

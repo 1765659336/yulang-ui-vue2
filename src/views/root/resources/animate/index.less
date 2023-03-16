@@ -19,14 +19,6 @@
     .isSelect {
       color: skyblue;
     }
-
-    .copyBtn {
-      padding: 10px;
-    }
-
-    & > div {
-      cursor: pointer;
-    }
   }
 }
 
@@ -48,7 +40,17 @@
 
     .copyBtn {
       position: absolute;
+      left: 50%;
       bottom: -30px;
+      transform: translateX(-50%);
+      width: 70%;
+    }
+
+    .refresh {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
     }
   }
 }
