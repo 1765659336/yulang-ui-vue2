@@ -54,6 +54,9 @@ import YulangBreadcrumb from "@/packages/yulang-breadcrumb/YulangBreadcrumb.vue"
 import YulangBreadcrumbItem from "@/packages/yulang-breadcrumb-item/YulangBreadcrumbItem.vue";
 import YulangInputNumber from "@/packages/yulang-input-number/YulangInputNumber.vue";
 import YulangAlert from "@/packages/yulang-alert/YulangAlert.vue";
+import YulangRow from "@/packages/yulang-row/YulangRow.vue";
+import YulangCol from "@/packages/yulang-col/YulangCol.vue";
+
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -157,6 +160,8 @@ export const Packages = [
   YulangInputNumber,
   YulangOption,
   YulangAlert,
+  YulangRow,
+  YulangCol
 ];
 
 // 工具函数

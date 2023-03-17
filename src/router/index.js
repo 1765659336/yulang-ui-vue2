@@ -668,6 +668,17 @@ const routes = [
               title: "警告 YulangAlert",
             },
           },
+          {
+            path: "yulang-layout",
+            name: "yulang-layout",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-layout/YulangLayout.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "布局 YulangLayout",
+            },
+          },
         ],
       },
       {
