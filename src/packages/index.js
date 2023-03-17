@@ -64,6 +64,8 @@ import "../assets/style/animate.css";
 import "@/assets/style/variable.less";
 // 引入全局class样式类
 import "@/assets/style/public.less";
+// 引入消息通知框的样式
+import "@/packages/yulang-notification/index.less";
 
 // 自定义指令
 import YulangCopy from "@/instruction/copy";
@@ -88,11 +90,13 @@ export const Directives = {
 // 自定义函数
 import { Loading } from "@/createNode/loading";
 import { Notification } from "@/createNode/notification";
+import { Message } from "@/createNode/message";
 
 // 自定义函数对象// 引入自定义方法(通知)
 export const CreateNode = [
   { name: "$yulangLoading", value: Loading },
   { name: "$yulangNotification", value: Notification },
+  { name: "$yulangMessage", value: Message },
 ];
 
 // 自定义组件数组
@@ -158,8 +162,7 @@ import * as Lib from "@/packages/lib";
 import Index from "@/tools/getIndex";
 
 const install = function (Vue, option) {
-  console.log(option,"全局引入option");
-
+  console.log(option, "全局引入option");
   Packages.forEach((component) => {
     Vue.component(component.name, component);
   });
@@ -191,7 +194,7 @@ export const changeDefault = function (Vue, option) {
 
   // 通过外部传入参数来设置脱离文档流如popover弹窗框的z-index值，保证后弹出的不会被之前弹出的盖住
   Vue.prototype.$yulangIndex = new Index(option.size.zIndex ?? 3000);
-  
+
   // 通过外部传入参数来设置主题变量
   if (option.themeCssVariable) {
     const root = document.querySelector(":root");
@@ -210,4 +213,5 @@ export default {
   Lib,
   Directives,
   changeDefault,
+  YulangMessage: Message,
 };

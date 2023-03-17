@@ -44,7 +44,6 @@
 
 <script>
 import {
-  codeStrB,
   codeStrB1,
   codeStrB2,
   codeStrB3,
@@ -56,7 +55,6 @@ export default {
   name: "root-theme",
   data() {
     return {
-      codeStrB,
       codeStrB1,
       codeStrB2,
       codeStrB3,
