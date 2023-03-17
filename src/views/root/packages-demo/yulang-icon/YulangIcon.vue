@@ -85,6 +85,22 @@ export default {
           name: "icon-shuaxin",
           value: '<i class="iconfont icon-shuaxin"></i>',
         },
+        {
+          name: "icon-jinggao",
+          value: '<i class="iconfont icon-jinggao"></i>',
+        },
+        {
+          name: "icon-guanbi1",
+          value: '<i class="iconfont icon-guanbi1"></i>',
+        },
+        {
+          name: "icon-zhengque",
+          value: '<i class="iconfont icon-zhengque"></i>',
+        },
+        {
+          name: "icon-tishi1",
+          value: '<i class="iconfont icon-tishi1"></i>',
+        },
       ],
     };
   },

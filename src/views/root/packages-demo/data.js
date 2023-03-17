@@ -176,6 +176,11 @@ export const unionData = [
   },
   {
     level: 2,
+    title: "Alert 警告",
+    path: "/root/packages-demo/yulang-alert",
+  },
+  {
+    level: 2,
     title: "Loading 加载中",
     path: "/root/packages-demo/yulang-loading",
   },

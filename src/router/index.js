@@ -90,10 +90,7 @@ const routes = [
           {
             path: "time",
             name: "time",
-            component: () =>
-              import(
-                "@/views/root/packages-demo/time/Time.vue"
-              ),
+            component: () => import("@/views/root/packages-demo/time/Time.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -104,9 +101,7 @@ const routes = [
             path: "install",
             name: "install",
             component: () =>
-              import(
-                "@/views/root/packages-demo/install/Install.vue"
-              ),
+              import("@/views/root/packages-demo/install/Install.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -117,9 +112,7 @@ const routes = [
             path: "version",
             name: "version",
             component: () =>
-              import(
-                "@/views/root/packages-demo/version/Version.vue"
-              ),
+              import("@/views/root/packages-demo/version/Version.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -130,9 +123,7 @@ const routes = [
             path: "start",
             name: "start",
             component: () =>
-              import(
-                "@/views/root/packages-demo/start/Start.vue"
-              ),
+              import("@/views/root/packages-demo/start/Start.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -580,19 +571,21 @@ const routes = [
             name: "yulang-pagination",
             component: () =>
               import(
-                "@/views/root/packages-demo/yulang-pagination/YulangPagination.vue"),
+                "@/views/root/packages-demo/yulang-pagination/YulangPagination.vue"
+              ),
             meta: {
               keepAlive: true,
               isAuth: true,
               title: "分页 YulangPagination",
-            }
+            },
           },
           {
             path: "yulang-table-plus",
             name: "yulang-table-plus",
             component: () =>
               import(
-                "@/views/root/packages-demo/yulang-table-plus/YulangTablePlus.vue"),
+                "@/views/root/packages-demo/yulang-table-plus/YulangTablePlus.vue"
+              ),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -662,6 +655,17 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "数字输入框 YulangInputNumber",
+            },
+          },
+          {
+            path: "yulang-alert",
+            name: "yulang-alert",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-alert/YulangAlert.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "警告 YulangAlert",
             },
           },
         ],
