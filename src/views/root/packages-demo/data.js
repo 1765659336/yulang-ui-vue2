@@ -129,15 +129,20 @@ export const unionData = [
     title: "Rate 评分",
     path: "/root/packages-demo/yulang-rate",
   },
-  {
-    level: 2,
-    title: "ColorPicker 颜色选择器",
-    path: "/root/packages-demo/yulang-color-picker",
-  },
+  // {
+  //   level: 2,
+  //   title: "ColorPicker 颜色选择器",
+  //   path: "/root/packages-demo/yulang-color-picker",
+  // },
   {
     level: 2,
     title: "Form 表单",
     path: "/root/packages-demo/yulang-form",
+  },
+  {
+    level: 2,
+    title: "DatePicker 日期选择器",
+    path: "/root/packages-demo/yulang-date-picker",
   },
   {
     level: 3,

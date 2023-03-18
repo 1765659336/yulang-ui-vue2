@@ -101,6 +101,10 @@ export default {
           name: "icon-tishi1",
           value: '<i class="iconfont icon-tishi1"></i>',
         },
+        {
+          name: "icon-riqi1",
+          value: '<i class="iconfont icon-riqi1"></i>',
+        },
       ],
     };
   },
