@@ -254,11 +254,11 @@ export const unionData = [
     title: "BackTop 回到顶部",
     path: "/root/packages-demo/yulang-back-top",
   },
-  {
-    level: 2,
-    title: "SwitchCopy 开关Copy",
-    path: "/root/packages-demo/yulang-switch-copy",
-  },
+  // {
+  //   level: 2,
+  //   title: "SwitchCopy 开关Copy",
+  //   path: "/root/packages-demo/yulang-switch-copy",
+  // },
   {
     level: 2,
     title: "Leader 引导",
@@ -284,11 +284,11 @@ export const unionData = [
     title: "Drawer 抽屉",
     path: "/root/packages-demo/yulang-drawer",
   },
-  {
-    level: 2,
-    title: "YulangTablePlus 表格PLUS",
-    path: "/root/packages-demo/yulang-table-plus",
-  },
+  // {
+  //   level: 2,
+  //   title: "YulangTablePlus 表格PLUS",
+  //   path: "/root/packages-demo/yulang-table-plus",
+  // },
   {
     level: 2,
     title: "Timeline 时间线",
