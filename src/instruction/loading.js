@@ -7,14 +7,7 @@ export default {
   // 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。
   inserted(el) {
     communicationObj.open = function () {
-      const instance = new YulangLoadingClass({
-        data() {
-          return {
-            height: el.offsetHeight + "px",
-            width: el.offsetWidth + "px",
-          };
-        },
-      }).$mount();
+      const instance = new YulangLoadingClass({}).$mount();
       let positionCopy = el.style.position;
       el.style.position = "relative";
       el.appendChild(instance.$el);
