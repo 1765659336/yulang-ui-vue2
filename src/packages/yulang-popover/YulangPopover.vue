@@ -148,14 +148,20 @@ export default {
           this.isShow = !this.isShow;
         }
       }
-      if (this.isShow) {
-        this.$nextTick(() => {
-          this.getPositionFn();
-          if (this.trigger === "hover" && this.isFirst) {
-            this.isFirst = false;
-            this.addEventListener();
-          }
-        });
+      // 显示之前添加钩子
+      if (this.$listeners.isShowBefore && !this.$listeners.isShowBefore()) {
+        // 表示打开之前的钩子函数返回false，不让打开
+        this.isShow = false;
+      } else {
+        if (this.isShow) {
+          this.$nextTick(() => {
+            this.getPositionFn();
+            if (this.trigger === "hover" && this.isFirst) {
+              this.isFirst = false;
+              this.addEventListener();
+            }
+          });
+        }
       }
     },
     getPositionFn() {
