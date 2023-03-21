@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkyulang_ui"]=self["webpackChunkyulang_ui"]||[]).push([[13],{3013:function(u,e,a){a.r(e),a.d(e,{default:function(){return r}});var l=function(){var u=this,e=u._self._c;return e("div",[e("yulang-switch-copy",{attrs:{textTitle:["开","关"]},model:{value:u.value,callback:function(e){u.value=e},expression:"value"}}),u._v(" "+u._s(u.value)+" ")],1)},n=[],t={name:"packages-demo-yulang-switch-copy",data(){return{value:!1}}},c=t,s=a(1001),i=(0,s.Z)(c,l,n,!1,null,"53c935df",null),r=i.exports}}]);
+//# sourceMappingURL=13.4b499b18.js.map

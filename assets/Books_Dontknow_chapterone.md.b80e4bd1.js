@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./app.0aef8e55.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/Dontknow/chapterone.md","lastUpdated":1667879025000}'),a={name:"Books/Dontknow/chapterone.md"};function n(r,s,c,p,d,_){return o(),t("div")}const f=e(a,[["render",n]]);export{m as __pageData,f as default};

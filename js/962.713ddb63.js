@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkyulang_ui"]=self["webpackChunkyulang_ui"]||[]).push([[962],{8962:function(e,u,l){l.r(u),l.d(u,{default:function(){return i}});var a=function(){var e=this,u=e._self._c;return u("yulang-color-picker",{model:{value:e.value,callback:function(u){e.value=u},expression:"value"}})},n=[],r={name:"packages-demo-yulang-color-picker",data(){return{value:"red"}}},c=r,t=l(1001),o=(0,t.Z)(c,a,n,!1,null,"51dc4d1e",null),i=o.exports}}]);
+//# sourceMappingURL=962.713ddb63.js.map

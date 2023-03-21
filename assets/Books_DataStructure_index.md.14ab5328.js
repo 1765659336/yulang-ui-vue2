@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app.0aef8e55.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"Books/DataStructure/index.md","lastUpdated":1667812013000}'),r={name:"Books/DataStructure/index.md"};function o(s,n,c,d,i,p){return a(),e("div")}const u=t(r,[["render",o]]);export{m as __pageData,u as default};

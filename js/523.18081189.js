@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkyulang_ui"]=self["webpackChunkyulang_ui"]||[]).push([[523],{7523:function(u,n,r){r.r(n),r.d(n,{default:function(){return l}});var t=function(){var u=this,n=u._self._c;return n("div",[u._v("root-resources-instruction")])},e=[],s={name:"root-resources-instruction"},i=s,o=r(1001),c=(0,o.Z)(i,t,e,!1,null,"1492d1df",null),l=c.exports}}]);
+//# sourceMappingURL=523.18081189.js.map

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkyulang_ui"]=self["webpackChunkyulang_ui"]||[]).push([[904],{3904:function(n,u,a){a.r(u),a.d(u,{default:function(){return f}});var e=function(){var n=this,u=n._self._c;return u("div",[u("yulang-canvas")],1)},l=[],c={name:"packages-demo-yulang-canvas"},s=c,t=a(1001),r=(0,t.Z)(s,e,l,!1,null,"1c411ef5",null),f=r.exports}}]);
+//# sourceMappingURL=904.b756fa06.js.map

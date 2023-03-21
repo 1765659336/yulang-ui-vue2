@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkyulang_ui"]=self["webpackChunkyulang_ui"]||[]).push([[728],{9728:function(u,e,n){n.r(e),n.d(e,{default:function(){return a}});var r=function(){var u=this,e=u._self._c;return e("div",[u._v("root-resources-tools")])},o=[],s={name:"root-resources-tools"},t=s,l=n(1001),c=(0,l.Z)(t,r,o,!1,null,"4350584e",null),a=c.exports}}]);
+//# sourceMappingURL=728.d102238b.js.map
