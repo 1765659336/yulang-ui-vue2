@@ -85,7 +85,7 @@ const routes = [
         children: [
           {
             path: "",
-            redirect: "yulang-switch",
+            redirect: "time",
           },
           {
             path: "time",
@@ -666,6 +666,28 @@ const routes = [
               keepAlive: true,
               isAuth: true,
               title: "警告 YulangAlert",
+            },
+          },
+          {
+            path: "yulang-layout",
+            name: "yulang-layout",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-layout/YulangLayout.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "布局 YulangLayout",
+            },
+          },
+          {
+            path: "yulang-date-picker",
+            name: "yulang-date-picker",
+            component: () =>
+              import("@/views/root/packages-demo/yulang-date-picker/YulangDatePicker.vue"),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "日期选择器 YulangDatePicker",
             },
           },
         ],

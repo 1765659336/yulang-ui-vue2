@@ -125,9 +125,13 @@ export default {
           time: "2023-03-16",
         },
         {
-          content: "新增Message消息提示组件、Alert警告组件",
+          content: "新增Message消息提示组件、Alert警告组件、Layout布局组件",
           time: "2023-03-17",
-        }
+        },
+        {
+          content: "新增日期选择器组件",
+          time: "2023-03-18",
+        },
       ],
     };
   },

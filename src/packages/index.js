@@ -54,6 +54,9 @@ import YulangBreadcrumb from "@/packages/yulang-breadcrumb/YulangBreadcrumb.vue"
 import YulangBreadcrumbItem from "@/packages/yulang-breadcrumb-item/YulangBreadcrumbItem.vue";
 import YulangInputNumber from "@/packages/yulang-input-number/YulangInputNumber.vue";
 import YulangAlert from "@/packages/yulang-alert/YulangAlert.vue";
+import YulangRow from "@/packages/yulang-row/YulangRow.vue";
+import YulangCol from "@/packages/yulang-col/YulangCol.vue";
+import YulangDatePicker from "@/packages/yulang-date-picker/YulangDatePicker.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -157,6 +160,9 @@ export const Packages = [
   YulangInputNumber,
   YulangOption,
   YulangAlert,
+  YulangRow,
+  YulangCol,
+  YulangDatePicker
 ];
 
 // 工具函数
@@ -165,6 +171,7 @@ import Index from "@/tools/getIndex";
 
 const install = function (Vue, option) {
   console.log(option, "全局引入option");
+
   Packages.forEach((component) => {
     Vue.component(component.name, component);
   });
