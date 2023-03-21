@@ -184,6 +184,7 @@ if (typeof window !== "undefined" && window.Vue) {
 } else {
   // 后面支持按需加载时，用户可能不会调用changeDefault来更改组件全局默认值,手动赋默认值
   window.Vue && (window.Vue.prototype.$yulangIndex = new Index(3000));
+  window.Vue && (window.prototype.yulangComponentSize = "medium");
 }
 
 export const changeDefault = function (Vue, option) {
