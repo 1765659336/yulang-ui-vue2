@@ -2,10 +2,10 @@
   <div class="yulang-packages-union">
     <div class="component-menu" id="component-menu">
       <div
-        v-for="(item, index) in unionData"
+        v-for="item in unionData"
         :key="item.title"
         :class="unionDataClass(item)"
-        @click="jumpComponentRouter(item, index)"
+        @click="jumpComponentRouter(item)"
       >
         {{ item.title }}
       </div>
@@ -37,13 +37,9 @@ export default {
   computed: {},
   methods: {
     // 跳转到
-    jumpComponentRouter(item, index) {
+    jumpComponentRouter(item) {
       if (item.level === 2 && item.path) {
         this.$router.push(item.path);
-        this.unionData = this.unionData.map((item, unionDataIndex) => {
-          item.active = index === unionDataIndex;
-          return item;
-        });
       }
     },
     unionDataClass(item) {
