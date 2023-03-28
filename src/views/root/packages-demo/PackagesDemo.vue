@@ -1,6 +1,7 @@
 <template>
   <div class="yulang-packages-union">
     <div class="component-menu" id="component-menu">
+      <yulang-link url="https://gitee.com/langlangyilangl/yulang-ui">gitee仓库地址</yulang-link>
       <div
         v-for="item in unionData"
         :key="item.title"
