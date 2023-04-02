@@ -707,6 +707,19 @@ const routes = [
               title: "级联选择器 YulangCascader",
             },
           },
+          {
+            path: "yulang-progress",
+            name: "yulang-progress",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-progress/YulangProgress.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "进度条 YulangProgress",
+            },
+          },
         ],
       },
       {

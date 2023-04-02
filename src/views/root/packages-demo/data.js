@@ -36,8 +36,8 @@ export const unionData = [
   },
   {
     level: 3,
-    title: 'Basic',
-    path: ''
+    title: "Basic",
+    path: "",
   },
   {
     level: 2,
@@ -76,8 +76,8 @@ export const unionData = [
   },
   {
     level: 3,
-    title: 'Form',
-    path: ''
+    title: "Form",
+    path: "",
   },
   {
     level: 2,
@@ -152,7 +152,7 @@ export const unionData = [
   {
     level: 3,
     title: "Data",
-    path: ''
+    path: "",
   },
   {
     level: 2,
@@ -185,9 +185,14 @@ export const unionData = [
     path: "/root/packages-demo/yulang-collapse",
   },
   {
+    level: 2,
+    title: "Progress 进度条",
+    path: "/root/packages-demo/yulang-progress",
+  },
+  {
     level: 3,
-    title: 'Notice',
-    path: ''
+    title: "Notice",
+    path: "",
   },
   {
     level: 2,
@@ -216,8 +221,8 @@ export const unionData = [
   },
   {
     level: 3,
-    title: 'Navigation',
-    path: ''
+    title: "Navigation",
+    path: "",
   },
   {
     level: 2,
@@ -236,8 +241,8 @@ export const unionData = [
   },
   {
     level: 3,
-    title: 'Others',
-    path: ""
+    title: "Others",
+    path: "",
   },
   {
     level: 2,
