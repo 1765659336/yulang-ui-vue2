@@ -145,6 +145,11 @@ export const unionData = [
     path: "/root/packages-demo/yulang-date-picker",
   },
   {
+    level: 2,
+    title: "Cascader 级联选择器",
+    path: "/root/packages-demo/yulang-cascader",
+  },
+  {
     level: 3,
     title: "Data",
     path: ''
