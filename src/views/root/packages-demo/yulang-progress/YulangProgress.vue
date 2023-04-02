@@ -22,9 +22,17 @@
       </yulang-describe-frame>
     </template>
     <template #d>
-        可以通过 color 设置进度条的颜色，color 可以接受颜色字符串，函数和数组。
+      可以通过 color 设置进度条的颜色，color 可以接受颜色字符串，函数和数组。
       <yulang-describe-frame :codeStr="codeStrD">
         <progress-d></progress-d>
+      </yulang-describe-frame>
+    </template>
+    <template #e>
+      Progress 组件可通过 type
+      属性来指定使用环形进度条，在环形进度条中，还可以通过 width
+      属性来设置其大小。
+      <yulang-describe-frame :codeStr="codeStrE">
+        <progress-e></progress-e>
       </yulang-describe-frame>
     </template>
   </yulang-anchor-point>
@@ -34,25 +42,29 @@
 import ProgressB from "./components/ProgressB.vue";
 import ProgressC from "./components/ProgressC.vue";
 import ProgressD from "./components/ProgressD.vue";
+import ProgressE from "./components/ProgressE.vue";
 
-import { codeStrB, codeStrC, codeStrD } from "./data";
+import { codeStrB, codeStrC, codeStrD, codeStrE } from "./data";
 export default {
   name: "packages-yulang-progress",
   components: {
     ProgressB,
     ProgressC,
     ProgressD,
+    ProgressE,
   },
   data() {
     return {
       codeStrB,
       codeStrC,
       codeStrD,
+      codeStrE,
       slotArr: [
         { slotName: "a", slotTitle: "Progress 进度条", level: 1 },
         { slotName: "b", slotTitle: "线形进度条", level: 2 },
         { slotName: "c", slotTitle: "百分比内显", level: 2 },
         { slotName: "d", slotTitle: "自定义颜色", level: 2 },
+        { slotName: "e", slotTitle: "环形进度条", level: 2 },
       ],
     };
   },

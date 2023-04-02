@@ -1,5 +1,5 @@
 <template>
-  <div class="packages-yulang-progress-container">
+  <div class="packages-yulang-progress-container" v-if="type === 'default'">
     <div
       class="yulang-progress-inner"
       :style="{ '--stroke-height--': strokeHeight + 'px' }"
@@ -22,7 +22,36 @@
         textInside ? 'progress-text-inside' : '',
       ]"
     >
-      {{ format ? format(percentage) : percentage + "%" }}
+      <span v-if="status === 'default'">{{
+        format ? format(percentage) : percentage + "%"
+      }}</span>
+      <i v-if="status === 'success'" class="iconfont icon-zhengque"></i>
+      <i v-if="status === 'exception'" class="iconfont icon-guanbi1"></i>
+      <i v-if="status === 'warning'" class="iconfont icon-jinggao"></i>
+    </div>
+  </div>
+  <div
+    v-else
+    class="packages-yulang-progress-circle-container"
+    :style="{
+      '--percentage-width--': percentage + '%',
+      '--custom-color--': colorComputed,
+    }"
+  >
+    <div
+      :class="[
+        'yulang-progress-content',
+        colorComputed ? 'progress-custom-color' : '',
+      ]"
+    ></div>
+    <div class="yulang-progress-mask"></div>
+    <div class="yulang-progress-text">
+      <span v-if="status === 'default'">{{
+        format ? format(percentage) : percentage + "%"
+      }}</span>
+      <i v-if="status === 'success'" class="iconfont icon-zhengque"></i>
+      <i v-if="status === 'exception'" class="iconfont icon-guanbi1"></i>
+      <i v-if="status === 'warning'" class="iconfont icon-jinggao"></i>
     </div>
   </div>
 </template>
@@ -49,6 +78,7 @@ export default {
     // 状态
     status: {
       type: String,
+      default: "default",
       validator(value) {
         return ["default", "success", "warning", "exception"].find(
           (item) => item === value
@@ -68,6 +98,14 @@ export default {
     // 自定义进度条完成的颜色
     color: {
       type: [String, Function, Array],
+    },
+    // 进度条类型
+    type: {
+      type: String,
+      default: "default",
+      validator(value) {
+        return ["default", "circle"].find((item) => item === value);
+      },
     },
   },
   computed: {
