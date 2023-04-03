@@ -733,6 +733,19 @@ const routes = [
               title: "标记 YulangBadge",
             },
           },
+          {
+            path: "yulang-avatar",
+            name: "yulang-avatar",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-avatar/YulangAvatar.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "头像 Avatar",
+            },
+          },
         ],
       },
       {

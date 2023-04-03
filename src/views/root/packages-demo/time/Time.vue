@@ -140,6 +140,14 @@ export default {
           content: "新增进度条组件",
           time: "2023-04-02",
         },
+        {
+          content: "新增标记组件",
+          time: "2023-04-03",
+        },
+        {
+          content: "新增头像组件",
+          time: "2023-04-04",
+        },
       ],
     };
   },
@@ -148,6 +156,7 @@ export default {
 
 <style lang="less" scoped>
 .packages-demo-time-container {
+  overflow: auto;
   .radio-group-container {
     margin: 1rem 0;
   }

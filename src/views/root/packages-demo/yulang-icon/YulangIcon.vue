@@ -105,6 +105,10 @@ export default {
           name: "icon-riqi1",
           value: '<i class="iconfont icon-riqi1"></i>',
         },
+        {
+          name: "icon-yonghu",
+          value: '<i class="iconfont icon-yonghu"></i>',
+        },
       ],
     };
   },

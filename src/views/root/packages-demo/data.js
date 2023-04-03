@@ -195,6 +195,11 @@ export const unionData = [
     path: "/root/packages-demo/yulang-badge",
   },
   {
+    level: 2,
+    title: "Avatar 头像",
+    path: "/root/packages-demo/yulang-avatar",
+  },
+  {
     level: 3,
     title: "Notice",
     path: "",
