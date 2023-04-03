@@ -720,6 +720,19 @@ const routes = [
               title: "进度条 YulangProgress",
             },
           },
+          {
+            path: "yulang-badge",
+            name: "yulang-badge",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-badge/YulangBadge.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "标记 YulangBadge",
+            },
+          },
         ],
       },
       {

@@ -59,6 +59,7 @@ import YulangCol from "@/packages/yulang-col/YulangCol.vue";
 import YulangDatePicker from "@/packages/yulang-date-picker/YulangDatePicker.vue";
 import YulangCascader from "@/packages/yulang-cascader/YulangCascader.vue";
 import YulangProgress from "@/packages/yulang-progress/YulangProgress.vue";
+import YulangBadge from "@/packages/yulang-badge/YulangBadge.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -167,6 +168,7 @@ export const Packages = [
   YulangDatePicker,
   YulangCascader,
   YulangProgress,
+  YulangBadge
 ];
 
 // 工具函数

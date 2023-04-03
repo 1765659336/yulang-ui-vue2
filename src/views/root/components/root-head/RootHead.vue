@@ -40,7 +40,7 @@ export default {
   },
   data() {
     return {
-      theme: false,
+      theme: true,
       btnArr: [
         {
           id: 'guide',
