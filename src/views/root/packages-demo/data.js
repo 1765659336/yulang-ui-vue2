@@ -259,11 +259,11 @@ export const unionData = [
     title: "Signaure 签名板",
     path: "/root/packages-demo/yulang-signaure",
   },
-  {
-    level: 2,
-    title: "canvas 画布",
-    path: "/root/packages-demo/yulang-canvas",
-  },
+  // {
+  //   level: 2,
+  //   title: "canvas 画布",
+  //   path: "/root/packages-demo/yulang-canvas",
+  // },
   {
     level: 2,
     title: "Dialog 对话框",
