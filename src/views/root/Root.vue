@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      isShowLeader: true,
+      isShowLeader: false,
       leaderList: [
         {
           // 指定id
@@ -66,6 +66,14 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    if (!sessionStorage.getItem("isFirstVisit")) {
+      this.isShowLeader = true;
+      sessionStorage.setItem(("isFirstVisit", true));
+    }else {
+      this.isShowLeader = false;
+    }
   },
 };
 </script>
