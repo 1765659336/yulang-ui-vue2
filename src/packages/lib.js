@@ -139,8 +139,8 @@ const judgmentBottom = function (triggerDom, contentDom, offsetX, offsetY) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomRight = window.innerWidth - right;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (
@@ -165,8 +165,8 @@ const judgmentBottomStart = function (
   const { right, bottom } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomRight = window.innerWidth - right;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -201,7 +201,7 @@ const judgmentLeft = function (triggerDom, contentDom, offsetX) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomLeft < contentDom.clientWidth + offsetX) {
@@ -220,7 +220,7 @@ const judgmentLeftStart = function (triggerDom, contentDom, offsetX) {
   const { bottom, left: triggerDomLeft } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomLeft < contentDom.clientWidth + offsetX) {
@@ -236,7 +236,7 @@ const judgmentTopStart = function (triggerDom, contentDom, offsetX, offsetY) {
   const { right, top: triggerDomTop } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomRight = window.innerWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -256,7 +256,7 @@ const judgmentTop = function (triggerDom, contentDom, offsetX, offsetY) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomRight = window.innerWidth - right;
 
   // 判断水平方向是否可以放下
   if (
@@ -276,7 +276,7 @@ const judgmentTopEnd = function (triggerDom, contentDom, offsetX, offsetY) {
   const { right, top: triggerDomTop } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomRight = window.innerWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -293,8 +293,8 @@ const judgmentRightStart = function (triggerDom, contentDom, offsetX) {
   const { bottom, right } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomRight = window.innerWidth - right;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -315,8 +315,8 @@ const judgmentRight = function (triggerDom, contentDom, offsetX) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomRight = window.innerWidth - right;
+  let triggerDomBottom =window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -336,7 +336,7 @@ const judgmentRightEnd = function (triggerDom, contentDom, offsetX) {
   const { top: triggerDomTop, right } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomRight = window.innerWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -353,8 +353,8 @@ const judgmentBottomEnd = function (triggerDom, contentDom, offsetX, offsetY) {
   const { right, bottom } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right;
-  let triggerDomBottom = document.body.clientHeight - bottom;
+  let triggerDomRight = window.innerWidth - right;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -403,7 +403,7 @@ export const getPosition = function (
   contentDom, // 弹出内容区的Dom
   offsetX = 0,
   offsetY = 0,
-  checkNumber = -1
+  checkNumber = 0
 ) {
   // 如果校验了一个轮回
   if (checkNumber === positionArr.length + 1) {
