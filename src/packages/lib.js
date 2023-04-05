@@ -139,8 +139,8 @@ const judgmentBottom = function (triggerDom, contentDom, offsetX, offsetY) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (
@@ -162,12 +162,11 @@ const judgmentBottomStart = function (
   offsetX,
   offsetY
 ) {
-  const { right, bottom } =
-    triggerDom.getBoundingClientRect();
+  const { right, bottom } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -202,7 +201,7 @@ const judgmentLeft = function (triggerDom, contentDom, offsetX) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomLeft < contentDom.clientWidth + offsetX) {
@@ -218,12 +217,10 @@ const judgmentLeft = function (triggerDom, contentDom, offsetX) {
   return true;
 };
 const judgmentLeftStart = function (triggerDom, contentDom, offsetX) {
-  const { bottom, left: triggerDomLeft } =
-    triggerDom.getBoundingClientRect();
+  const { bottom, left: triggerDomLeft } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomBottom = document.body.clientHeight - bottom
-
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomLeft < contentDom.clientWidth + offsetX) {
@@ -236,11 +233,10 @@ const judgmentLeftStart = function (triggerDom, contentDom, offsetX) {
   return true;
 };
 const judgmentTopStart = function (triggerDom, contentDom, offsetX, offsetY) {
-  const { right, top: triggerDomTop } =
-    triggerDom.getBoundingClientRect();
+  const { right, top: triggerDomTop } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
+  let triggerDomRight = document.body.clientWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -260,8 +256,7 @@ const judgmentTop = function (triggerDom, contentDom, offsetX, offsetY) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-
+  let triggerDomRight = document.body.clientWidth - right;
 
   // 判断水平方向是否可以放下
   if (
@@ -278,11 +273,10 @@ const judgmentTop = function (triggerDom, contentDom, offsetX, offsetY) {
 };
 
 const judgmentTopEnd = function (triggerDom, contentDom, offsetX, offsetY) {
-  const { right, top: triggerDomTop } =
-    triggerDom.getBoundingClientRect();
+  const { right, top: triggerDomTop } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
+  let triggerDomRight = document.body.clientWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -296,12 +290,11 @@ const judgmentTopEnd = function (triggerDom, contentDom, offsetX, offsetY) {
 };
 
 const judgmentRightStart = function (triggerDom, contentDom, offsetX) {
-  const { bottom, right } =
-    triggerDom.getBoundingClientRect();
+  const { bottom, right } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -322,8 +315,8 @@ const judgmentRight = function (triggerDom, contentDom, offsetX) {
   } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -340,11 +333,10 @@ const judgmentRight = function (triggerDom, contentDom, offsetX) {
 };
 
 const judgmentRightEnd = function (triggerDom, contentDom, offsetX) {
-  const { top: triggerDomTop, right } =
-    triggerDom.getBoundingClientRect();
+  const { top: triggerDomTop, right } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
+  let triggerDomRight = document.body.clientWidth - right;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -358,12 +350,11 @@ const judgmentRightEnd = function (triggerDom, contentDom, offsetX) {
 };
 
 const judgmentBottomEnd = function (triggerDom, contentDom, offsetX, offsetY) {
-  const { right, bottom } =
-    triggerDom.getBoundingClientRect();
+  const { right, bottom } = triggerDom.getBoundingClientRect();
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
-  let triggerDomRight = document.body.clientWidth - right
-  let triggerDomBottom = document.body.clientHeight - bottom
+  let triggerDomRight = document.body.clientWidth - right;
+  let triggerDomBottom = document.body.clientHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDom.clientWidth + triggerDomRight < contentDom.clientWidth) {
@@ -395,13 +386,7 @@ export const judgmentObj = {
 };
 
 // 当前位置放不下的回调
-const negateFn = function (
-  triggerDom,
-  contentDom,
-  offsetX,
-  offsetY,
-  index
-) {
+const negateFn = function (triggerDom, contentDom, offsetX, offsetY, index) {
   return getPosition(
     positionArr[index] ?? positionArr[0],
     triggerDom,
@@ -412,11 +397,10 @@ const negateFn = function (
   );
 };
 
-
 export const getPosition = function (
   defaultPosition,
   triggerDom, // parentDom
-  contentDom,  // 弹出内容区的Dom
+  contentDom, // 弹出内容区的Dom
   offsetX = 0,
   offsetY = 0,
   checkNumber = -1
@@ -447,8 +431,6 @@ export const getPosition = function (
   return defaultPosition;
 };
 
-
-
 // 改变dom的位置
 /* 
   fatherDom : 父dom
@@ -462,117 +444,121 @@ export const changePosition = function (
   sonDom,
   position
 ) {
-  const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollLeft =
-    document.documentElement.scrollLeft || document.body.scrollLeft;
+  const {
+    top: triggerTop,
+    bottom: triggerBottom,
+    right: triggerRight,
+    left: triggerLeft,
+    width: triggerWidth,
+    height: triggerHeight,
+  } = triggerDom.getBoundingClientRect();
   switch (position) {
     case "bottom-start":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.top = triggerDom.clientHeight + "px";
-        sonDom.style.left = "0px";
+        sonDom.style.top = triggerBottom + "px";
+        sonDom.style.left = triggerLeft + "px";
         sonDom.style.transform = "translate(0px, 10px)";
       }
       break;
     case "bottom":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.top = triggerDom.clientHeight + "px";
-        sonDom.style.left = triggerDom.clientWidth / 2 - scrollLeft + "px";
+        sonDom.style.top = triggerBottom + "px";
+        sonDom.style.left = triggerLeft + triggerWidth / 2 + "px";
         sonDom.style.transform = "translate(-50%, 10px)";
       }
       break;
     case "bottom-end":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.top = triggerDom.clientHeight + "px";
-        sonDom.style.left = triggerDom.clientWidth - sonDom.clientWidth + "px";
+        sonDom.style.top = triggerBottom + "px";
+        sonDom.style.left = triggerRight - sonDom.clientWidth + "px";
         sonDom.style.transform = "translate(0px, 10px)";
       }
       break;
     case "left-end":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = "0px";
-        sonDom.style.left = -sonDom.clientWidth - scrollLeft + "px";
+        sonDom.style.top = triggerBottom - sonDom.clientHeight + "px";
+        sonDom.style.left = triggerLeft - sonDom.clientWidth + "px";
         sonDom.style.transform = "translate(-10px, 0px)";
       }
       break;
     case "left":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight / 2 + scrollTop + "px";
-        sonDom.style.left = -sonDom.clientWidth - scrollLeft + "px";
-        sonDom.style.transform = "translate(-10px, 50%)";
+        sonDom.style.top = triggerBottom - triggerHeight / 2 + "px";
+        sonDom.style.left = triggerLeft - sonDom.clientWidth + "px";
+        sonDom.style.transform = "translate(-10px, -50%)";
       }
       break;
     case "left-start":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.top = "0px";
-        sonDom.style.left = -sonDom.clientWidth - scrollLeft + "px";
+        sonDom.style.top = triggerBottom - sonDom.clientHeight + "px";
+        sonDom.style.left = triggerLeft - sonDom.clientWidth + "px";
         sonDom.style.transform = "translate(-10px, 0px)";
       }
       break;
     case "top-start":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight + "px";
-        sonDom.style.left = "0px";
+        sonDom.style.top = triggerTop - sonDom.clientHeight + "px";
+        sonDom.style.left = triggerLeft + "px";
         sonDom.style.transform = "translate(0px, -10px)";
       }
       break;
     case "top":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight + "px";
-        sonDom.style.left = triggerDom.clientWidth / 2 + "px";
+        sonDom.style.top = triggerTop - sonDom.clientHeight + "px";
+        sonDom.style.left = triggerLeft + sonDom.clientWidth / 2 + "px";
         sonDom.style.transform = "translate(-50%, -10px)";
       }
       break;
     case "top-end":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight + "px";
-        sonDom.style.left = triggerDom.clientWidth + "px";
+        sonDom.style.top = triggerTop - sonDom.clientHeight + "px";
+        sonDom.style.left = triggerLeft + sonDom.clientWidth + "px";
         sonDom.style.transform = "translate(-100%, -10px)";
       }
       break;
     case "right-start":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight + scrollTop + "px";
-        sonDom.style.left = triggerDom.clientWidth + "px";
-        sonDom.style.transform = "translate(10px, 100%)";
+        sonDom.style.top = triggerTop + "px";
+        sonDom.style.left = triggerRight + "px";
+        sonDom.style.transform = "translate(10px, 0)";
       }
       break;
     case "right":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = triggerDom.clientHeight / 2 + scrollTop + "px";
-        sonDom.style.left = triggerDom.clientWidth + "px";
-        sonDom.style.transform = "translate(10px, 50%)";
+        sonDom.style.top = triggerTop + triggerHeight / 2 + "px";
+        sonDom.style.left = triggerRight + "px";
+        sonDom.style.transform = "translate(10px, -50%)";
       }
       break;
     case "right-end":
       {
-        fatherDom.style.position = "relative";
+        // fatherDom.style.position = "relative";
         sonDom.style.position = "absolute";
-        sonDom.style.bottom = scrollTop + "px";
-        sonDom.style.left = triggerDom.clientWidth + "px";
-        sonDom.style.transform = "translate(10px, 0)";
+        sonDom.style.top = triggerTop + triggerHeight + "px";
+        sonDom.style.left = triggerRight + "px";
+        sonDom.style.transform = "translate(10px, -100%)";
       }
       break;
   }

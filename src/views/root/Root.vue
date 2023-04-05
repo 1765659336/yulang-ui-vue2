@@ -24,45 +24,45 @@
 </template>
 
 <script>
-import RootHead from '@/views/root/components/root-head/RootHead.vue';
+import RootHead from "@/views/root/components/root-head/RootHead.vue";
 export default {
-  name: 'yulang-root',
+  name: "yulang-root",
   components: {
     RootHead,
   },
   data() {
     return {
-      isShowLeader: false,
+      isShowLeader: true,
       leaderList: [
         {
           // 指定id
-          target: '#guide',
-          text: '配置和使用yulangUI的一些相关事宜',
-          placement: 'bottom',
+          target: "#guide",
+          text: "配置和使用yulangUI的一些相关事宜",
+          placement: "bottom",
         },
         {
           // 指定id
-          target: '#packages-demo',
-          text: '这里包含组件的使用说明演示和属性',
-          placement: 'bottom',
+          target: "#packages-demo",
+          text: "这里包含组件的使用说明演示和属性",
+          placement: "bottom",
         },
         {
           // 指定id
-          target: '#theme',
-          text: '不知道干嘛的',
-          placement: 'bottom',
+          target: "#theme",
+          text: "设置组件库的全局风格配置",
+          placement: "bottom",
         },
         {
           // 指定id
-          target: '#resources',
-          text: '包含开箱即用的全局动画,自定义指令和工具函数',
-          placement: 'bottom',
+          target: "#resources",
+          text: "包含开箱即用的全局动画,自定义指令和工具函数",
+          placement: "bottom",
         },
         {
           // 指定id
-          target: '#switchTheme',
-          text: '主题的选择,支持自定义主题',
-          placement: 'bottom',
+          target: "#switchTheme",
+          text: "主题的选择,支持自定义主题",
+          placement: "bottom",
         },
       ],
     };
@@ -71,5 +71,5 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import url('./index.less');
+@import url("./index.less");
 </style>
