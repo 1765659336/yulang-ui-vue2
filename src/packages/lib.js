@@ -316,7 +316,7 @@ const judgmentRight = function (triggerDom, contentDom, offsetX) {
   // right和bottom的参数是分别距离（左边+宽度）和（上面+高度）
   // 而不是距离右边和下面的距离，所以需要用屏幕宽高度减去这个值
   let triggerDomRight = window.innerWidth - right;
-  let triggerDomBottom =window.innerHeight - bottom;
+  let triggerDomBottom = window.innerHeight - bottom;
 
   // 判断水平方向是否可以放下
   if (triggerDomRight < contentDom.clientWidth + offsetX) {
@@ -610,3 +610,11 @@ export const equar = (a, b) => {
     return true;
   }
 };
+
+// 判断是pc端还是移动端
+export function isMobile() {
+  let flag = navigator.userAgent.match(
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+  );
+  return flag;
+}

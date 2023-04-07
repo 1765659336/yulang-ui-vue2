@@ -21,7 +21,7 @@
     </div>
     <yulang-switch
       id="switchTheme"
-      v-model="theme"
+      v-model="themeComputed"
       inactiveText="绿"
       activeText="蓝"
       inactiveColor="#2FFF00"
@@ -32,59 +32,51 @@
 </template>
 
 <script>
-import YulangSwitch from '@/packages/yulang-switch/YulangSwitch.vue';
+import YulangSwitch from "@/packages/yulang-switch/YulangSwitch.vue";
+import { btnArr } from "./data";
 export default {
-  name: 'yulang-head',
+  name: "yulang-head",
   components: {
     YulangSwitch,
   },
+  props: {
+    theme: {},
+  },
   data() {
     return {
-      theme: true,
-      btnArr: [
-        {
-          id: 'guide',
-          title: '指南',
-          path: '/root/guide',
-        },
-        {
-          id: 'packages-demo',
-          title: '组件',
-          path: '/root/packages-demo',
-        },
-        {
-          id: 'theme',
-          title: '主题',
-          path: '/root/theme',
-        },
-        {
-          id: 'resources',
-          title: '资源',
-          path: '/root/resources',
-        },
-      ],
+      btnArr,
     };
+  },
+  computed: {
+    themeComputed: {
+      get() {
+        return this.theme;
+      },
+      set(newVal) {
+        this.$emit("update:theme", newVal);
+      },
+    },
   },
   watch: {
     theme: {
       handler(val) {
         // 右边是绿色系的
-        const root = document.querySelector(':root');
+        const root = document.querySelector(":root");
         root.style.setProperty(
-          '--yulang-theme-color--',
-          val ? '#69DFEB' : '#00DF74'
+          "--yulang-theme-color--",
+          val ? "#69DFEB" : "#00DF74"
         );
         root.style.setProperty(
-          '--yulang-font-color--',
-          val ? '#69DFEB' : '#2FFF00'
+          "--yulang-font-color--",
+          val ? "#69DFEB" : "#2FFF00"
         );
         root.style.setProperty(
-          '--yulang-border-color--',
-          val ? '#87D0EC' : '#00DF74'
+          "--yulang-border-color--",
+          val ? "#87D0EC" : "#00DF74"
         );
         root.style.setProperty(
-          '--yulang-background-color--',
-          val ? '#0094A3' : '#00BB9C'
+          "--yulang-background-color--",
+          val ? "#0094A3" : "#00BB9C"
         );
       },
       immediate: true,
@@ -99,7 +91,7 @@ export default {
       // console.log(this.$route);
       return {
         // 选中样式
-        ['yulang-head-menu-item-active']:
+        ["yulang-head-menu-item-active"]:
           item.path === this.$route.matched[1].path,
       };
     },
@@ -108,5 +100,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('./index.less');
+@import url("./index.less");
 </style>

@@ -1,41 +1,43 @@
 <template>
-  <yulang-anchor-point :slotArr="slotArr">
-    <template #a> 组件库支持一些全局配置来实现一些个性化需求 </template>
-    <template #b> 支持使用者使用三种方式来修改主题，具体演示代码如下 </template>
-    <template #b1>
-      <yulang-describe-frame :codeStr="codeStrB1">
-        在引入YulangUI时，使用暴露的方法changeDefault传参修改
-      </yulang-describe-frame>
-    </template>
-    <template #b2>
-      <yulang-describe-frame :codeStr="codeStrB2">
-        在自己项目中手动执行下面js代码，直接修改
-      </yulang-describe-frame>
-    </template>
-    <template #b3>
-      <yulang-describe-frame :codeStr="codeStrB3">
-        手动引入一个样式文件，位置需要在YulangUI样式文件后面引入，然后样式文件中的内容如下即可修改
-      </yulang-describe-frame>
-    </template>
-    <template #b4>
-      <yulang-describe-frame :codeStr="codeStrB4">
-        所支持的所有css变量
-      </yulang-describe-frame>
-    </template>
-    <template #c>
-      <yulang-describe-frame :codeStr="codeStrC">
-        在引入YulangUI时，使用暴露的方法changeDefaultsize(size:String"medium"|"small"|"mini")修改
-      </yulang-describe-frame>
-    </template>
-    <template #d>
-      <yulang-describe-frame :codeStr="codeStrD">
-        在引入YulangUI时，使用暴露的方法changeDefault({zIndex:Number})修改
-      </yulang-describe-frame>
-    </template>
-    <template #e>
-      <yulang-describe-frame :codeStr="codeStrE"></yulang-describe-frame>
-    </template>
-  </yulang-anchor-point>
+    <yulang-anchor-point :slotArr="slotArr">
+      <template #a> 组件库支持一些全局配置来实现一些个性化需求 </template>
+      <template #b>
+        支持使用者使用三种方式来修改主题，具体演示代码如下
+      </template>
+      <template #b1>
+        <yulang-describe-frame :codeStr="codeStrB1">
+          在引入YulangUI时，使用暴露的方法changeDefault传参修改
+        </yulang-describe-frame>
+      </template>
+      <template #b2>
+        <yulang-describe-frame :codeStr="codeStrB2">
+          在自己项目中手动执行下面js代码，直接修改
+        </yulang-describe-frame>
+      </template>
+      <template #b3>
+        <yulang-describe-frame :codeStr="codeStrB3">
+          手动引入一个样式文件，位置需要在YulangUI样式文件后面引入，然后样式文件中的内容如下即可修改
+        </yulang-describe-frame>
+      </template>
+      <template #b4>
+        <yulang-describe-frame :codeStr="codeStrB4">
+          所支持的所有css变量
+        </yulang-describe-frame>
+      </template>
+      <template #c>
+        <yulang-describe-frame :codeStr="codeStrC">
+          在引入YulangUI时，使用暴露的方法changeDefaultsize(size:String"medium"|"small"|"mini")修改
+        </yulang-describe-frame>
+      </template>
+      <template #d>
+        <yulang-describe-frame :codeStr="codeStrD">
+          在引入YulangUI时，使用暴露的方法changeDefault({zIndex:Number})修改
+        </yulang-describe-frame>
+      </template>
+      <template #e>
+        <yulang-describe-frame :codeStr="codeStrE"></yulang-describe-frame>
+      </template>
+    </yulang-anchor-point>
 </template>
 
 <script>
