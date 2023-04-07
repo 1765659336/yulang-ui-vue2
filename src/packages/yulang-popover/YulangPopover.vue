@@ -178,6 +178,7 @@ export default {
       }
     },
     showChange(e, type) {
+      console.log("showChange", e);
       if (type) {
         if (type === "down") {
           this.openShow();
@@ -194,13 +195,13 @@ export default {
             this.time = setTimeout(() => (this.isShow = false), 100);
           }
         } else {
-          this.isShow = !this.isShow;
+          // this.isShow = !this.isShow;
+          if (!this.isShow) {
+            this.openShow();
+          } else {
+            this.closeShow();
+          }
         }
-      }
-      if (this.isShow) {
-        this.openShow();
-      } else {
-        this.closeShow();
       }
     },
     getPositionFn() {
