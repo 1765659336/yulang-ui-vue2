@@ -17,6 +17,10 @@ import "normalize.css";
 //   },
 // });
 
+// 判断是移动端还是PC端
+import { isMobile } from "@/packages/lib";
+Vue.prototype.IsMobile = isMobile();
+
 // element引入
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";

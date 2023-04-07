@@ -1,13 +1,18 @@
 <template>
   <div class="container">
-    <root-head></root-head>
-    <keep-alive>
-      <!-- 需要缓存的视图组件 -->
-      <router-view v-if="$route.meta.keepAlive"></router-view>
-    </keep-alive>
-    <!-- 不需要缓存的视图组件 -->
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
-
+    <root-head class="root-head-div" :theme.sync="theme"></root-head>
+    <div class="root-content-view">
+      <keep-alive>
+        <!-- 需要缓存的视图组件 -->
+        <router-view v-if="$route.meta.keepAlive"></router-view>
+      </keep-alive>
+      <!-- 不需要缓存的视图组件 -->
+      <router-view v-if="!$route.meta.keepAlive"></router-view>
+    </div>
+    <root-head-mobile
+      class="root-head-mobile-div"
+      :theme.sync="theme"
+    ></root-head-mobile>
     <!-- 这是引导组件 -->
     <yulang-leader
       :leader-list="leaderList"
@@ -25,14 +30,18 @@
 
 <script>
 import RootHead from "@/views/root/components/root-head/RootHead.vue";
+import RootHeadMobile from "@/views/root/components/root-head-mobile/RootHeadMobile.vue";
+
 export default {
   name: "yulang-root",
   components: {
     RootHead,
+    RootHeadMobile,
   },
   data() {
     return {
-      isShowLeader: true,
+      isShowLeader: false,
+      theme: true,
       leaderList: [
         {
           // 指定id

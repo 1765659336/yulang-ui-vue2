@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3878120 */
-  src: url('iconfont.woff2?t=1680540156288') format('woff2'),
-       url('iconfont.woff?t=1680540156288') format('woff'),
-       url('iconfont.ttf?t=1680540156288') format('truetype');
+  src: url('iconfont.woff2?t=1680855228029') format('woff2'),
+       url('iconfont.woff?t=1680855228029') format('woff'),
+       url('iconfont.ttf?t=1680855228029') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhuti_tiaosepan_o:before {
+  content: "\eb6e";
 }
 
 .icon-yonghu:before {

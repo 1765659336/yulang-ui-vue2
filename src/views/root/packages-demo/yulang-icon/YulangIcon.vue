@@ -114,6 +114,10 @@ export default {
           name: "icon-yonghu",
           value: '<i class="iconfont icon-yonghu"></i>',
         },
+        {
+          name: "icon-zhuti_tiaosepan_o",
+          value: '<i class="iconfont icon-zhuti_tiaosepan_o"></i>',
+        },
       ],
     };
   },
