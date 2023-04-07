@@ -13,11 +13,6 @@
       class="root-head-mobile-div"
       :theme.sync="theme"
     ></root-head-mobile>
-    <!-- 这是引导组件 -->
-    <yulang-leader
-      :leader-list="leaderList"
-      v-if="isShowLeader"
-    ></yulang-leader>
 
     <!-- 这是回到顶部组件 -->
     <yulang-back-top :bottom="100" :right="100" :hiddenValue="100">
@@ -40,49 +35,8 @@ export default {
   },
   data() {
     return {
-      isShowLeader: false,
       theme: true,
-      leaderList: [
-        {
-          // 指定id
-          target: "#guide",
-          text: "配置和使用yulangUI的一些相关事宜",
-          placement: "bottom",
-        },
-        {
-          // 指定id
-          target: "#packages-demo",
-          text: "这里包含组件的使用说明演示和属性",
-          placement: "bottom",
-        },
-        {
-          // 指定id
-          target: "#theme",
-          text: "设置组件库的全局风格配置",
-          placement: "bottom",
-        },
-        {
-          // 指定id
-          target: "#resources",
-          text: "包含开箱即用的全局动画,自定义指令和工具函数",
-          placement: "bottom",
-        },
-        {
-          // 指定id
-          target: "#switchTheme",
-          text: "主题的选择,支持自定义主题",
-          placement: "bottom",
-        },
-      ],
     };
-  },
-  mounted() {
-    if (!sessionStorage.getItem("isFirstVisit")) {
-      this.isShowLeader = true;
-      sessionStorage.setItem(("isFirstVisit", true));
-    }else {
-      this.isShowLeader = false;
-    }
   },
 };
 </script>

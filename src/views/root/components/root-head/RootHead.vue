@@ -28,6 +28,11 @@
       activeColor="#69DFEB"
       >切换主题</yulang-switch
     >
+    <!-- 这是引导组件 -->
+    <yulang-leader
+      :leader-list="leaderList"
+      v-if="isShowLeader"
+    ></yulang-leader>
   </div>
 </template>
 
@@ -45,6 +50,39 @@ export default {
   data() {
     return {
       btnArr,
+      isShowLeader: false,
+      leaderList: [
+        {
+          // 指定id
+          target: "#guide",
+          text: "配置和使用yulangUI的一些相关事宜",
+          placement: "bottom",
+        },
+        {
+          // 指定id
+          target: "#packages-demo",
+          text: "这里包含组件的使用说明演示和属性",
+          placement: "bottom",
+        },
+        {
+          // 指定id
+          target: "#theme",
+          text: "设置组件库的全局风格配置",
+          placement: "bottom",
+        },
+        {
+          // 指定id
+          target: "#resources",
+          text: "包含开箱即用的全局动画,自定义指令和工具函数",
+          placement: "bottom",
+        },
+        {
+          // 指定id
+          target: "#switchTheme",
+          text: "主题的选择,支持自定义主题",
+          placement: "bottom",
+        },
+      ],
     };
   },
   computed: {
@@ -95,6 +133,15 @@ export default {
           item.path === this.$route.matched[1].path,
       };
     },
+  },
+  mounted() {
+    console.log(localStorage.isFirstVisit);
+    if (!localStorage.isFirstVisit) {
+      this.isShowLeader = true;
+      localStorage.isFirstVisit = true;
+    } else {
+      this.isShowLeader = false;
+    }
   },
 };
 </script>
