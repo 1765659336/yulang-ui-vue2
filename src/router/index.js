@@ -724,9 +724,7 @@ const routes = [
             path: "yulang-badge",
             name: "yulang-badge",
             component: () =>
-              import(
-                "@/views/root/packages-demo/yulang-badge/YulangBadge.vue"
-              ),
+              import("@/views/root/packages-demo/yulang-badge/YulangBadge.vue"),
             meta: {
               keepAlive: true,
               isAuth: true,
@@ -739,6 +737,19 @@ const routes = [
             component: () =>
               import(
                 "@/views/root/packages-demo/yulang-avatar/YulangAvatar.vue"
+              ),
+            meta: {
+              keepAlive: true,
+              isAuth: true,
+              title: "头像 Avatar",
+            },
+          },
+          {
+            path: "yulang-tree-select",
+            name: "yulang-tree-select",
+            component: () =>
+              import(
+                "@/views/root/packages-demo/yulang-tree-select/YulangTreeSelect.vue"
               ),
             meta: {
               keepAlive: true,

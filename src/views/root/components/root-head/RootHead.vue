@@ -135,7 +135,7 @@ export default {
     },
   },
   mounted() {
-    console.log(localStorage.isFirstVisit);
+    // console.log(localStorage.isFirstVisit);
     if (!localStorage.isFirstVisit) {
       this.isShowLeader = true;
       localStorage.isFirstVisit = true;

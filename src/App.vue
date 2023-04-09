@@ -14,6 +14,7 @@ export default {
   data() {
     return {
       loadingValue: true,
+      treeSelectValue: null,
     };
   },
   mounted() {

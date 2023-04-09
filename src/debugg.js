@@ -1,6 +1,13 @@
 import Vue from "vue";
+// 引入elementUI样式
+import "element-ui/lib/theme-chalk/index.css";
 
-import { Packages, Directives, CreateNode } from "@/packages/index";
+import {
+  Packages,
+  Directives,
+  CreateNode,
+  YulangPackages,
+} from "@/packages/index";
 
 // 引入全局index
 import Index from "@/tools/getIndex";
@@ -13,6 +20,11 @@ root.style.setProperty("--yulang-theme-color--", "#00DF74");
 Packages.forEach((component) => {
   Vue.component(component.name, component);
 });
+
+YulangPackages.forEach(
+  (component) =>
+    (component.install = (Vue) => Vue.component(component.name, component))
+);
 
 Object.keys(Directives).forEach((key) => {
   Vue.directive(key, Directives[key]);

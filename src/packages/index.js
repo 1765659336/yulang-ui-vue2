@@ -1,4 +1,5 @@
 // 自定义组件
+import { Select, Option, Tree } from "element-ui";
 import YulangButton from "@/packages/yulang-button/YulangButton.vue";
 import YulangSlider from "@/packages/yulang-slider/YulangSlider.vue";
 import YulangSignaure from "@/packages/yulang-signaure/YulangSignaure.vue";
@@ -61,7 +62,7 @@ import YulangCascader from "@/packages/yulang-cascader/YulangCascader.vue";
 import YulangProgress from "@/packages/yulang-progress/YulangProgress.vue";
 import YulangBadge from "@/packages/yulang-badge/YulangBadge.vue";
 import YulangAvatar from "@/packages/yulang-avatar/YulangAvatar.vue";
-
+import YulangTreeSelect from "@/packages/yulang-tree-select/YulangTreeSelect.vue";
 
 // 引入icon
 import "../assets/icon/iconfont.css";
@@ -75,6 +76,8 @@ import "@/assets/style/variable.less";
 import "@/assets/style/public.less";
 // 引入消息通知框的样式
 import "@/packages/yulang-notification/index.less";
+// 引入elementUI样式
+import "element-ui/lib/theme-chalk/index.css";
 
 // 自定义指令
 import YulangCopy from "@/instruction/copy";
@@ -109,7 +112,7 @@ export const CreateNode = [
 ];
 
 // 自定义组件数组
-export const Packages = [
+export const YulangPackages = [
   YulangButton,
   YulangSlider,
   YulangSignaure,
@@ -171,8 +174,17 @@ export const Packages = [
   YulangCascader,
   YulangProgress,
   YulangBadge,
-  YulangAvatar
+  YulangAvatar,
+  YulangTreeSelect,
 ];
+
+// 注册按需加载
+YulangPackages.forEach(
+  (component) =>
+    (component.install = (Vue) => Vue.component(component.name, component))
+);
+
+export const Packages = [Select, Option, Tree, ...YulangPackages];
 
 // 工具函数
 import * as Lib from "@/packages/lib";
