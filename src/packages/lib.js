@@ -470,6 +470,7 @@ export const changePosition = function (
     width: triggerWidth,
     height: triggerHeight,
   } = triggerDom.getBoundingClientRect();
+  console.log(triggerDom.getBoundingClientRect(), triggerDom);
   console.log(triggerBottom, "triggerBottom");
   switch (position) {
     case "bottom-start":
