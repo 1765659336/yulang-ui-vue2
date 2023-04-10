@@ -744,19 +744,6 @@ const routes = [
               title: "头像 Avatar",
             },
           },
-          {
-            path: "yulang-tree-select",
-            name: "yulang-tree-select",
-            component: () =>
-              import(
-                "@/views/root/packages-demo/yulang-tree-select/YulangTreeSelect.vue"
-              ),
-            meta: {
-              keepAlive: true,
-              isAuth: true,
-              title: "头像 Avatar",
-            },
-          },
         ],
       },
       {

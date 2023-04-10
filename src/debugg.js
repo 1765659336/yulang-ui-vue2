@@ -6,7 +6,6 @@ import {
   Packages,
   Directives,
   CreateNode,
-  YulangPackages,
 } from "@/packages/index";
 
 // 引入全局index
@@ -21,7 +20,7 @@ Packages.forEach((component) => {
   Vue.component(component.name, component);
 });
 
-YulangPackages.forEach(
+Packages.forEach(
   (component) =>
     (component.install = (Vue) => Vue.component(component.name, component))
 );
