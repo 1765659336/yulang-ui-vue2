@@ -183,6 +183,21 @@ const judgmentBottomStart = function (
 const judgmentLeftEnd = function (triggerDom, contentDom, offsetX) {
   const { top: triggerDomTop, left: triggerDomLeft } =
     triggerDom.getBoundingClientRect();
+  // console.log(contentDom, "contentDom");
+  // console.log(
+  //   triggerDomLeft,
+  //   "triggerDomLeft",
+  //   contentDom.clientWidth,
+  //   "contentDom.clientWidth",
+  //   offsetX,
+  //   "offsetX",
+  //   triggerDom.clientHeight,
+  //   "triggerDom.clientHeight",
+  //   triggerDomTop,
+  //   "triggerDomTop",
+  //   contentDom.clientHeight,
+  //   "contentDom.clientHeight"
+  // );
   // 判断水平方向是否可以放下
   if (triggerDomLeft < contentDom.clientWidth + offsetX) {
     return false;
@@ -405,6 +420,8 @@ export const getPosition = function (
   offsetY = 0,
   checkNumber = 0
 ) {
+  console.log(defaultPosition, "defaultPosition");
+  console.log(contentDom.clientWidth, "contentDom.clientWidth");
   // 如果校验了一个轮回
   if (checkNumber === positionArr.length + 1) {
     // 每个位置都放不下，因此就放在默认第一次传入的位置
@@ -415,6 +432,7 @@ export const getPosition = function (
     if (Object.hasOwnProperty.call(judgmentObj, key)) {
       if (defaultPosition === key) {
         if (judgmentObj[key](triggerDom, contentDom, offsetX, offsetY)) {
+          console.log(key, "key");
           return key;
         } else {
           return negateFn(
