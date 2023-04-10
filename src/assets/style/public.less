@@ -20,9 +20,13 @@
   border-radius: 5px;
   background-color: white;
   overflow-y: auto;
-  width: var(--yulang-popover-reference-width--);
-  min-height: var(--yulang-popover-position-min-height--);
-  max-height: var(--yulang-popover-position-max-height--);
+  display: inline-block;
+
+  .yulang-popover-content {
+    width: var(--yulang-popover-reference-width--);
+    min-height: var(--yulang-popover-position-min-height--);
+    max-height: var(--yulang-popover-position-max-height--);
+  }
 
   .yulang-popover-triangle {
     position: absolute;

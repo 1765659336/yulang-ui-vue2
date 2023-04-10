@@ -420,8 +420,8 @@ export const getPosition = function (
   offsetY = 0,
   checkNumber = 0
 ) {
-  console.log(defaultPosition, "defaultPosition");
-  console.log(contentDom.clientWidth, "contentDom.clientWidth");
+  // console.log(defaultPosition, "defaultPosition");
+  // console.log(contentDom.clientWidth, "contentDom.clientWidth");
   // 如果校验了一个轮回
   if (checkNumber === positionArr.length + 1) {
     // 每个位置都放不下，因此就放在默认第一次传入的位置
@@ -432,7 +432,7 @@ export const getPosition = function (
     if (Object.hasOwnProperty.call(judgmentObj, key)) {
       if (defaultPosition === key) {
         if (judgmentObj[key](triggerDom, contentDom, offsetX, offsetY)) {
-          console.log(key, "key");
+          // console.log(key, "key");
           return key;
         } else {
           return negateFn(
@@ -470,6 +470,7 @@ export const changePosition = function (
     width: triggerWidth,
     height: triggerHeight,
   } = triggerDom.getBoundingClientRect();
+  console.log(triggerBottom, "triggerBottom");
   switch (position) {
     case "bottom-start":
       {
