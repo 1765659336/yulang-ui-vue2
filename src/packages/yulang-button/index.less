@@ -1,10 +1,8 @@
 .packages-yulang-button-container {
-  border: 1px solid #ccc;
-  height: var(--margin-top-botton--);
-  line-height: var(--margin-top-botton--);
-  padding: 0em .5em;
+  border: var(--yulang-border-thickness--) solid var(--yulang-border-color--);
   display: inline-block;
-  border-radius: 5px;
+  border-radius: var(--yulang-button-border-radius--);
+  color: var(--yulang-button-font-color--);
 }
 
 .is-disable {
@@ -19,12 +17,46 @@
   }
 }
 
-.is-success {
-  color: #fff;
-  background-color: green;
+.is-default {
+  color: var(--yulang-button-default-font-color--);
 }
 
-.is-error {
-  color: #fff;
-  background-color:red;
+.is-success {
+  background-color: var(--yulang-button-success-color--);
+  border-color: var(--yulang-button-success-color--);
+}
+
+.is-primary {
+  background-color: var(--yulang-button-primary-color--);
+  border-color: var(--yulang-button-primary-color--);
+}
+
+.is-info {
+  background-color: var(--yulang-button-info-color--);
+  border-color: var(--yulang-button-info-color--);
+}
+
+.is-warning {
+  background-color: var(--yulang-button-warning-color--);
+  border-color: var(--yulang-button-warning-color--);
+}
+
+.is-danger {
+  background-color: var(--yulang-button-danger-color--);
+  border-color: var(--yulang-button-danger-color--);
+}
+
+.size-medium {
+  height: var(--yulang-button-size-medium--);
+  line-height: var(--yulang-button-size-medium--);
+}
+
+.size-small {
+  height: var(--yulang-button-size-small--);
+  line-height: var(--yulang-button-size-small--);
+}
+
+.size-mini {
+  height: var(--yulang-button-size-mini--);
+  line-height: var(--yulang-button-size-mini--);
 }
