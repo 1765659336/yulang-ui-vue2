@@ -3,7 +3,7 @@
     <div
       class="yulang-popover-reference"
       ref="yulangPopoverReferenceRef"
-      v-YulangClickOutside="closeShow"
+      v-YulangClickOutside:[contentUUID]="closeShow"
     >
       <!-- 触发点 -->
       <div ref="referenceRef" class="yulang-popover-reference-trigger">
@@ -19,6 +19,7 @@
           class="yulang-popover-position"
           v-if="isShow"
           ref="yulangPopoverContentRef"
+          :id="contentUUID"
         >
           <!-- 箭头 -->
           <!-- <div class="yulang-popover-triangle"></div> -->
@@ -109,6 +110,7 @@ export default {
       isFirst: true,
       time: null,
       time2: null,
+      contentUUID: "yulang-popover-content-uuid",
     };
   },
   methods: {
