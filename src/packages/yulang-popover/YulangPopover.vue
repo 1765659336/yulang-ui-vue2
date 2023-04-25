@@ -246,6 +246,15 @@ export default {
       });
     },
   },
+  watch: {
+    $route: {
+      handler: function () {
+        this.closeShow();
+      },
+      // 深度观察监听
+      deep: true,
+    },
+  },
   mounted() {
     if (this.$refs.yulangPopoverReferenceRef) {
       if (this.trigger === "click") {
