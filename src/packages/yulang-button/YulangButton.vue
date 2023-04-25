@@ -3,7 +3,9 @@
     :class="containerClass"
     @click="handleClick"
     ref="container"
+    v-yulangLoading="loading"
   >
+    <i :class="['iconfont', icon]" v-if="icon"></i>
     <slot></slot>
   </div>
 </template>
@@ -54,6 +56,27 @@ export default {
       type: Boolean,
       default: true,
     },
+    // 是否是圆角按钮
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否浅色按钮
+    plain: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+    },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -67,11 +90,13 @@ export default {
         return {
           "packages-yulang-button-container": true,
           "is-disable": this.disabled,
-          "not-disable": !this.disabled,
           ["is-" + this.type]: true,
           "yulang-animate": this.clickAnimate,
           "yulang-push-release": this.clickAnimate,
           ["size-" + this.size]: true,
+          "is-plain": this.plain,
+          "is-round": this.round,
+          "is-circle": this.circle,
         };
       },
     },
@@ -94,9 +119,6 @@ export default {
         }
       }
     },
-  },
-  beforeDestroy() {
-    clearInterval(this.timer);
   },
 };
 </script>

@@ -22,6 +22,11 @@
       </yulang-describe-frame>
     </template>
 
+    <template #e>
+      <yulang-describe-frame :codeStr="codeStrE">
+        <button-e></button-e>
+      </yulang-describe-frame>
+    </template>
     <!-- 以下开始是阅读文档 -->
     <template #u></template>
 
@@ -44,25 +49,35 @@
 import ButtonB from "./components/ButtonB.vue";
 import ButtonC from "./components/ButtonC.vue";
 import ButtonD from "./components/ButtonD.vue";
+import ButtonE from "./components/ButtonE.vue";
 
-import { codeStrB, codeStrC, codeStrD, tableDataAttributes } from "./data.js";
+import {
+  codeStrB,
+  codeStrC,
+  codeStrD,
+  codeStrE,
+  tableDataAttributes,
+} from "./data.js";
 export default {
   name: "packages-demo-yulang-button",
   components: {
     ButtonB,
     ButtonC,
     ButtonD,
+    ButtonE,
   },
   data() {
     return {
       codeStrB,
       codeStrC,
       codeStrD,
+      codeStrE,
       slotArr: [
         { slotName: "a", slotTitle: "Button 按钮", level: 1 },
         { slotName: "b", slotTitle: "按钮类型", level: 2 },
         { slotName: "c", slotTitle: "按钮尺寸", level: 2 },
         { slotName: "d", slotTitle: "按钮禁用", level: 2 },
+        { slotName: "e", slotTitle: "加载中", level: 2 },
         { slotName: "u", slotTitle: "阅读文档", level: 1 },
         { slotName: "v", slotTitle: "属性", level: 2 },
       ],
