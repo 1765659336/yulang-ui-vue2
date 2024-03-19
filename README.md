@@ -1,30 +1,5 @@
-# yulang
+# yulang-ui
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-
-
-
-node版本16.15.1
+## 项目介绍
+基于vue2进行一开的组件库
+[官网](http://101.132.70.183:10094/)
